@@ -14,3 +14,9 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require vendor.min
+//= require vendor/jquery.accordion
+//= require vendor/jquery.selectric
+//= require vendor/modernizr
+//= require vendor/prism
+//= require assets/app
