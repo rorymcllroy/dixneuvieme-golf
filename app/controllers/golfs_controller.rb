@@ -1,5 +1,4 @@
 class GolfsController < ApplicationController
-end
 
 def index
   @golf = Golf.all
@@ -34,7 +33,9 @@ def update
 end
 
 def destroy
-  @gossip = Gossip.find(params[:id])
-  @gossip.destroy
-  redirect_to gossips_path
+  @golf = Golf.find(params[:id])
+  @Golf.destroy
+  redirect_to Golf_path
+end
+
 end
