@@ -3,7 +3,8 @@ class UserMailer < ApplicationMailer
 
   def welcome_email(user)
     @user = user
-    @url = 'http://localhost:3000/users/sign_up'
+    @url  = 'http://localhost:3000/'
     mail(to: @user.email, subject: 'Bienvenue chez nous !')
   end
 end
+ 
