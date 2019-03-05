@@ -1,0 +1,29 @@
+<div class="col-md-6 col-lg-4">
+<div class="card">
+   <div> 
+      <%= image_tag "profile-pic-test.jpg", class: "avatar" %>
+   </div> 
+   <div class="card-body">
+     <a href="" class="eyebrow mb-1"><%= carsharing.driver.first_name %> <%= carsharing.driver.last_name %></a>
+     <p class="card-title mb-0"> <%= carsharing.golf.name %></p>
+     <p class="card-title mb-0">Date: <%= carsharing.date %></p>
+     <p class="card-title mb-0">Places dispo: <%= carsharing.places %></p>
+     <p class="card-title mb-0">Description: <%= carsharing.description %></p>
+   </div>
+   <div class="card-footer">
+     <div class="row align-items-center">
+      <div class="col-8">
+        <a href="" class="btn btn-ico btn-rounded btn-outline-primary circle">Rejoindre le covoiturage<i class="fas fa-arrow-right fa-2x icon"></i></a>
+      </div>
+       <div class="col-4 text-right">
+         <ul class="list-inline mb-0">
+           <li class="list-inline-item">
+             <a href="#"><i class="fas fa-star"></i> 4.5</a>
+           </li>
+         </ul>
+       </div>
+     </div>
+   </div>
+</div>
+</div>
+
