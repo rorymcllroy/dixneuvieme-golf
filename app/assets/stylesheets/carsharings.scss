@@ -4,12 +4,21 @@
 
 .flex {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
+.component-example {
+  background-color: #49E179;
+}
+
 .card {
-  position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
+  background-color: white;
+}
+
+.test {
+  margin-left: 7.5%;
 }
 
 .fa-star {
@@ -28,10 +37,30 @@
 }
 
 .avatar {
-  position: absolute;
-  top: 5%;
-  left: 25%;
   border-radius: 50%;
-  width: 30vh;
-  height: 30vh;
+  width: 120px;
+  height: 120px;
+}
+
+p {
+  color: #151515;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.card-footer {
+  padding-top: 10px;
+}
+
+.btn-primary {
+  background-color: #49e179;
+  border: #49e179; 
+}
+
+.btn-primary:hover {
+  background-color: #31d863;
+  border: #31d863; 
 }

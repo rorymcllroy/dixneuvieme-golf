@@ -9,13 +9,9 @@
   <div class="tab-content" id="component-1">
     <div class="tab-pane show active bg-light" id="component-1-1" role="tabpanel" aria-labelledby="component-1-1">
       <div class="component-example flex">
-        <div class="container">
-          <div class="row">
               <% @carsharing.each do |carsharing| %>
                 <%= render 'card', carsharing: carsharing %>
               <% end %>
-          </div>
-        </div>
       </div>
     </div>
   </div>

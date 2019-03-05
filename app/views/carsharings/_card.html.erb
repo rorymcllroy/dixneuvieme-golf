@@ -1,29 +1,20 @@
-<div class="col-md-6 col-lg-4">
-<div class="card">
-   <div> 
-      <%= image_tag "profile-pic-test.jpg", class: "avatar" %>
-   </div> 
+<div class="col-md-6 col-lg-5">
+<div class="card"> 
    <div class="card-body">
-     <a href="" class="eyebrow mb-1"><%= carsharing.driver.first_name %> <%= carsharing.driver.last_name %></a>
-     <p class="card-title mb-0"> <%= carsharing.golf.name %></p>
-     <p class="card-title mb-0">Date: <%= carsharing.date %></p>
-     <p class="card-title mb-0">Places dispo: <%= carsharing.places %></p>
-     <p class="card-title mb-0">Description: <%= carsharing.description %></p>
-   </div>
-   <div class="card-footer">
-     <div class="row align-items-center">
-      <div class="col-8">
-        <a href="" class="btn btn-ico btn-rounded btn-outline-primary circle">Rejoindre le covoiturage<i class="fas fa-arrow-right fa-2x icon"></i></a>
+    <div class="flex">
+      <%= image_tag "profile-pic-test.jpg", class: "avatar" %>
+      <div class="test">
+        <h5 class="eyebrow mb-1"><%= carsharing.driver.first_name %> <%= carsharing.driver.last_name %> <i class="fas fa-star"></i> 4.5 - 5 avis </h5>
+        <p class="card-title mb-0">Destination: Golf de Gonesse </p>
+        <p class="card-title mb-0">Places dispo: <%= carsharing.places %> </p>
+        <p class="card-title mb-0"> Départ de Paris à 13h00 </p>
       </div>
-       <div class="col-4 text-right">
-         <ul class="list-inline mb-0">
-           <li class="list-inline-item">
-             <a href="#"><i class="fas fa-star"></i> 4.5</a>
-           </li>
-         </ul>
-       </div>
-     </div>
+    </div>
+    <hr>
+     <p class="card-title mb-0">Je vais jouer à Gonesse pour faire 9T ce dimanche. Ambiance décontractée.</p>
+    <hr>
+      <a href="#" class="btn btn-primary center">Rejoindre le trajet de <%= carsharing.driver.first_name %></a>
    </div>
-</div>
+  </div>
 </div>
 
