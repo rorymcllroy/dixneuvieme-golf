@@ -13,7 +13,7 @@ end
 
 #Create 10 users
 10.times do
-  user = User.new(first_name: Faker::Name.first_name, email: Faker::Internet.email, password:"testtest")
+  user = User.new(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password:"testtest")
   city = City.all.sample
   user.city = city
   user.save!
@@ -36,7 +36,7 @@ end
 
 #Create 3 carsharings
 3.times do
-  carsharing = Carsharing.new(description: Faker::Marketing.buzzwords)
+  carsharing = Carsharing.new(description: Faker::Marketing.buzzwords, date: Faker::Date.between(Date.today, 1.month.from_now) , places: "4", price: "10")
   user = User.all.sample
   carsharing.driver = user
   golf = Golf.all.sample
