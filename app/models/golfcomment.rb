@@ -1,4 +1,4 @@
 class Golfcomment < ApplicationRecord
   belongs_to :user
-  belongs_to :golves
+  belongs_to :golf
 end
