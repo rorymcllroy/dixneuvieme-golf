@@ -10,10 +10,81 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_084017) do
+ActiveRecord::Schema.define(version: 2019_03_05_111934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "carsharingreviews", force: :cascade do |t|
+    t.text "content"
+    t.string "grade"
+    t.bigint "carsharing_id"
+    t.bigint "passenger_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["carsharing_id"], name: "index_carsharingreviews_on_carsharing_id"
+    t.index ["passenger_id"], name: "index_carsharingreviews_on_passenger_id"
+  end
+
+  create_table "carsharings", force: :cascade do |t|
+    t.datetime "date"
+    t.integer "places"
+    t.text "description"
+    t.integer "price"
+    t.bigint "golf_id"
+    t.bigint "driver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["driver_id"], name: "index_carsharings_on_driver_id"
+    t.index ["golf_id"], name: "index_carsharings_on_golf_id"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "golfcomments", force: :cascade do |t|
+    t.text "content"
+    t.string "grade"
+    t.bigint "golf_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["golf_id"], name: "index_golfcomments_on_golf_id"
+    t.index ["user_id"], name: "index_golfcomments_on_user_id"
+  end
+
+  create_table "golves", force: :cascade do |t|
+    t.string "price_range"
+    t.string "lat"
+    t.string "long"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "description"
+    t.string "name"
+  end
+
+  create_table "passengers", force: :cascade do |t|
+    t.string "stripe_customer_id"
+    t.bigint "passenger_id"
+    t.bigint "carsharing_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["carsharing_id"], name: "index_passengers_on_carsharing_id"
+    t.index ["passenger_id"], name: "index_passengers_on_passenger_id"
+  end
+
+  create_table "privatemessages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "recipient_id"
+    t.bigint "sender_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipient_id"], name: "index_privatemessages_on_recipient_id"
+    t.index ["sender_id"], name: "index_privatemessages_on_sender_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,6 +94,12 @@ ActiveRecord::Schema.define(version: 2019_03_05_084017) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "city_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "golf_level"
+    t.text "description"
+    t.index ["city_id"], name: "index_users_on_city_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
