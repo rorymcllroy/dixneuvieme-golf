@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   root 'welcomes#index' 
   resources :golfs
   resources :carsharings
+  resources :users
 end
 
