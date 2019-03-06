@@ -11,14 +11,6 @@
   City.create!(name: Faker::Address.city)
 end
 
-#Create 10 users
-10.times do
-  user = User.new(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password:"testtest")
-  city = City.all.sample
-  user.city = city
-  user.save!
-end
-
 #Create 10 golfs
 10.times do
   Golf.create!(name: Faker::Job.title)
