@@ -1,0 +1,39 @@
+<h2 class='container'>Création d'un covoiturage</h2>
+<div class="tab-pane show active" id="component-1-1" role="tabpanel" aria-labelledby="component-1-1">
+  <div class="component-example">
+    <div class='container'>
+
+      <%= form_tag carsharings_path, method: "post" do %>
+        <div class="row">
+        <div class="col-md-6">
+          <p>Golf de destination: </p>
+          <%= text_field_tag 'golf', "" , class: 'form-control' %>
+          <br>
+          <p>Description: </p>
+          <%= text_area_tag 'description' , "" ,  class: 'form-control' %>
+          <br>
+          <p>Date: </p>
+          <%= datetime_local_field_tag 'start_date', "" , class: 'form-control' %>        
+        </div>
+
+        <div class="col-md-6">
+          <p>Ville de départ: </p>       
+          <%= select_tag(:city, options_for_select(City.all.collect {|city| [city.name, city.id]}, {include_blank: true})) %>
+          <br>
+          <p>Places dispo: </p>
+          <%= select_tag(:place, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4]])) %>
+          <br>
+          <%= submit_tag "Envoyer",  class: "btn btn-lg btn-primary btn-block" %>
+        </div>
+        </div>
+      <% end %>      
+    
+
+
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6">
+</div>
+
