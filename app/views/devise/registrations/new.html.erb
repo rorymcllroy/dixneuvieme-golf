@@ -2,7 +2,7 @@
 <div class="tab-pane show active" id="component-1-1" role="tabpanel" aria-labelledby="component-1-1">
   <div class="component-example">
     <div class='container'>
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :multipart => true }) do |f| %>
       <div class='row'>
         <div class="col-md-6">
             <%= render "devise/shared/error_messages", resource: resource %>
@@ -23,7 +23,6 @@
             <div class='field form-group'>
               <%= f.label 'Niveau' %>
               <%= f.select(:golf_level, options_for_select([['débutant', 'débutant'], ['intermediaire', 'intermediaire'], ['confirmer', 'confirmer']])) %>
-              <%= f.select(:city_id, options_for_select(City.pluck(:name, :id), target_blank: true )) %>
             </div>
             </div>
           <div class="col-md-6">
@@ -49,6 +48,12 @@
             <%= f.label 'Description'%>
               <%= f.text_area :description, size: "60x5", class: 'form-control'%>
             </div>
+
+            <div class='field form-group'>
+              <%= f.label 'Photo de profil'%>
+              <%= f.file_field :avatar%>
+            </div>
+
             </div>
             <div class="actions">
               <%= f.submit "Inscription", class: 'btn btn-primary' %>

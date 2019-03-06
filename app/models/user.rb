@@ -16,5 +16,6 @@ class User < ApplicationRecord
   has_many :carsharingreviews, foreign_key: 'passenger_id', class_name: "Carsharingreview"
   has_many :sent_messages, foreign_key: 'sender_id', class_name: "Privatemessage"
   has_many :received_messages, foreign_key: 'recipient_id', class_name: "Privatemessage"
+  has_one_attached :avatar
 
 end
