@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-<a class="navbar-brand" href="#">Le19</a>
+  <%= link_to "Le19", root_path, class: "navbar-brand" %>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -7,7 +7,10 @@
 <div class="collapse navbar-collapse" id="navbarColor01">
   <ul class="navbar-nav mr-auto">
     <li class="nav-item">
-      <a class="nav-link" href="#">covoiturage</a>
+      <%= link_to "Covoiturage", carsharings_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+    <%= link_to "les Golfs", golfs_path, class: "nav-link" %>
     </li>
   </ul>
   <%= current_user ? "Connecté" : "Non connecté" %>
