@@ -1,0 +1,38 @@
+<div class="row gutter-1 mb-2">
+  <div class="col-6 col-md-4 col-lg-3">
+    <div class="equal">
+      <div class="boxeds">
+        <div class="equal-header">
+          <span class="text-muted">Membre depuis</span>
+        </div>
+        <div class="equal-footer">
+          <b class="h4"><%= @user.created_at.day %> <%= Date::MONTHNAMES[@user.created_at.month] %> <%=@user.created_at.year %></b>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 col-md-4 col-lg-3">
+    <div class="equal">
+      <div class="boxed">
+        <div class="equal-header">
+          <span class="text-muted">Niveau de golf</span>
+        </div>
+        <div class="equal-footer">
+          <b class="h4"><%= @user.golf_level %></b>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 col-md-4 col-lg-3">
+    <div class="equal">
+      <div class="boxed">                      
+        <div class="equal-header">
+          <span class="text-muted">Covoiturages</span>
+        </div>
+        <div class="equal-footer">
+          <b class="h2"><%= @carsharing.where(driver_id: @user.id).count %></b>
+        </div>
+      </div>
+    </div>
+  </div>                  
+</div>

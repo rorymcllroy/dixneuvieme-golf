@@ -1,0 +1,74 @@
+<!-- Photo and name -->
+<section class="p-0 bg-light">
+      <div class="image image-overlay image-cover" style="background-image:url(../../assets/images/demo/minimal/portfolio-bg-2.jpg)"
+      data-top-top="transform: translateY(0px);" 
+      data-top-bottom="transform: translateY(-250px);"></div>
+      <div class="container">
+        <div class="row justify-content-center align-items-end vh-50 mb-5">
+          <div class="col col-md-10 col-lg-8">
+            <div class="row align-items-center">
+              <div class="col-4 col-lg-3">
+                <%= image_tag "profile-pic-test.jpg", class: "mr-3 avatar avatar-xl rounded" %>
+              </div>
+              <div class="col">
+                <div class="row align-items-center">
+                  <div class="col-md-8">
+                    <h2 class="mb-0"> <%= @user.first_name %> <%= @user.last_name %> </h2>
+                    <span class="text-muted"><i class="fas fa-star"></i> 4.5 - 5 avis</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+<!-- Summary -->
+
+<section class="bg-light p-0">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col col-md-10 col-lg-8">
+        <div class="nav nav-tabs mb-1">
+          <a class="nav-item nav-link active" data-toggle="tab" href="#demo-2-1">Profil</a>
+          <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-2">Covoiturages</a>
+          <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-3">Avis</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Detail -->
+<section class="bg-light pt-2">
+  <div class="container">
+    <div class="tab-content" id="demo-2">
+      <!-- Profile -->
+      <div class="tab-pane show active" id="demo-2-1" role="tabpanel" aria-labelledby="demo-2-1">
+        <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8">                
+            <%= render 'profile' %>
+          </div>
+        </div>
+      </div>
+      <!-- Carsharing list -->
+      <div class="tab-pane" id="demo-2-2" role="tabpanel" aria-labelledby="demo-2-2">          
+        <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8">
+            <%= render 'carsharing_list' %>
+          </div>
+        </div>
+      </div>
+      <!-- Reviews -->
+      <div class="tab-pane" id="demo-2-3" role="tabpanel" aria-labelledby="demo-2-3">
+        <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8">              
+            <%= render 'review'%>
+          </div>
+        </div>
+      </div>       
+    </div>
+  </div>
+</section>
+
