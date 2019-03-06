@@ -10,15 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 ActiveRecord::Schema.define(version: 2019_03_06_150626) do
-=======
-ActiveRecord::Schema.define(version: 2019_03_06_081507) do
->>>>>>> welcome
-=======
-ActiveRecord::Schema.define(version: 2019_03_06_081507) do
->>>>>>> view_golf
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
