@@ -19,8 +19,8 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.create(comment_id: params[:id], content: params[:content], grade: params[:grade] user_id: session[:user_id] , golf_id: params[:golf_id])
-    redirect_to comment_path(params[:comment_id])
+    
+    redirect_to comment_path(params[:id])
   end
 
   def edit
@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
     comment_params = params.permit(:content)
 
       if @comment.update(comment_params)
-        redirect_to comment_path(params[:comment_id])
+        redirect_to comment_path(params[:id])
       else
         render :edit
       end
@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to comment_path(params[:comment_id])
+    redirect_to comment_path(params[:id])
   end
 
   def authenticate_user
