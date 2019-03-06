@@ -6,7 +6,7 @@ end
 
 
 def show
-  @golf = Golf.find(params[:id])
+  @golf= Golf.find(params[:id])
 end
 
 def new

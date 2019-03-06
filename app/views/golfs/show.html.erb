@@ -1,9 +1,14 @@
 <!-- hero -->
 <section class="hero hero-with-header">
+
+
+<div class="image image-overlay image-blur" style="background-image:url(https://www.bonifacio.fr/wp-content/uploads/2017/06/golf-de-sperone-bonifacio-vuedrone-corse.jpg.jpg)"></div>
+
+
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-10 text-center">
-        <h1><b>Everything</b> from design to development.</h1>
+        <h1> Le golf de :<b><%=@golf.name%></b></h1>
       </div>
     </div>
   </div>    
@@ -18,56 +23,67 @@
       <div class="col-md-6 col-lg-4 p-5 text-center">
         <i class="svg-icon w-50 equal">
           <span>
-            <img src="../../assets/images/demo/illustrations/draw-1.svg" alt="Image">
+          <i class="fas fa-user-clock"></i>
           </span>
         </i>
-        <h4 class="fs-24 font-weight-normal">Game Development</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+        <h4 class="fs-24 font-weight-normal">Les horaires</h4>
+        <p>Lundi<br>
+            mardi<br>
+            mercredi<br>
+            jeudi<br>
+            vendredi<br>
+            samedi<br>
+            dimanche<br>
+            </p>
       </div>
       <div class="col-md-6 col-lg-4 p-5 text-center">
         <i class="svg-icon w-50 equal">
           <span>
-            <img src="../../assets/images/demo/illustrations/draw-2.svg" alt="Image">
+          <i class="fas fa-money-bill-alt"></i>
           </span>
         </i>
-        <h4 class="fs-24 font-weight-normal">Targeted Marketing</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+        <h4 class="fs-24 font-weight-normal">Les tarifs</h4>
+        <p>£££ <br> 
+            $$$ <br>
+            €€€ <br>
+            </p>
       </div>
       <div class="col-md-6 col-lg-4 p-5 text-center">
         <i class="svg-icon w-50 equal">
           <span>
-            <img src="../../assets/images/demo/illustrations/draw-3.svg" alt="Image">
+          <%= image_tag "img-golf-trou.jpg", class: "golf-flag" %>
+        
           </span>
         </i>
-        <h4 class="fs-24 font-weight-normal">Support</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+        <h4 class="fs-24 font-weight-normal">Le parcours</h4>
+        
+        <p>18 / 9 trous</p>
       </div>
       <div class="col-md-6 col-lg-4 p-5 text-center">
         <i class="svg-icon w-50 equal">
           <span>
-            <img src="../../assets/images/demo/illustrations/draw-4.svg" alt="Image">
+          <i class="fas fa-utensils"></i>
           </span>
         </i>
-        <h4 class="fs-24 font-weight-normal">SEO</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+        <h4 class="fs-24 font-weight-normal">Les services</h4>
+        <p>Restauration, shop, ... </p>
       </div>
       <div class="col-md-6 col-lg-4 p-5 text-center">
         <i class="svg-icon w-50 equal">
           <span>
-            <img src="../../assets/images/demo/illustrations/draw-5.svg" alt="Image">
+          <i class="fas fa-trophy"></i>
           </span>
         </i>
-        <h4 class="fs-24 font-weight-normal">Security</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+        <h4 class="fs-24 font-weight-normal">Evènements</h4>
+        <p>Prochains évènements</p>
       </div>
       <div class="col-md-6 col-lg-4 p-5 text-center">
         <i class="svg-icon w-50 equal">
           <span>
-            <img src="../../assets/images/demo/illustrations/draw-6.svg" alt="Image">
-          </span>
+          <i class="fas fa-golf-ball"></i>          </span>
         </i>
-        <h4 class="fs-24 font-weight-normal">Fast Delivery</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+        <h4 class="fs-24 font-weight-normal">Le site officiel</h4>
+        <p>  <a href="https://www.golfdesperone.com/">Visit golf site</a> </p>
       </div>
     </div>
   </div>
@@ -80,7 +96,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8 text-center">
-        <h2>Kind Words</h2>
+        <h2>Ils nous parlent de <b> <%=@golf.name%></b></h2>
       </div>
     </div>
     <div class="row justify-content-center">
@@ -89,13 +105,13 @@
           <blockquote class="blockquote blockquote-1">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
             <footer class="blockquote-footer">
-              Valerie Doe
+              RoryMac
             </footer>
           </blockquote>
           <blockquote class="blockquote blockquote-1">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
             <footer class="blockquote-footer">
-              Valerie Doe
+              Le Tigre
             </footer>
           </blockquote>
         </div>
