@@ -10,9 +10,13 @@
       </div>
     </div>
     <hr>
-     <p class="blockquote">Ce golf c'est de la bombe.</p>
+     <!-- <p class="blockquote">Ce golf c'est de la bombe.</p> -->
+     <blockquote class="blockquote blockquote-2 boxed">
+        <p>Lorem ipsum dolor sit amet, sed do eiusmod tempor.</p>
+     <footer class="blockquote-footer">Michael Doe</footer>
+    </blockquote>
     <hr>
-      <a href="#" class="btn btn-primary center">Réserver ce golf <%link_to 'golf_path(:id)' %> </a>
+    <%= link_to "Voir plus", golf_path(golf.id), class: "btn btn-primary center" %>
    </div>
   </div>
 </div>
