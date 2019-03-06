@@ -1,19 +1,27 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
+<div class="welcome-container">
+  <%= image_tag "welcome-pic.jpg" %>
+  <div class="header">
+    <div class="container">
+      <div class="intro-text text-center">
+        <div class="intro-heading">We take you for a round of golf</div>
+        <%= link_to "Nous Rejoindre", new_user_registration_path, class: "btn btn-green btn-xl" %>
+        </div>
+    </div>
+  </div>
+</div>
 
 <div class="golf-carte">
 <hr>
 <h3 class=golf-carte-title>Les golfs proches de chez toi</h3>
 <div id="googleMap"></div>
 </div>
-
-
 
 <script src="main.js"></script>
