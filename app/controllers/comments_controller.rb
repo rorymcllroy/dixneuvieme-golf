@@ -1,9 +1,7 @@
 class CommentsController < ApplicationController
-end
 
-before_action :authenticate_user, only: [:create]
+  before_action :authenticate_user, only: [:create]
     before_action :author_comment, only: [:edit, :update, :destroy]
-
 
   def index
     @golf = Golf.find(params[:id])
@@ -60,3 +58,4 @@ before_action :authenticate_user, only: [:create]
         redirect_to root_path
     end
   end
+end
