@@ -9,7 +9,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :city
+  belongs_to :city, optional: true
   has_many :golfcomments
   has_many :drivers, foreign_key: 'driver_id', class_name: "Carsharing"
   has_many :passengers, foreign_key: 'passenger_id', class_name: "Passenger"
