@@ -1,0 +1,18 @@
+<div class="col-md-6 col-lg-5">
+<div class="card"> 
+   <div class="card-body">
+    <div class="flex">
+      <%= image_tag "golf-de-sperone-bonifacio-vuedrone-corse.jpg", class: "avatar-golf" %>
+      <div class="test">
+        <h5 class="eyebrow mb-1"><%= golf.name %><i class="fas fa-star"></i> 4.5 - 5 avis </h5>
+        <p class="card-title mb-0">Places dispo: <%= golf.id %> </p>
+        
+      </div>
+    </div>
+    <hr>
+     <p class="blockquote">Ce golf c'est de la bombe.</p>
+    <hr>
+      <a href="#" class="btn btn-primary center">Réserver ce golf <%link_to 'golf_path(:id)' %> </a>
+   </div>
+  </div>
+</div>

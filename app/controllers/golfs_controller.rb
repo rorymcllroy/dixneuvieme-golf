@@ -1,12 +1,12 @@
 class GolfsController < ApplicationController
 
 def index
-  @golf = Golf.all
+  @golfs = Golf.all
 end
 
 
 def show
-  @golf = Golf.find(params[:golf_id])
+  @golf = Golf.find(params[:id])
 end
 
 def new
