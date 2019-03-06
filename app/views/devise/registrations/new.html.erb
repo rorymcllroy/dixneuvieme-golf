@@ -22,7 +22,8 @@
             </div>
             <div class='field form-group'>
               <%= f.label 'Niveau' %>
-              <%= select_tag(:golf_level, options_for_select([['débutant', 'débutant'], ['intermediaire', 'intermediaire'], ['confirmer', 'confirmer']])) %>
+              <%= f.select(:golf_level, options_for_select([['débutant', 'débutant'], ['intermediaire', 'intermediaire'], ['confirmer', 'confirmer']])) %>
+              <%= f.select(:city_id, options_for_select(City.pluck(:name, :id), target_blank: true )) %>
             </div>
             </div>
           <div class="col-md-6">
@@ -41,7 +42,7 @@
 
             <div class='field form-group'>
               <%= f.label 'Ville' %>
-              <%= select_tag(:city_id, options_for_select( City.all.collect { |city| [city.name, city.id] }, {target_blank: true} )) %>
+             <%= f.select(:city_id, options_for_select(City.pluck(:name, :id), target_blank: true )) %>
             </div>
 
             <div class='field form-group'>
