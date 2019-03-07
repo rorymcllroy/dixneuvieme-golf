@@ -5,12 +5,13 @@ class CommentsController < ApplicationController
 
   def index
     @golf = Golf.find(params[:id])
-    @comments = @golf.golfcomments
+    @comments = Golfcomment
   end
 
   def show
     @golf = Golf.find(params[:id])
-    @comments = Golfcomment.where(golf_id:@golf)
+    @user = User.find(params[:id])
+    @comments = Golfcomment
   end
 
   def new
