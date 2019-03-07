@@ -14,7 +14,7 @@
     <hr>
      <p class="card-title mb-0">Je vais jouer à Gonesse pour faire 9T ce dimanche. Ambiance décontractée.</p>
     <hr>
-      <a href="#" class="btn btn-primary center">Rejoindre le trajet de <%= carsharing.driver.first_name %></a>
+      <%= link_to "Rejoindre le trajet", carsharing_path(carsharing.id), class: "btn btn-outline-primary center" %>
    </div>
   </div>
 </div>

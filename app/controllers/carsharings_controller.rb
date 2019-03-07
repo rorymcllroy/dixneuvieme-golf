@@ -5,7 +5,7 @@ class CarsharingsController < ApplicationController
   end
   
   def show
-    @carsharing = Carsharing.find(params[:carsharing_id])
+    @carsharing = Carsharing.find(params[:id])
   end
   
   def new
