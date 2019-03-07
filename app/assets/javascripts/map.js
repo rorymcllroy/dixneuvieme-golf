@@ -1,4 +1,5 @@
 function initMap() {
+
 // Generate Map and Related CSS
 let map = new google.maps.Map(document.getElementById('map'), {
   center: {lat: 48.866667, lng: 2.333333},
@@ -165,34 +166,33 @@ let map = new google.maps.Map(document.getElementById('map'), {
 	}
   ]
 });
+
 // Custom pin
 //var pin = 
+  
+//Configure InfoWindow
+let infowindow = new google.maps.InfoWindow({
+content: ""
+});
+
 for(let i = 0; i < gon.golfs.length; i++){
+
  // Current marker
  let marker = new google.maps.Marker({
 	position: new google.maps.LatLng(gon.golfs[i].lat,gon.golfs[i].long),
 	map: map
   });
 
+  //Golf name
   let golf = gon.golfs[i].name
   let golflink = golf.link("https://www.google.fr")
 
-  google.maps.InfoWindow.prototype.opened = false;
-  let infowindow = new google.maps.InfoWindow({
-	content: golflink
-  });
-
-
-
+  console.log(golflink)
+  
+  // Open InfoWindow on click
   google.maps.event.addListener(marker, 'click', function() {
+	infowindow.setContent(golflink);
 	infowindow.open(map, marker);
-	if (infowindow.opened) {
-		infowindow.close(map, marker);
-		infowindow.opened = false;
-	} else {
-		infowindow.open(map, marker);
-		infowindow.opened = true;
-	}
   });
  }
 }
