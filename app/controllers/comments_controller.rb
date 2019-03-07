@@ -1,16 +1,17 @@
 class CommentsController < ApplicationController
 
-  before_action :authenticate_user, only: [:create]
-    before_action :author_comment, only: [:edit, :update, :destroy]
+  # before_action :authenticate_user, only: [:create]
+  #   before_action :author_comment, only: [:edit, :update, :destroy]
 
   def index
     @golf = Golf.find(params[:id])
-    @comments = @golf.comments
+    @comments = Golfcomment
   end
 
   def show
     @golf = Golf.find(params[:id])
-    @comments = @golf.comments
+    @user = User.find(params[:id])
+    @comments = Golfcomment
   end
 
   def new

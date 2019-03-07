@@ -83,7 +83,7 @@
           <i class="fas fa-golf-ball"></i>          </span>
         </i>
         <h4 class="fs-24 font-weight-normal">Le site officiel</h4>
-        <p>  <a href="https://www.golfdesperone.com/">Visit golf site</a> </p>
+        <p>  <a href="https://www.golfdesperone.com/">Visit site</a> </p>
       </div>
     </div>
   </div>
@@ -100,18 +100,20 @@
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col">
-        <div class="owl-carousel" data-items="[2,1]" data-autoplay="true" data-dots="true" data-loop="true" data-margin="50">
+      <div class="col"> pb de js le owl carousel ne se charge pas
+        <div class="owl-carousel" data-items="[2,1]" data-autoplay="true" data-dots="true" data-loop="true" data-margin="50">   
           <blockquote class="blockquote blockquote-1">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+            <p><%=@comments.where(golf_id:@golf)[0].content%></p>   <!-- get the content of the first input of the table golfcomment linked to @golf id -->
             <footer class="blockquote-footer">
-              RoryMac
-            </footer>
+            <%=User.find(@comments.where(golf_id:@golf)[0].user_id).first_name%>
+            </footer>          
           </blockquote>
+
+
           <blockquote class="blockquote blockquote-1">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+            <p><%=@comments.where(golf_id:@golf)[1].content%></p>  <!-- get the content of the 2nd input of the table golfcomment linked to @golf id -->
             <footer class="blockquote-footer">
-              Le Tigre
+            <%=User.find(@comments.where(golf_id:@golf)[1].user_id).first_name%>
             </footer>
           </blockquote>
         </div>
@@ -119,4 +121,4 @@
     </div>
   </div>
 </section>
-<!-- / testimonial -->
+<!-- /testimonial -->
