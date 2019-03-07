@@ -7,6 +7,7 @@ end
 
 def show
   @golf= Golf.find(params[:id])
+  @comments= @golf.golfcomments
 end
 
 def new
