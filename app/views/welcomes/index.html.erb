@@ -1,24 +1,53 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-
-<div class="header">
-  <div class="container">
-    <div class="intro-text text-center">
-      <div class="intro-heading">We take you for a round of golf</div>
-      <%= link_to "Nous Rejoindre", new_user_registration_path, class: "btn btn-green btn-xl" %>
+<!-- CTA -->
+<section class="p-0">
+  <div class="swiper-container swiper-container-half text-white"
+    data-top-top="transform: translateY(0px);" 
+    data-top-bottom="transform: translateY(250px);">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide vh-100">
+        <div class="image image-overlay background-image"></div>
+        <div class="caption">
+          <div class="container">
+            <div class="row justify-content-center vh-100">
+              <div class="col-md-8 align-self-center text-center">
+                <h1 data-swiper-parallax="-100%" class="display-2"><b>19ème trou</b></h1>
+                <h3 data-swiper-parallax="-100%" class="display-2 undertitle">Service de covoiturage pour golfeur citadin</h3>
+                <%= link_to "Trouve un covoiturage", carsharings_path , class: "btn btn-rounded btn-white px-5" %>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="swiper-footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col text-center">
+              <div class="mouse"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-<div class="golf-carte">
-<hr>
-<h3 class=golf-carte-title>Les golfs proches de chez toi</h3>
-<div id="googleMap"></div>
+<!-- Map title-->
+<div class="bg-light map-title">
+  <div class="row justify-content-center">
+    <div class="col-md-10 col-lg-8 text-center">
+      <h2>Les golfs près de chez toi</h2>
+      <h5>Navigue sur la carte pour afficher les golfs alentours</h5>
+    </div>
+  </div>    
 </div>
+<!-- Map -->
+<section class="py-0">
+  <div class="map-flex">
+    <div id="map" class="vh-80 map-width"></div>
+  </div>
 
-<script src="main.js"></script>
+<%= javascript_include_tag('map.js') %>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBcxcCsf1Vymc0NaK2W_oT8AZBE5nn-ek&callback=initMap"
+  async defer>
+</script>
+</section>
