@@ -186,8 +186,6 @@ for(let i = 0; i < gon.golfs.length; i++){
   //Golf name
   let golf = gon.golfs[i].name
   let golflink = golf.link("https://www.google.fr")
-
-  console.log(golflink)
   
   // Open InfoWindow on click
   google.maps.event.addListener(marker, 'click', function() {
