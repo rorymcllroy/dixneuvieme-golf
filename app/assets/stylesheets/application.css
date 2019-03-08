@@ -20,5 +20,21 @@
  */
  
 .footer-height {
+  display: flex;
+  justify-content: space-between;
   height: 12.5vh;
+}
+
+.text-left {
+  padding-top:15px; 
+  padding-left:40px;
+}
+
+.text-right {
+  padding-top:25px; 
+  padding-right:40px;
+}
+
+.icon-space-right {
+  margin-right: 50px;
 }

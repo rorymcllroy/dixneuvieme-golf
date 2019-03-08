@@ -3,7 +3,7 @@ function initMap() {
 // Generate Map and Related CSS
 let map = new google.maps.Map(document.getElementById('map'), {
   center: {lat: 48.866667, lng: 2.333333},
-  zoom: 10,
+  zoom: 9,
   disableDefaultUI: true,
   styles: [
 	{
@@ -186,8 +186,6 @@ for(let i = 0; i < gon.golfs.length; i++){
   //Golf name
   let golf = gon.golfs[i].name
   let golflink = golf.link("https://www.google.fr")
-
-  console.log(golflink)
   
   // Open InfoWindow on click
   google.maps.event.addListener(marker, 'click', function() {
