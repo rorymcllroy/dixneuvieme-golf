@@ -2,7 +2,7 @@
         <div class="row">
         <div class="col-md-6">
           <p>Golf de destination: </p>
-          <%= text_field_tag 'golf', "" , class: 'form-control' %>
+          <%= select_tag(:golf, options_for_select(Golf.pluck(:name, :id), target_blank: true )) %>
           <br>
           <p>Description: </p>
           <%= text_area_tag 'description' , "" ,  class: 'form-control' %>
@@ -21,7 +21,7 @@
           <%= select_tag(:place, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4]])) %>
           <br>
           <p>Prix: </p>
-          <%= select_tag(:price, options_for_select([['Gratuit', 0], ['5', 5], ['10', 10], ['15', 15], ['20', 20]])) %>
+          <%= select_tag(:price, options_for_select([['Gratuit', 0], ['5€', 5], ['10€', 10], ['15€', 15], ['20€', 20]])) %>
           <br>
           
           <%= submit_tag "Envoyer",  class: "btn btn-lg btn-primary btn-block" %>
