@@ -6,5 +6,9 @@ Rails.application.routes.draw do
   resources :golfs
   resources :carsharings
   resources :users
+
+  namespace :admin do
+    resources :carsharings, :golfs
+  end
 end
 
