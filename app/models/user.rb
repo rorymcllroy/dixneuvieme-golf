@@ -18,4 +18,14 @@ class User < ApplicationRecord
   has_many :received_messages, foreign_key: 'recipient_id', class_name: "Privatemessage"
   has_one_attached :avatar
 
+  validates :first_name, 
+  presence: true
+  validates :last_name, 
+  presence: true
+  validates :golf_level, 
+  presence: true
+  validates :description,
+  presence: true,
+  length: { in: 20..1000 }
+
 end
