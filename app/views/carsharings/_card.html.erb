@@ -14,7 +14,7 @@
     <hr>
      <p class="card-title mb-0"> <%= carsharing.description %> </p>
     <hr>
-      <%= link_to "Rejoindre le trajet (10 €)", carsharing_path(carsharing.id), class: "btn btn-outline-primary center" %>
+      <%= link_to "Rejoindre le trajet (#{carsharing.price == 0 ? "Gratuit" : "#{carsharing.price} €"})", carsharing_path(carsharing.id), class: "btn btn-outline-primary center" %>
    </div>
   </div>
 </div>
