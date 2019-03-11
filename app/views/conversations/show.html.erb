@@ -1,26 +1,41 @@
-<h1>Conversation entre <%= current_user[:first_name] %> et <%= user_by_id(params[:id]).first_name %> </h1>
+<!-- Page header -->
+<section class="page-header">
+  <div class="image image-overlay"></div>
+  <div class="container">
+      <div class="col text-white text-shadow">
+        <h2>Conversation entre <%= current_user[:first_name] %> et <%= user_by_id(params[:id]).first_name %></b></h2>
+    </div>
+  </div>
+</section>
 
-<!-- Received messages -->
-<% Privatemessage.all.each do |pm| %>
-      <% if (pm.recipient.id == current_user.id && pm.sender.id == user_by_id(params[:id]).id) || (pm.sender.id == current_user.id && pm.recipient.id == user_by_id(params[:id]).id) %>
-            <% if pm.recipient.id == current_user.id %>
-                  <p> <%= pm.sender.first_name %> : <span class="badge badge-primary text-wrap" style="width: 6rem;" > <%= pm.content %> </span> </p>
-            <% else %>
-                  <p> <%= pm.sender.first_name %> : <span class="badge badge-secondary text-wrap" style="width: 6rem;" > <%= pm.content %> </span> </p>
-            <% end %>   
-      <% end %>      
-<% end %>
-<hr>
+<!-- Message list -->
+    <section id="default" class="component">
+      <div class="tab-content" id="component-1">
+        <div class="tab-pane show active bg-light" id="component-1-1" role="tabpanel" aria-labelledby="component-1-1">
+          <div class="component-example">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4 blockquote-list">
+                <% Privatemessage.all.each.with_index do |pm, index| %>
+                 <% if (pm.recipient.id == current_user.id && pm.sender.id == user_by_id(params[:id]).id) || (pm.sender.id == current_user.id && pm.recipient.id == user_by_id(params[:id]).id) %>
+                   <blockquote class="blockquote-2 boxed">
+                    <p><%= pm.content %> </p>
+                     <footer class="blockquote-footer"> <%= pm.sender.first_name %> </footer>
+                   </blockquote>
+                 <% end %>      
+                <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
 <h2>Répondre</h2>
-
   <form action=  <%= user_conversations_path(current_user) %> method="POST">
     <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
     <input type="hidden" name="recipient" value=<%= user_by_id(params[:id]).id %> >
     <input type="text" name="content">
     <input type="submit" value="Envoyer">
   </form>
-
-
-
-
-

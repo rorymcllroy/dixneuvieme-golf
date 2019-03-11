@@ -4,7 +4,6 @@
   <div class="container">
       <div class="col text-white text-shadow">
         <h2>Mon profil</b></h2>
-        <%= link_to "Envoyer un message", new_privatemessage_path, class: "btn btn-outline-white btn-rounded" %>
     </div>
   </div>
 </section>
@@ -44,6 +43,7 @@
         <div class="nav nav-tabs mb-1">
           <a class="nav-item nav-link active" data-toggle="tab" href="#demo-2-1">Profil</a>
           <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-2">Covoiturages</a>
+          <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-4">Conversations</a>
           <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-3">Avis</a>
         </div>
       </div>
@@ -78,20 +78,20 @@
             <%= render 'review'%>
           </div>
         </div>
-      </div>       
+      </div>   
+      <!-- Conversations -->
+      <div class="tab-pane" id="demo-2-4" role="tabpanel" aria-labelledby="demo-2-2">          
+        <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8">
+            <%= render 'conversation_list' %>
+            <%= link_to "Nouvelle conversation", new_privatemessage_path, class: "btn btn-outline-primary btn-rounded" %>
+          </div>
+        </div>
+      </div>    
     </div>
   </div>
 </section>
 
-<% User.all.each do |user| %>
-      <% if user.id != current_user.id%>
-            <% if pm_count(current_user.id, user.id) != 0 %>
-                  <p> Interlocuteurs: </p>
-                  <%= link_to user.first_name, user_conversation_path(current_user, user.id), class: "btn btn-secondary" %>
-                  <p> Nombre de messages: <%= pm_count(current_user.id, user.id) %> </p>
-            <% end %>
-      <% end %>
-<% end %>
 
 
 
