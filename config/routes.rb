@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   root 'welcomes#index' 
   resources :golfs
   resources :carsharings
-  resources :users
+  resources :users do
+    resources :conversations, only: [:show, :create]
+  end
+  resources :privatemessages
+  resources :conversations
 end
 

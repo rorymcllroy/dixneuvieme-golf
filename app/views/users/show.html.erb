@@ -1,4 +1,15 @@
-<!-- Photo and name -->
+<!-- Page header -->
+<section class="page-header">
+  <div class="image image-overlay"></div>
+  <div class="container">
+      <div class="col text-white text-shadow">
+        <h2>Mon profil</b></h2>
+        <%= link_to "Envoyer un message", new_privatemessage_path, class: "btn btn-outline-white btn-rounded" %>
+    </div>
+  </div>
+</section>
+
+<!-- Profile part I -->
 <section class="p-0 bg-light">
       <div class="image image-overlay image-cover" style="background-image:url(../../assets/images/demo/minimal/portfolio-bg-2.jpg)"
       data-top-top="transform: translateY(0px);" 
@@ -24,8 +35,8 @@
       </div>
 </section>
 
+<!-- Profile part II -->
 <!-- Summary -->
-
 <section class="bg-light p-0">
   <div class="container">
     <div class="row justify-content-center">
@@ -71,4 +82,17 @@
     </div>
   </div>
 </section>
+
+<% User.all.each do |user| %>
+      <% if user.id != current_user.id%>
+            <% if pm_count(current_user.id, user.id) != 0 %>
+                  <p> Interlocuteurs: </p>
+                  <%= link_to user.first_name, user_conversation_path(current_user, user.id), class: "btn btn-secondary" %>
+                  <p> Nombre de messages: <%= pm_count(current_user.id, user.id) %> </p>
+            <% end %>
+      <% end %>
+<% end %>
+
+
+
 
