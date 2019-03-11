@@ -1,0 +1,26 @@
+<h1>Conversation entre <%= current_user[:first_name] %> et <%= user_by_id(params[:id]).first_name %> </h1>
+
+<!-- Received messages -->
+<% Privatemessage.all.each do |pm| %>
+      <% if (pm.recipient.id == current_user.id && pm.sender.id == user_by_id(params[:id]).id) || (pm.sender.id == current_user.id && pm.recipient.id == user_by_id(params[:id]).id) %>
+            <% if pm.recipient.id == current_user.id %>
+                  <p> <%= pm.sender.first_name %> : <span class="badge badge-primary text-wrap" style="width: 6rem;" > <%= pm.content %> </span> </p>
+            <% else %>
+                  <p> <%= pm.sender.first_name %> : <span class="badge badge-secondary text-wrap" style="width: 6rem;" > <%= pm.content %> </span> </p>
+            <% end %>   
+      <% end %>      
+<% end %>
+<hr>
+<h2>Répondre</h2>
+
+  <form action=  <%= user_conversations_path(current_user) %> method="POST">
+    <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
+    <input type="hidden" name="recipient" value=<%= user_by_id(params[:id]).id %> >
+    <input type="text" name="content">
+    <input type="submit" value="Envoyer">
+  </form>
+
+
+
+
+
