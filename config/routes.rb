@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :carsharings, :golfs
+    root 'admin#index'
   end
+  
 end
 
