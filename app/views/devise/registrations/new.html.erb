@@ -20,8 +20,8 @@
               <%= f.label :email %><br />
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
             </div>
-            <div class='field form-group'>
-              <%= f.label 'Niveau' %>
+            <%= f.label 'Niveau de jeu' %>
+            <div class='field form-group select-form'>
               <%= f.select(:golf_level, options_for_select([['débutant', 'débutant'], ['intermediaire', 'intermediaire'], ['confirmer', 'confirmer']])) %>
             </div>
             </div>
@@ -39,9 +39,9 @@
               <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
             </div>
 
-            <div class='field form-group'>
-              <%= f.label 'Ville' %>
-             <%= f.select(:city_id, options_for_select(City.pluck(:name, :id), target_blank: true )) %>
+            <%= f.label 'Ville' %>
+            <div class='field form-group select-form'>
+              <%= f.select(:city_id, options_for_select(City.pluck(:name, :id), target_blank: true )) %>
             </div>
 
             <div class='field form-group'>
@@ -59,7 +59,7 @@
               <%= f.submit "Inscription", class: 'btn btn-primary' %>
             </div>
           <% end %>
-          <button class='btn btn-primary' style="margin-left:20px;"><%= render "devise/shared/links" %></button>
+          <div style="margin-left:20px; margin-top: 19px;" > <%= render "devise/shared/links" %></div>
       </div>
     </div>
   </div>
