@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   root 'welcomes#index' 
   resources :golfs
-  resources :carsharings
+  resources :carsharings do 
+    resources :passengers, only: [:new, :create, :index]
+  end
   resources :users
 end
 
