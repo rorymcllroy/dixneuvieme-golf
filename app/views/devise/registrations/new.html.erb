@@ -1,66 +1,59 @@
-<h2 class='container'>Inscription</h2>
-<div class="tab-pane show active" id="component-1-1" role="tabpanel" aria-labelledby="component-1-1">
-  <div class="component-example">
-    <div class='container'>
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :multipart => true }) do |f| %>
-      <div class='row'>
-        <div class="col-md-6">
-            <%= render "devise/shared/error_messages", resource: resource %>
-            <div class='field form-group'>
-              <%= f.label 'Prénom' %><br>
-              <%= f.text_field :first_name, class: 'form-control' %>
-            </div>
-
-            <div class='field form-group'>
-              <%= f.label 'Nom' %><br>
-              <%= f.text_field :last_name, class: 'form-control' %>
-            </div>
-
-            <div class="field form-group">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
-            </div>
-            <%= f.label 'Niveau de jeu' %>
-            <div class='field form-group select-form'>
-              <%= f.select(:golf_level, options_for_select([['débutant', 'débutant'], ['intermediaire', 'intermediaire'], ['confirmer', 'confirmer']])) %>
-            </div>
-            </div>
+<section class='bg-light'>
+  <h2 class='container'>Inscription</h2>
+  <div class="col">
+    <div class="row">
+      <div class='container'>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :multipart => true }) do |f| %>
+        <div class='row'>
           <div class="col-md-6">
-            <div class="field form-group">
-              <%= f.label 'Mot de passe' %>
-              <% if @minimum_password_length %>
-              <em>(<%= @minimum_password_length %> characters minimum)</em>
-              <% end %><br />
-              <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
-            </div>
+              <%= render "devise/shared/error_messages", resource: resource %>
+              <div class='col'>
+                <%= f.text_field :first_name, class: 'form-control form-control-minimal', placeholder: 'Prénom' %>
+              </div>
 
-            <div class="field form-group">
-              <%= f.label 'Confirmer mot de passe' %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
-            </div>
+              <div class='col'>
+                <%= f.text_field :last_name, class: 'form-control form-control-minimal', placeholder: 'Nom' %>
+              </div>
 
-            <%= f.label 'Ville' %>
-            <div class='field form-group select-form'>
-              <%= f.select(:city_id, options_for_select(City.pluck(:name, :id), target_blank: true )) %>
-            </div>
+              <div class="col">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-minimal', placeholder: 'Email' %>
+              </div>
+              <div class='col select-form'>
+                <%= f.select(:golf_level, options_for_select([['Niveau de jeu', 'débutant'], ['débutant', 'intermediaire'], ['intermediaire', 'confirmer'], ['confirmer', 'débutant']])) %>
+              </div>
 
-            <div class='field form-group'>
-            <%= f.label 'Description'%>
-              <%= f.text_area :description, size: "60x5", class: 'form-control'%>
-            </div>
+               <div class='col select-form'>
+                <%= f.select(:city_id, options_for_select(City.pluck(:name, :id), target_blank: true )) %>
+              </div>
 
-            <div class='field form-group'>
-              <%= f.label 'Photo de profil'%>
-              <%= f.file_field :avatar%>
-            </div>
+              </div>
+            <div class="col-md-6">
+              <div class="col">
+                <%= f.password_field :password, autocomplete: "new-password", class: 'form-control form-control-minimal', placeholder: 'Mot de passe (6 caractéres minimum)' %>
+              </div>
 
-            </div>
-            <div class="actions">
-              <%= f.submit "Inscription", class: 'btn btn-primary' %>
-            </div>
-          <% end %>
-          <div style="margin-left:20px; margin-top: 19px;" > <%= render "devise/shared/links" %></div>
+              <div class="col">
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control form-control-minimal', placeholder: 'Comfirmer le mot de passe' %>
+              </div>
+
+              <div class="form-row mb-1">
+                <div class='col'>
+                  <%= f.text_area :description ,size: "60x5", class: 'form-control form-control-minimal', placeholder: 'Description'%>
+                </div>
+              </div>
+
+              <div class='col'>
+                <%= f.label 'Photo de profil'%>
+                <%= f.file_field :avatar %>
+              </div>
+
+              </div>
+              <div class="actions">
+                <%= f.submit "Inscription", class: 'btn btn-primary px-5' %>
+              </div>
+            <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
