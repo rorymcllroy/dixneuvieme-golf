@@ -3,15 +3,13 @@
     
         <div id="description_item" class="card-body">
           <div class="portfolio-meta">
-            <span class="mr-3"><i class="far fa-user"></i> <%= @carsharing.driver_id %></span>
-            <span class="mr-3"><i class="far fa-heart"></i> 12 </span>
-            <i class="far fa-bookmark"></i><a href="#"> Chaton</a>, <a href="#">mignon</a>
+            <span class="mr-3">Places disponibles: <%= @carsharing.places %> <i class="far fa-user"></i> </span>
           </div>
-          <h2 class="h3 font-weight-bold block-title"><%= @carsharing.id %></h2>
-          <h3 class="h4 font-weight-light"><%= @carsharing.price %> €</h3>
+          <h2 class="h3 font-weight-bold block-title"> Covoiturage: <%= @carsharing.id %></h2>
+          <h3 class="h4 font-weight-light">Prix: <%= @carsharing.price %> €</h3>
           <p class="text-muted">Description : <%= @carsharing.description %></p>
 
-          <%= button_to "Modifier l'article", edit_admin_carsharing_path(@carsharing.id), method: :get, :class => "btn btn-primary btn-block m-0" %>
+          <%= button_to "Valider ce covoiturage", edit_admin_carsharing_path(@carsharing.id), method: :get, :class => "btn btn-secondary btn-block m-0" %>
 
         </div>
     </div>
