@@ -9,7 +9,11 @@
           <h3 class="h4 font-weight-light">Prix: <%= @carsharing.price %> €</h3>
           <p class="text-muted">Description : <%= @carsharing.description %></p>
 
-          <%= button_to "Valider ce covoiturage", edit_admin_carsharing_path(@carsharing.id), method: :get, :class => "btn btn-secondary btn-block m-0" %>
+
+          <%= form_tag admin_carsharing_path(@carsharing.id), method: "PUT" do %>
+            <%= hidden_field_tag 'validation', true %>
+            <%= submit_tag "Valider",  class: "btn btn-secondary btn-block m-0", style: "margin-right :5px;" %>
+          <% end %>
 
         </div>
     </div>
