@@ -31,8 +31,6 @@ class PassengersController < ApplicationController
     )
 
     @passenger = Passenger.new(passenger_id: current_user.id, carsharing_id: params[:carsharing_id], stripe_customer_id: customer.id)
-    #flash[:success] = "Vous participez à l'évènement"
-    #redirect_to @event
     if @passenger.save     
       redirect_to carsharing_path(@carsharing)
       flash[:success] = "Vous avez rejoint ce covoiturage"
@@ -41,7 +39,7 @@ class PassengersController < ApplicationController
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
-      redirect_to event_path
+      redirect_to carsharing_path
 
   end
   
