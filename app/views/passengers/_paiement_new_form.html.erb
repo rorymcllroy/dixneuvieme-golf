@@ -12,6 +12,8 @@
 
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-image=""
+            data-name="Le 19 ème "
             data-description="Paiement du covoiturage"
             data-amount="<%= (@carsharing.price)*100 %>"
             data-currency="eur"
