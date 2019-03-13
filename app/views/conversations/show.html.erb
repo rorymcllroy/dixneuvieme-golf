@@ -31,11 +31,11 @@
         </div>
       </div>
     </section>
-
-<h2>Répondre</h2>
-  <form action=  <%= user_conversations_path(current_user) %> method="POST">
+  <form class='' action=  <%= user_conversations_path(current_user) %> method="POST">
     <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
     <input type="hidden" name="recipient" value=<%= user_by_id(params[:id]).id %> >
-    <input type="text" name="content">
-    <input type="submit" value="Envoyer">
+    <div class='text-center'>
+      <textarea name="content" class='form-control form-control-minimal text-center' placeholder='Votre message'></textarea>
+      <input type="submit" value="Envoyer" class='btn btn-outline-primary px-5'>
+    </div>
   </form>
