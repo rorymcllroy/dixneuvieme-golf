@@ -20,10 +20,10 @@ class Admin::CarsharingsController < AdminController
     def update
         if params[:validation] == "true"
           puts "ok"
-          Carsharing.find(params[:id]).update(:validated => true)
+          Carsharing.find(params[:id]).update(validated: true)
         else
           puts "nok"
-          Carsharing.find(params[:id]).update(:validated => false)
+          Carsharing.find(params[:id]).update(validated: false)
         end
         redirect_to admin_carsharings_path
     end
