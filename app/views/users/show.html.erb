@@ -1,4 +1,14 @@
-<!-- Photo and name -->
+<!-- Page header -->
+<section class="page-header">
+  <div class="image image-overlay"></div>
+  <div class="container">
+      <div class="col text-white text-shadow">
+        <h2>Mon profil</b></h2>
+    </div>
+  </div>
+</section>
+
+<!-- Profile part I -->
 <section class="p-0 bg-light">
       <div class="image image-overlay image-cover" style="background-image:url(../../assets/images/demo/minimal/portfolio-bg-2.jpg)"
       data-top-top="transform: translateY(0px);" 
@@ -24,8 +34,8 @@
       </div>
 </section>
 
+<!-- Profile part II -->
 <!-- Summary -->
-
 <section class="bg-light p-0">
   <div class="container">
     <div class="row justify-content-center">
@@ -33,6 +43,7 @@
         <div class="nav nav-tabs mb-1">
           <a class="nav-item nav-link active" data-toggle="tab" href="#demo-2-1">Profil</a>
           <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-2">Covoiturages</a>
+          <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-4">Conversations</a>
           <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-3">Avis</a>
         </div>
       </div>
@@ -67,8 +78,32 @@
             <%= render 'review'%>
           </div>
         </div>
-      </div>       
+      </div>   
+      <!-- Conversations -->
+      <div class="tab-pane" id="demo-2-4" role="tabpanel" aria-labelledby="demo-2-2">          
+        <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8">
+            <%= render 'conversation_list' %>
+            <%= link_to "Nouvelle conversation", new_privatemessage_path, class: "btn btn-outline-primary btn-rounded" %>
+          </div>
+        </div>
+      </div>    
     </div>
   </div>
 </section>
+
+
+<h1>Page Profil</h1>
+
+<p>Bienvenue sur la page d'ajout d'un avatar pour le User portant l'id : <%=@user.id%></p>
+<h3>Avatar actuel</h3>
+<%if @user.avatar.attached?%>
+  <%= image_tag @user.avatar, alt: 'avatar' %>
+<%else%>
+  <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+<%end%>
+
+
+
+
 
