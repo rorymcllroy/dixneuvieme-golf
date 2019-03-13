@@ -1,9 +1,9 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe Carsharingreview, type: :model do
-  before do
-    @carsharing = FactoryBot.create(:carsharingreview)
-  end
+# RSpec.describe Carsharingreview, type: :model do
+#   before do
+#     @carsharing = FactoryBot.create(:carsharingreview)
+#   end
 
   # context "validations" do
   #   it "is valid with valid attributes" do
@@ -51,4 +51,4 @@ RSpec.describe Carsharingreview, type: :model do
   #   end
   # end
 
-end
+# end

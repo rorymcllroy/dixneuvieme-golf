@@ -1,5 +1,5 @@
-# FactoryBot.define do 
-#   factory :city do
-#     name { "boubou" }
-#   end
-# end
+FactoryBot.define do
+  factory :city do
+    name { 'Randomcityname' }
+  end
+end
