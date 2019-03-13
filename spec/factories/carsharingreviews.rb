@@ -1,8 +1,8 @@
 FactoryBot.define do 
   factory :carsharingreview do
-    content { "Amazing !!" }
+    content { "Amazing !! Amazing !! Amazing !!" }
     grade { '4.5' }
-    carsharing_id { Carsharing.last.id }
-    passenger_id { Passenger.last.id }
+    carsharing_id { FactoryBot.create(:carsharing).id }
+    passenger_id { FactoryBot.create(:passenger).id }
   end
 end
