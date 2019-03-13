@@ -1,16 +1,16 @@
-# require 'rails_helper'
+require 'rails_helper'
 
-# RSpec.describe Carsharing, type: :model do
-#   before do
-#     @carsharing = FactoryBot.create(:carsharing)
-#   end
+RSpec.describe Carsharing, type: :model do
+  before do
+    @carsharing = FactoryBot.create(:carsharing)
+  end
 
-  # context "validations" do
-  #   it "is valid with valid attributes" do
-  #     expect(@carsharing).to be_a(Carsharing)
-  #     expect(@carsharing).to be_valid
-  #   end
-  # end
+  context "validations" do
+    it "is valid with valid attributes" do
+      expect(@carsharing).to be_a(Carsharing)
+      expect(@carsharing).to be_valid
+    end
+  end
 
   # describe 'description' do
   #   it 'is not valid without description' do
@@ -56,4 +56,4 @@
   #   end
   # end
 
-# end
+end
