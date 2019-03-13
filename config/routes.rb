@@ -5,12 +5,15 @@ Rails.application.routes.draw do
   root 'welcomes#index' 
   resources :golfs
   resources :carsharings
-  resources :users
 
   namespace :admin do
     resources :carsharings, :golfs
     root 'admin#index'
   end
   
+  resources :users do
+    resources :conversations, only: [:show, :create]
+  end
+  resources :privatemessages
 end
 

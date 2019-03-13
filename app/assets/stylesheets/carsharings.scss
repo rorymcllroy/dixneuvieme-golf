@@ -4,7 +4,7 @@
 
 .flex {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -64,4 +64,9 @@ p {
 .flex-carsharing-add {
   display: flex;
   justify-content: space-between;
+}
+
+.page-header {
+  height: 40vh;
+  background-image: url(golf-banner-pic.jpg)
 }
