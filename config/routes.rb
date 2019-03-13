@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   root 'welcomes#index' 
   resources :golfs
-  resources :carsharings
 
   namespace :admin do
     resources :carsharings, :golfs
@@ -15,5 +14,8 @@ Rails.application.routes.draw do
     resources :conversations, only: [:show, :create]
   end
   resources :privatemessages
+  resources :carsharings do 
+    resources :passengers, only: [:new, :create, :index]
+  end
 end
 
