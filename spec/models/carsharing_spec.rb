@@ -61,5 +61,4 @@ RSpec.describe Carsharing, type: :model do
       end
     end
   end
-
 end
