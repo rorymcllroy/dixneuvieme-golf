@@ -1,0 +1,22 @@
+<% @user_all.each do |user| %>
+  <% if user.id != current_user.id%>
+    <% if pm_count(current_user.id, user.id) != 0 %>
+      <div class="row gutter-1">
+        <div class="col-12">
+          <div class="boxed p-2">
+            <div class="row align-items-center justify-content-between">
+              <div class="col-10">
+                <div class="media align-items-center">
+                  <div class="media-body">
+                    <h5 class="mb-0"> <%= link_to user.first_name, user_conversation_path(current_user, user.id) %> </h5>
+                      <p> Nombre de messages: <%= pm_count(current_user.id, user.id) %> </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>  
+  <% end %>
+<% end %>
