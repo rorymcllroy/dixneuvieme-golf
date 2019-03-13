@@ -1,8 +1,8 @@
 class Carsharing < ApplicationRecord
-  belongs_to :driver, class_name: "User"
-  belongs_to :golf
+  belongs_to :driver, class_name: "User", optional: true
+  belongs_to :golf, optional: true
 
-  validates :date, 
+  validates :date,
   presence: true
   validates :places, 
   presence: true
