@@ -19,7 +19,7 @@
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-minimal', placeholder: 'Email' %>
               </div>
               <div class='col select-form'>
-                <%= f.select(:golf_level, options_for_select([['Niveau de jeu', 'débutant'], ['débutant', 'intermediaire'], ['intermediaire', 'confirmer'], ['confirmer', 'débutant']])) %>
+                <%= f.select(:golf_level, options_for_select([["0-5", "0-5"], ["6-15", "6-15"], ["16-30", "16-30"], ["30+", "30+"]])) %>
               </div>
 
                <div class='col select-form'>

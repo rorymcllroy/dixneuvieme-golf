@@ -2,6 +2,7 @@ class CarsharingsController < ApplicationController
   
   def index
     @carsharing = Carsharing.all
+    @passenger = Passenger.all
   end
   
   def show
