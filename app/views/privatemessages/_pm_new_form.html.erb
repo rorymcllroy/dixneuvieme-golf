@@ -1,0 +1,11 @@
+<%= form_tag privatemessages_path(current_user), method: "post" do %>
+  <div class="row">
+    <div class="col-md-6">
+      <p>Destinataire: </p>
+        <%= collection_select :recipient, :id, User.all, :id, :first_name %>
+      <p>Contenu: </p>
+        <%= text_field_tag 'content', "", class: 'form-control' %>
+        <%= submit_tag "Envoyer", class: "btn btn-lg btn-primary btn-block" %>
+    </div>
+  </div>
+<% end %>

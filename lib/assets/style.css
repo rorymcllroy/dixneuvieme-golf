@@ -19705,7 +19705,7 @@ pre[class*="language-"] {
 
 .component-example {
   position: relative;
-  padding: 75px 0;
+  padding: 15px 0;
   overflow: hidden; }
   .component-example[class*="-fit"] {
     padding: 0; }
