@@ -1,6 +1,6 @@
 class Golfcomment < ApplicationRecord
-  belongs_to :user, optional: true
-  belongs_to :golf, optional: true
+  belongs_to :user
+  belongs_to :golf
 
   validates :content,
   presence: true,
