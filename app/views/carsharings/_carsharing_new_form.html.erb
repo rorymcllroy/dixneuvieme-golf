@@ -4,35 +4,37 @@
       <div class='col'>
       <%= form_tag carsharings_path, method: "post" do %>
         <div class="form-row mb-1">
-        <div class="col-md-6">
-          <div class='col'>
-            <%= text_field_tag 'golf', "" , class: 'form-control form-control-minimal', placeholder: 'Golf de destination:' %>
+          <div class="col-md-6">
+            <div class='col'>
+              <%= label_tag 'Golf' %>
+              <%= select_tag(:golf_id, options_for_select(Golf.pluck(:name, :id), target_blank: true )) %>
+            </div>
+            <div class='col select-form'>
+              <%= label_tag 'Ville' %>
+              <%= select_tag(:city_id, options_for_select(City.pluck(:name, :id), target_blank: true )) %>
+            </div>
+            <div class='col select-form'>
+            <%= label_tag 'Nombres de places' %>
+              <%= select_tag(:place, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4]])) %>
+            </div>
           </div>
-          <div class='col'>
-            <%= datetime_local_field_tag 'start_date', "" , class: 'form-control form-control-minimal', placeholder: 'Date'%>
-          </div>        
-        </div>
-
-        <div class="col-md-6">
-          <div class='col select-form'>
-            <%= label_tag 'ville' %>
-            <%= select_tag(:city_id, options_for_select(City.pluck(:name, :id), target_blank: true )) %>
+          <div class="col-md-6">
+            <div class='col select-form'>
+              <%= label_tag 'Prix' %>
+              <%= select_tag(:price, options_for_select([['Gratuit', 0], ['5€', 5], ['10€', 10], ['15€', 15], ['20€', 20]])) %>
+            </div> 
+            <div class='col'>
+              <%= label_tag 'Jour et heure du départ' %>
+              <%= datetime_local_field_tag 'start_date', "" , class: 'form-control form-control-minimal', placeholder: 'Date'%>
+            </div>
+            <div class='col'>
+              <%= text_area_tag 'description' , nil ,  class: 'form-control form-control-minimal', placeholder: 'Description' %>
+            </div>
           </div>
-          <div class='col select-form'>
-          <%= label_tag 'Nombres de places' %>
-            <%= select_tag(:place, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4]])) %>
-          </div>
-          <div class='col select-form'>
-            <%= label_tag 'Prix' %>
-            <%= select_tag(:price, options_for_select([['Gratuit', 0], ['5', 5], ['10', 10], ['15', 15], ['20', 20]])) %>
-          </div>
-        </div>
-          <%= text_area_tag 'description' , nil ,  class: 'form-control form-control-minimal', placeholder: 'Description' %>
-          <br>
+            <br>
         </div>
         <%= submit_tag "Envoyer",  class: "btn btn-primary px-5" %>
-        <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
 </section
