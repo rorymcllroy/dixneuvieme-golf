@@ -1,9 +1,14 @@
 class Passenger < ApplicationRecord
 
   after_create :new_passenger_email_send
+  after_create :new_reservation_passenger_email_send
 
   def new_passenger_email_send 
     PassengerMailer.new_passenger_email(self).deliver_now
+  end
+
+  def new_reservation_passenger_email_send 
+    PassengerMailer.new_reservation_passenger_email(self).deliver_now
   end
 
   belongs_to :passenger, class_name: "User"
