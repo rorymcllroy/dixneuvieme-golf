@@ -1,0 +1,16 @@
+<!-- Page header -->
+<section class="page-header">
+  <div class="image image-overlay"></div>
+  <div class="container">
+      <div class="col text-white text-shadow">
+        <h2>Les covoiturages pour le <%=@golf.name%> </b></h2>
+    </div>
+  </div>
+</section>
+
+<!-- Carsharings index -->
+<section class="component-example flex">
+  <% @carsharing.each do |carsharing| %>
+      <%= render 'carsharings/card', carsharing: carsharing %>
+  <% end %>
+</section>
