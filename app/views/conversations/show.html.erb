@@ -15,14 +15,15 @@
           <div class="component-example">
             <div class="container">
               <div class="row">
-                <div class="col-lg-4 blockquote-list">
+                <div class="col-lg-4">
                 <% Privatemessage.all.each.with_index do |pm, index| %>
                  <% if (pm.recipient.id == current_user.id && pm.sender.id == user_by_id(params[:id]).id) || (pm.sender.id == current_user.id && pm.recipient.id == user_by_id(params[:id]).id) %>
-                   <blockquote class="blockquote-2 boxed">
-                    <p><%= pm.content %> </p>
-                     <footer class="blockquote-footer"> <%= pm.sender.first_name %> </footer>
-                   </blockquote>
-                 <% end %>      
+                    <% if (pm.sender.id == current_user.id)%>
+                      <%= render 'private_message_sender', pm: pm %>
+                    <% else %>
+                      <%= render 'private_message_recipient', pm: pm %>
+                    <%end%>
+                 <% end %>
                 <% end %>
                 </div>
               </div>
@@ -31,11 +32,12 @@
         </div>
       </div>
     </section>
-  <form class='' action=  <%= user_conversations_path(current_user) %> method="POST">
-    <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
-    <input type="hidden" name="recipient" value=<%= user_by_id(params[:id]).id %> >
+  <%= form_tag(user_conversations_path(current_user), method: :post, remote: true, id: 'pmForm') do %>
     <div class='text-center'>
-      <textarea name="content" class='form-control form-control-minimal text-center' placeholder='Votre message'></textarea>
-      <input type="submit" value="Envoyer" class='btn btn-outline-primary px-5'>
+      <%= hidden_field_tag(:authenticity_token, form_authenticity_token)%>
+      <%= hidden_field_tag(:recipient, user_by_id(params[:id]).id) %>
+      <%= text_area_tag(:content, nil ,placeholder: 'Votre message', class: 'form-control form-control-minimal text-center') %>
+      <%= submit_tag('Envoyer', class: 'btn btn-outline-primary px-5')%>
     </div>
-  </form>
+  <%end%>
+  

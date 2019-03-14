@@ -1,5 +1,5 @@
 <% @carsharing.each do |carsharing| %>
-  <% if carsharing.driver_id == @user.id %>
+  <% if carsharing.driver_id == @user.id && passenger_of_a_carsharing(carsharing.id).count != 0%>
     <div class="row gutter-1">
       <div class="col-12">
         <div class="boxed p-2">
@@ -7,25 +7,7 @@
             <div class="col-10">
               <div class="media align-items-center">
                 <div class="media-body">
-
-
-                  <h5 class="mb-0"> <%= @user.first_name %> a partagé sa voiture avec 
-                    <% @passenger.where(carsharing_id:carsharing.id).each do |passenger|  
-                      @passenger_array << User.find(passenger.id).first_name
-                    end %> 
-                    <% @passenger_array.each.with_index do |passenger,index| %> 
-                      <% if index + 1 == @passenger_array.length%>
-                        <%= link_to passenger, user_path(2) %>
-                      <% elsif index +1 == @passenger_array.length - 1 %>
-                        <%= link_to passenger, user_path(2) %> et
-                      <% else %>
-                        <%= link_to passenger, user_path(2) %>,
-                      <% end %>
-                    <% end %>
-                    <% @passenger_array = [] %> 
-                  </h5>
-
-
+                  <h5 class="mb-0"> <%= @user.first_name %> a partagé sa voiture avec <%= render 'passenger_list', carsharing: carsharing %> </h5>
                   <p> <%= link_to carsharing.golf.name, user_conversation_path(current_user, carsharing.golf.id) %> </p>
                   <% if carsharing.date != nil %>
                     <span class="text-muted">Covoiturage effectué le <%= carsharing.date.day %> <%= Date::MONTHNAMES[carsharing.date.month] %> <%= carsharing.date.year %> </span>

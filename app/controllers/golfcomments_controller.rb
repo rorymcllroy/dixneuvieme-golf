@@ -1,27 +1,19 @@
-class CommentsController < ApplicationController
+class GolfcommentsController < ApplicationController
 
   # before_action :authenticate_user, only: [:create]
   #   before_action :author_comment, only: [:edit, :update, :destroy]
 
-  def index
-    @golf = Golf.find(params[:id])
-    @comments = Golfcomment
-  end
-
-  def show
-    @golf = Golf.find(params[:id])
-    @user = User.find(params[:id])
-    @comments = Golfcomment
-  end
-
   def new
-    @golf = Golf.find(params[:id])
-    @comment = @golf.comment.new
+
   end
 
   def create
-    
-    redirect_to comment_path(params[:id])
+    @comment = Golfcomment.new(user_id: current_user.id, grade: params[:grade], content: params[:content], golf_id: params[:golf_id])
+    if @comment.save!
+     redirect_to golf_path(params[:golf_id]), :notice => "Commentaire ajouté!"
+    else
+     render 'new'
+    end
   end
 
   def edit

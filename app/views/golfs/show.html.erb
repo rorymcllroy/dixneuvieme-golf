@@ -1,125 +1,107 @@
-<!-- hero -->
-<section class="hero hero-with-header">
+<!-- Page header -->
+<section class="page-header">
+  <div class="image image-overlay"></div>
+  <div class="container">
+      <div class="col text-white text-shadow">
+        <h2> <%= @golf.name %></b></h2>
+        <%= link_to "Covoiturages vers ce golf", golf_golfcarsharings_path(params[:id]), class: "btn btn-outline-white btn-rounded" %>
+    </div>
+  </div>
+</section>
 
+<!-- Golf features -->
+<section id="default" class="component">
+  <div class="container">
+    <div class="row align-items-center">
+      <ul class="feature-list gutter-1 list-width">
+        <li>
+          <div class="media bordered rounded p-2 align-items-center">
+            <i class="fab fa-font-awesome-flag fa-2x"></i>
+            <div class="media-body">
+            <div class="feature-size">
+              <span class="feature-content"><%= @golf.course_type %></span>
+            </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="media bordered rounded p-2 align-items-center">
+            <i class="fas fa-golf-ball fa-2x"></i>
+            <div class="media-body">
+            <div class="feature-size">
+              <span class="feature-content"> <%= @golf.par %> </span>
+            </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="media bordered rounded p-2 align-items-center">
+            <i class="fas fa-ruler fa-2x"></i>
+            <div class="media-body">
+            <div class="feature-size">
+              <span class="feature-content"> <%= @golf.length %> </span>
+            </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="media bordered rounded p-2 align-items-center">
+            <i class="fas fa-money-bill-alt fa-2x"></i>
+            <div class="media-body">
+              <div class="feature-size">
+                <h4 class="feature-content"> <%= price_range_display(@golf.price_range) %> </h4>
+              </div>      
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="media bordered rounded p-2 align-items-center">
+            <i class="fas fa-at fa-2x"></i>
+            <div class="media-body">
+            <div class="feature-size">
+              <span class="feature-content"><%= link_to "Site web", @golf.website, target: :_blank %></span>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>  
+    </div>
+  </div>
+</section>
 
-<div class="image image-overlay image-blur"></div>
-
-
+<!-- Description -->
+<section>
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-10 text-center">
-        <h1> Le golf de :<b><%=@golf.name%></b></h1>
-      </div>
-    </div>
-  </div>    
-</section>
-<!-- / hero -->
-
-
-<!-- services -->
-<section class="pt-0 pattern pattern-dark">
-  <div class="container">
-    <div class="row boxed separated">
-      <div class="col-md-6 col-lg-4 p-5 text-center">
-        <i class="svg-icon w-50 equal">
-          <span>
-          <i class="fas fa-user-clock"></i>
-          </span>
-        </i>
-        <h4 class="fs-24 font-weight-normal">Les horaires</h4>
-        <p>Lundi<br>
-            mardi<br>
-            mercredi<br>
-            jeudi<br>
-            vendredi<br>
-            samedi<br>
-            dimanche<br>
-            </p>
-      </div>
-      <div class="col-md-6 col-lg-4 p-5 text-center">
-        <i class="svg-icon w-50 equal">
-          <span>
-          <i class="fas fa-money-bill-alt"></i>
-          </span>
-        </i>
-        <h4 class="fs-24 font-weight-normal">Les tarifs</h4>
-        <p>£££ <br> 
-            $$$ <br>
-            €€€ <br>
-            </p>
-      </div>
-      <div class="col-md-6 col-lg-4 p-5 text-center">
-        <i class="svg-icon w-50 equal">
-          <span>
-          <%= image_tag "img-golf-trou.jpg", class: "golf-flag" %>
-        
-          </span>
-        </i>
-        <h4 class="fs-24 font-weight-normal">Le parcours</h4>
-        
-        <p>18 / 9 trous</p>
-      </div>
-      <div class="col-md-6 col-lg-4 p-5 text-center">
-        <i class="svg-icon w-50 equal">
-          <span>
-          <i class="fas fa-utensils"></i>
-          </span>
-        </i>
-        <h4 class="fs-24 font-weight-normal">Les services</h4>
-        <p>Restauration, shop, ... </p>
-      </div>
-      <div class="col-md-6 col-lg-4 p-5 text-center">
-        <i class="svg-icon w-50 equal">
-          <span>
-          <i class="fas fa-trophy"></i>
-          </span>
-        </i>
-        <h4 class="fs-24 font-weight-normal">Evènements</h4>
-        <p>Prochains évènements</p>
-      </div>
-      <div class="col-md-6 col-lg-4 p-5 text-center">
-        <i class="svg-icon w-50 equal">
-          <span>
-          <i class="fas fa-golf-ball"></i>          </span>
-        </i>
-        <h4 class="fs-24 font-weight-normal">Le site officiel</h4>
-        <p>  <a href="https://www.golfdesperone.com/">Visit site</a> </p>
+      <div class="col-md-10 col-lg-8">
+        <p class="lead"><%= @golf.description %></p>
+        <hr class="w-25">
       </div>
     </div>
   </div>
 </section>
-<!-- / services -->
 
-
-<!-- testimonials -->
-<section class="bg-white separator-top">
+<!-- Testimonials -->
+<section class="bg-white">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8 text-center">
-        <h2>Ils nous parlent de <b> <%=@golf.name%></b></h2>
+        <%= link_to "Laisser un commentaire", new_golf_golfcomment_path(@golf.id), class: "btn btn-outline-primary btn-rounded" %> 
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col"> pb de js le owl carousel ne se charge pas
-        <div class="owl-carousel" data-items="[2,1]" data-autoplay="true" data-dots="true" data-loop="true" data-margin="50">   
-          <blockquote class="blockquote blockquote-1">
-            <p><%=@comments.where(golf_id:@golf)[0].content%></p>   <!-- get the content of the first input of the table golfcomment linked to @golf id -->
-            <footer class="blockquote-footer">
-            <%=User.find(@comments.where(golf_id:@golf)[0].user_id).first_name%>
-            </footer>          
-          </blockquote>
-
-
-          <blockquote class="blockquote blockquote-1">
-            <p><%=@comments.where(golf_id:@golf)[1].content%></p>  <!-- get the content of the 2nd input of the table golfcomment linked to @golf id -->
-            <footer class="blockquote-footer">
-            <%=User.find(@comments.where(golf_id:@golf)[1].user_id).first_name%>
-            </footer>
-          </blockquote>
+      <div class="col"> 
+        <div class="owl-carousel" data-items="[1,1]" data-autoplay="true" data-dots="true" data-loop="true" data-margin="50">   
+          <% @comments.each do |comment| %>
+            <% if comment.golf_id == @golf.id %>
+              <%= render 'comment', comment: comment %>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- /testimonial -->
+
+
 

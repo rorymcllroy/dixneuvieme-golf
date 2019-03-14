@@ -2,15 +2,11 @@ class GolfsController < ApplicationController
 
 def index
   @golfs = Golf.all
-  @comments= Golfcomment
-
 end
-
 
 def show
   @golf= Golf.find(params[:id])
-  @user = User.find(params[:id])
-  @comments= Golfcomment
+  @comments= Golfcomment.all
 end
 
 def new
@@ -18,8 +14,12 @@ def new
 end
 
 def create
+<<<<<<< HEAD
   @golf = Golf.new(name: params[:name], description: params[:description], price_range: params[:price_range], lat: params[:lat], long: params[:long] )
 
+=======
+  @golf = Golf.new(golf_id: params[:golf_id], description: params[:description], price_range: params[:price_range], lat: params[:lat], long: params[:long] )
+>>>>>>> new-development
     if @golf.save # try to save  golf in the db
       redirect_to root_path, :notice => "Nouveau Golf créé !"
     else

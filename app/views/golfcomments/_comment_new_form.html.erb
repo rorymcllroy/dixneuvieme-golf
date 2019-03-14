@@ -1,0 +1,21 @@
+<section class='bg-light'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col'>
+        <%= form_tag golf_golfcomments_path(params[:golf_id]), method: "post" do %>
+          <div class="form-row mb-1">
+              <div class='col'>
+                <%= label_tag 'Ma Note' %>
+                <%= select_tag(:grade, options_for_select([['0 étoile', 0], ['1 étoile', 1], ['2 étoiles', 2], ['3 étoiles', 3], ['4 étoiles', 4], ['5 étoiles', 5]])) %>
+              </div>
+              <div class='col'>
+                <%= text_area_tag 'content' , nil , class: 'form-control form-control-minimal', placeholder: 'Mon avis' %>
+              </div>
+          </div>
+          <%= submit_tag "Laisser mon avis",  class: "btn btn-primary px-5" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
