@@ -15,10 +15,14 @@
           <div class="component-example">
             <div class="container">
               <div class="row">
-                <div class="col-lg-4 blockquote-list">
+                <div class="col-lg-4">
                 <% Privatemessage.all.each.with_index do |pm, index| %>
                  <% if (pm.recipient.id == current_user.id && pm.sender.id == user_by_id(params[:id]).id) || (pm.sender.id == current_user.id && pm.recipient.id == user_by_id(params[:id]).id) %>
-                   <%= render 'private_message', pm: pm %>
+                    <% if (pm.sender.id == current_user.id)%>
+                      <%= render 'private_message_sender', pm: pm %>
+                    <% else %>
+                      <%= render 'private_message_recipient', pm: pm %>
+                    <%end%>
                  <% end %>      
                 <% end %>
                 </div>
