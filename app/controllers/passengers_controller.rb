@@ -8,11 +8,6 @@ class PassengersController < ApplicationController
   def show 
   end
   
-  def new
-    @carsharing = Carsharing.find(params[:carsharing_id])
-    @amount = @carsharing.price
-  end
-  
   def create
     @carsharing = Carsharing.find(params[:carsharing_id])
     # Amount in cents
@@ -32,14 +27,14 @@ class PassengersController < ApplicationController
 
     @passenger = Passenger.new(passenger_id: current_user.id, carsharing_id: params[:carsharing_id], stripe_customer_id: customer.id)
     if @passenger.save     
-      redirect_to carsharing_path(@carsharing)
+      redirect_to carsharings_path
       flash[:success] = "Vous avez rejoint ce covoiturage"
     else
     end
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
-      redirect_to carsharing_path
+      redirect_to carsharings_path
 
   end
   
