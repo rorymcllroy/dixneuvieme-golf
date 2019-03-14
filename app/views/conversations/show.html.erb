@@ -28,7 +28,7 @@
         </div>
       </div>
     </section>
-  <%= form_tag(user_conversations_path(current_user), method: :post, remote: true) do %>
+  <%= form_tag(user_conversations_path(current_user), method: :post, remote: true, id: 'pmForm') do %>
     <div class='text-center'>
       <%= hidden_field_tag(:authenticity_token, form_authenticity_token)%>
       <%= hidden_field_tag(:recipient, user_by_id(params[:id]).id) %>
