@@ -1,21 +1,25 @@
-<section class="container pt-3 pb-4 mb-5" data-offset-top="110" id="services">
-<h2 class="h3 block-title text-center mb-3">Interface administrateur : Bienvenue <%=current_user.first_name%></h2>
-<div class="row">
-  <div class="col-lg-4 col-sm-6">
-      <div class="icon-box-icon"><i class="fas fa-car"></i></div>
-      <div><h3 class="icon-box-title">Les covoiturages</h3></div>
-       <div> <%= link_to "Tous les covoiturages", admin_carsharings_path, class:"btn btn-secondary btn-sm mb-2" %></div>
+<section>
+<div class="container">
+<h2 class="h3 block-title text-center mb-3">Interface administrateur : <b>Bienvenue <%=current_user.first_name%></b></h2>
+<div class="row justify-content-between">
+
+  <div class="col-md-4 text-center">
+      <i class="fas fa-car"></i><br>
+      <p><h3 class="fs-18 text-uppercase font-weight-normal">Les covoiturages</h3></p>
+      <%= link_to "Tous les covoiturages", admin_carsharings_path, class:"btn btn-secondary btn-sm mb-2" %>
   </div>
-  <div class="col-lg-4 col-sm-6">
-      <div class="icon-box-icon"><i class="fas fa-users"></i></div>
-      <div><h3 class="icon-box-title">Utilisateurs</h3></div>
-        <div><%= link_to "Tous les utilisateurs", admin_golfs_path, class:"btn btn-secondary btn-sm mb-2" %></div>
+  <div class="col-md-4 text-center">
+      <i class="fas fa-users"></i><br>
+      <p><h3 class="fs-18 text-uppercase font-weight-normal">Utilisateurs</h3></p>
+      <%= link_to "Tous les utilisateurs", admin_golfs_path, class:"btn btn-secondary btn-sm mb-2" %>
   </div>
-  <div class="col-lg-4 col-sm-6">
-      <div class="icon-box-icon"><i class="fas fa-golf-ball"></i></div>
-     <div> <h3 class="icon-box-title">Les Golfs</h3></div>
-       <div> <%= link_to "Tous les golfs", admin_golfs_path, class:"btn btn-secondary btn-sm mb-2" %></div>
+  <div class="col-md-4 text-center">
+     <i class="fas fa-golf-ball"></i><br>
+     <p><h3 class="fs-18 text-uppercase font-weight-normal">Les Golfs</h3></p>
+      <%= link_to "Tous les golfs", admin_golfs_path, class:"btn btn-secondary btn-sm mb-2" %>
   </div>
+
+</div>
 </div>
 <hr class="mt-5">
 </section>
