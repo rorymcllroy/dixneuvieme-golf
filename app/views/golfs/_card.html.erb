@@ -1,21 +1,11 @@
-<div class="col-md-6 col-lg-5">
-<div class="card"> 
-   <div class="card-body">
-    <div class="flex">
-      <%= image_tag "golf-de-sperone-bonifacio-vuedrone-corse.jpg", class: "avatar-golf" %>
-      <div class="test">
-        <h5 class="eyebrow mb-1"><%= golf.name %><i class="fas fa-star"></i> 4.5 - 5 avis </h5>
-        <p class="card-title mb-0">Golf_id: <%= golf.id %> </p>
-        
-      </div>
+<div class="col-md-6 col-lg-4">
+  <div class="card card-minimal">
+    <a href="" class="card-img-container">
+      <%= link_to image_tag("golf-de-sperone-bonifacio-vuedrone-corse.jpg", class: "card-img"), golf_path(golf.id) %>
+    </a>
+    <div class="card-body">
+      <h5 class="card-title"><%= link_to "#{golf.name}", golf_path(golf.id) %></h5>
+      <p class="card-title"> <%= golf.course_type %> | <i class="fas fa-star"></i> 4.5 - 5 avis </p>
     </div>
-    <hr>
-     <!-- <p class="blockquote">Ce golf c'est de la bombe.</p> -->
-     <blockquote class="blockquote blockquote-2 boxed">
-     <footer class="blockquote-footer">Michael Doe</footer>
-    </blockquote>
-    <hr>
-    <%= link_to "Voir plus", golf_path(golf.id), class: "btn btn-outline-primary center" %>
-   </div>
   </div>
 </div>
