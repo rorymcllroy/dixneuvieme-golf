@@ -6,10 +6,10 @@
             <h2 class="h3 font-weight-bold block-title"> Covoiturage proposé par : <%= User.find(@carsharing.driver_id).first_name %></h2>
 
           
-              <h3><span class="mr-3">Places disponibles: <%= @carsharing.places %> <i class="far fa-user"></i> </span></h3>
+              <h3><span class="mr-3">Places disponibles : <%= @carsharing.places %> <i class="far fa-user"></i> </span></h3>
         
           
-              <h3 class="h4 font-weight-light">Prix: <%= @carsharing.price %> €</h3>
+              <h3 class="h4 font-weight-light">Prix : <%= @carsharing.price %> €</h3>
               <p class="text-muted">Description : <%= @carsharing.description %></p>
 
            <div style="display: flex;">

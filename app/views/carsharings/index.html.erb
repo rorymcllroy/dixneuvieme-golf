@@ -12,6 +12,8 @@
 <!-- Carsharings index -->
 <section class="component-example flex">
   <% @carsharing.each do |carsharing| %>
+    <%if carsharing.validated%>
     <%= render 'card', carsharing: carsharing %>
+    <%end%>
   <% end %>
 </section>
