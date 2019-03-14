@@ -7,14 +7,14 @@
         <h5 class="eyebrow mb-1"><%= carsharing.driver.first_name %> <%= carsharing.driver.last_name %> <i class="fas fa-star"></i> 4.5 - 5 avis </h5>
         <%= link_to "Voir profil >", user_path(carsharing.driver.id) %>
         <p class="card-title mb-0">Destination: <%= carsharing.golf.name %> </p>
-        <p class="card-title mb-0">Places dispo: <%= carsharing.places %> </p>
+        <p class="card-title mb-0">Places dispo: <%= carsharing.places - passengers_booked(carsharing.id) %> </p>
         <p class="card-title mb-0"> Départ de <%= carsharing.driver.city.name %> le <%= carsharing.date.day %> <%= Date::MONTHNAMES[carsharing.date.month] %> à <%= carsharing.date.hour %>h<%= carsharing.date.min %> </p>
       </div>
     </div>
     <hr>
      <p class="card-title mb-0"> <%= carsharing.description %> </p>
     <hr>
-      <%= link_to "Rejoindre le trajet (#{carsharing.price == 0 ? "Gratuit" : "#{carsharing.price} €"})", carsharing_path(carsharing.id), class: "btn btn-outline-primary center" %>
+      <%= render 'stripe', carsharing: carsharing %>
    </div>
   </div>
 </div>
