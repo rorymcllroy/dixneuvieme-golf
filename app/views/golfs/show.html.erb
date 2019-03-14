@@ -93,7 +93,9 @@
       <div class="col"> 
         <div class="owl-carousel" data-items="[1,1]" data-autoplay="true" data-dots="true" data-loop="true" data-margin="50">   
           <% @comments.each do |comment| %>
-            <%= render 'comment', comment: comment %>
+            <% if comment.golf_id == @golf.id %>
+              <%= render 'comment', comment: comment %>
+            <% end %>
           <% end %>
         </div>
       </div>
