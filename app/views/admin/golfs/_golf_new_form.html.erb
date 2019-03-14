@@ -2,7 +2,7 @@
   <div class='container'>
     <div class='row'>
       <div class='col'>
-      <%= form_tag carsharings_path, method: "post" do %>
+      <%= form_tag admin_golfs_path, method: "post" do %>
         <div class="form-row mb-1">
           <div class="col-md-6">
             <div class='col'>
@@ -15,17 +15,17 @@
             </div>
             <div class='col select-form'>
             <%= label_tag 'Price range' %>
-              <%= select_tag(:place, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4]])) %>
+              <%= select_tag(:price_range, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4]])) %>
             </div>
           </div>
           <div class="col-md-6">
             <div class='col select-form'>
               <%= label_tag 'Latitude' %>
-              <input type="string" class="form-control form-control-minimal" id="exampleFormControlInput1" placeholder="">
+              <input type="string" class="form-control form-control-minimal" id="lat" placeholder="">
             </div> 
             <div class='col'>
               <%= label_tag 'Longitude' %>
-              <input type="string" class="form-control form-control-minimal" id="exampleFormControlInput1" placeholder="">
+              <input type="string" class="form-control form-control-minimal" id="long" placeholder="">
             </div>
             <div class='col'>
               <%= text_area_tag 'description' , nil , class: 'form-control form-control-minimal', placeholder: 'Description' %>
