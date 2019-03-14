@@ -1,0 +1,15 @@
+<% passenger_of_a_carsharing(carsharing.id).each do |passenger|  
+  @passenger_array << User.find(passenger.passenger_id).first_name
+  @passenger_id_array << User.find(passenger.passenger_id).id
+end %> 
+<% @passenger_array.each.with_index do |passenger,index| %> 
+  <% if index + 1 == @passenger_array.length%>
+    <%= link_to passenger, user_path(@passenger_id_array[index]) %>
+  <% elsif index +1 == @passenger_array.length - 1 %>
+    <%= link_to passenger, user_path(@passenger_id_array[index]) %> et
+  <% else %>
+    <%= link_to passenger, user_path(@passenger_id_array[index]) %>,
+  <% end %>
+<% end %>
+<% @passenger_array = [] %> 
+<% @passenger_id_array = [] %> 
