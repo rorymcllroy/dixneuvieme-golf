@@ -1,9 +1,9 @@
 class Passenger < ApplicationRecord
 
-  after_create :confirmed_reservation_send
+  after_create :new_passenger_email_send
 
-  def confirmed_reservation_send 
-    PassengerMailer.confirmed_reservation_email(self).deliver_now
+  def new_passenger_email_send 
+    PassengerMailer.new_passenger_email(self).deliver_now
   end
 
   belongs_to :passenger, class_name: "User"
