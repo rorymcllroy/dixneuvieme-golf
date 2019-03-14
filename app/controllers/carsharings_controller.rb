@@ -1,4 +1,4 @@
-git class CarsharingsController < ApplicationController
+class CarsharingsController < ApplicationController
   
   def index
     @carsharing = Carsharing.all

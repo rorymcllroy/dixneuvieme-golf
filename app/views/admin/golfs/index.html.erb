@@ -1,0 +1,46 @@
+<section class="">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <h2>Golfs <b>référencés</b></h2><br>
+            <%= link_to "Ajouter un Golf", new_admin_golf_path, class: "btn btn-secondary btn-rounded" %>
+          </div> 
+        </div>
+        <div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="table-responsive-md">
+              <table class="table table-lined">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Course type</th>
+                    <th scope="col">Detail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% @golfs.each do |i|%>
+                  <tr>
+                    <th scope="row"><%=i.name%></th>
+                    <td><%=i.description%></td>
+                    <td><%=i.price_range%></td>
+                    <td><%=i.course_type%></td>
+                    <td>
+                    <%= link_to '<i class="fas fa-eye fa-1x"></i>'.html_safe, golf_path(i), method: "get", class:""  %>
+                    <%= link_to '<i class="fas fa-edit fa-1x"></i>'.html_safe, edit_admin_golf_path(i), method: "get", class:""  %>  
+                    </td>  
+                  </tr>
+
+                  <%end%>
+                 
+                
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
