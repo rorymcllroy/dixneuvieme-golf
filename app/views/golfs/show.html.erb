@@ -4,7 +4,7 @@
   <div class="container">
       <div class="col text-white text-shadow">
         <h2> <%= @golf.name %></b></h2>
-        <%= link_to "Covoiturages vers ce golf", new_carsharing_path, class: "btn btn-outline-white btn-rounded" %>
+        <%= link_to "Covoiturages vers ce golf", golf_golfcarsharings_path(params[:id]), class: "btn btn-outline-white btn-rounded" %>
     </div>
   </div>
 </section>
@@ -29,7 +29,7 @@
             <i class="fas fa-golf-ball fa-2x"></i>
             <div class="media-body">
             <div class="feature-size">
-              <span class="feature-content">Par 70</span>
+              <span class="feature-content"> <%= @golf.par %> </span>
             </div>
             </div>
           </div>
@@ -39,7 +39,7 @@
             <i class="fas fa-ruler fa-2x"></i>
             <div class="media-body">
             <div class="feature-size">
-              <span class="feature-content">5346 mètres</span>
+              <span class="feature-content"> <%= @golf.length %> </span>
             </div>
             </div>
           </div>
@@ -59,7 +59,7 @@
             <i class="fas fa-at fa-2x"></i>
             <div class="media-body">
             <div class="feature-size">
-              <span class="feature-content">Site officiel</span>
+              <span class="feature-content"><%= link_to "Site web", @golf.website, target: :_blank %></span>
               </div>
             </div>
           </div>

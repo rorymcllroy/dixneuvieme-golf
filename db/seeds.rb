@@ -17,7 +17,7 @@
 #City.create!(name: "Paris VIIIème");
 #City.create!(name: "Paris IXème");
 #City.create!(name: "Paris Xème");
-#City.create!(name: "Paris XIème");
+#ity.create!(name: "Paris XIème");
 #City.create!(name: "Paris XIIème");
 #City.create!(name: "Paris XIIIème");
 #City.create!(name: "Paris XIVème");
@@ -34,8 +34,8 @@ Golf.create!(name: "Golf de Gonesse", lat: "48.9863555", long: "2.4500537", pric
 Golf.create!(name: "Golf de Rosny-sous-Bois", lat: "48.8732", long: "2.485369999999989", price_range: "1", course_type: "9 trous", description: "Description à compléter ultérieurement.", par:"Par 33", length:"2011 mètres", website:"https://jouer.golf/rosny-sous-bois-daily/");
 Golf.create!(name: "Golf de Paris", lat: "48.8464", long: "2.21530000000007", price_range: "1", course_type: "9 trous", description: "Description à compléter ultérieurement.", par:"Par 35", length:"2700 mètres", website:"https://www.pariscountryclub.com/sports-et-loisirs/golf/");
 Golf.create!(name: "Golf de Bussy-Guermantes", lat: "48.8416", long: "2.6978900000000294", price_range: "2", course_type: "18 trous", description: "Description à compléter ultérieurement.", par:"Par 72", length:"6 111 mètres", website:"https://www.golfbussyguermantes.com/");
-Golf.create!(name: "Golf de Rueil-Malmaison", lat: "48.8778", long: "2.1883699999999635", price_range: "1", course_type: "9 trous compact", description: "Description à compléter ultérieurement.", par:"Par 32", length:"1926 mètres", website:"https://rueil-malmaison.bluegreen.com/fr");
-Golf.create!(name: "Golf de Saint-Ouen-l'Aumône", lat: "49.0441", long: "2.110369999999989", price_range: "1", course_type: "9 trous compact", description: "Description à compléter ultérieurement.", par:"Par 27", length:"675 mètres", website:"https://jouer.golf/saint-ouen-laumone-daily/");
+Golf.create!(name: "Golf de Rueil-Malmaison", lat: "48.8778", long: "2.1883699999999635", price_range: "1", course_type: "Compact", description: "Description à compléter ultérieurement.", par:"Par 32", length:"1926 mètres", website:"https://rueil-malmaison.bluegreen.com/fr");
+Golf.create!(name: "Golf de Saint-Ouen-l'Aumône", lat: "49.0441", long: "2.110369999999989", price_range: "1", course_type: "Compact", description: "Description à compléter ultérieurement.", par:"Par 27", length:"675 mètres", website:"https://jouer.golf/saint-ouen-laumone-daily/");
 Golf.create!(name: "Golf du Château de la Chouette", lat: "49.0259", long: "1.8929200000000037", price_range: "2", course_type: "18 trous", description: "Description à compléter ultérieurement.", par:"Par 72", length:"5671 mètres", website:"http://www.golfdelachouette.com/");
 Golf.create!(name: "Golf du Château de Cely", lat: "48.4590138", long: "2.5326635", price_range: "3", course_type: "18 trous", description: "Description à compléter ultérieurement.", par:"Par 72", length:"5431 mètres", website:"https://jouer.golf/cely/");
 Golf.create!(name: "Golf de la Vaucouleurs - Parcours Rivière", lat: "48.8668237", long: "1.6169513", price_range: "2", course_type: "18 trous", description: "Description à compléter ultérieurement.", par:"Par 73", length:"5608 mètres", website:"https://www.vaucouleurs.fr/");

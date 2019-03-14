@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'welcomes#index' 
   resources :golfs do 
-    resources :golfcomments
+    resources :golfcomments, :golfcarsharings
   end
 
   namespace :admin do
