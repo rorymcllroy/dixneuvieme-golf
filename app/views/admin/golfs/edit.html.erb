@@ -2,7 +2,7 @@
   <div class='container'>
     <div class='row'>
       <div class='col'>
-      <%= form_tag golf_path, method: "patch" do %>
+      <%= form_tag golf_path(@golf.id), method: "put", multipart: true do %>
         <div class="form-row mb-1">
           <div class="col-md-6">
             <div class='col'>
@@ -38,6 +38,31 @@
     </div>
   </div>
 </section>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <br><br><br>
+      <%= form_tag golf_path(@golf.id), html: { class: "form-signin mt-3" }, method: "put", multipart: true do %>
+        <h1 class="h3 mb-3 font-weight-normal text-center">Modifier l'événement <%= @golf.name %> </h1>
+        <p>Golf type: </p>
+        <%= text_field_tag 'title', @golf.course_type, class: 'form-control' %>
+        <p>Description: </p>
+        <%= text_area_tag 'description', @golf.description, class: 'form-control' %>
+        <p>Avatar: </p>
+        <%= file_field_tag :image %>        
+        <p>Latitude: </p>
+        <%= number_field_tag 'duration', @golf.lat, class: 'form-control', in: 0..1440, step: 5 %>
+        <p>Longitude: </p>
+        <%= text_field_tag 'location', @golf.long, class: 'form-control' %>
+        <p>Prix (entre 1 et 4): </p>
+        <%= number_field_tag 'price', @golf.price_range, class: 'form-control', in: 1..4, step: 1 %>
+        <br>
+        <%= submit_tag "Modifier",  class: "btn btn-primary px-5" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <div class="btn btn-light">
     <%= link_to "Back", :back %>
