@@ -46,8 +46,7 @@
     <div id="map" class="vh-80 map-width"></div>
   </div>
 
-<%= javascript_include_tag('map.js') %>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHtKZB7XlS_CVrIFsPbgroMG0SgX3c-po&callback=initMap"
-  async defer>
-</script>
+  <%= javascript_include_tag('map.js') %>
+  <script async defer src=<%="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_API_KEY']}&callback=initMap"%> type="text/javascript"></script>
+
 </section>

@@ -1,4 +1,4 @@
-<div class="content row justify-content-md-center">
+<!-- old version ><div class="content row justify-content-md-center">
   <div class="card col-lg-10">
     <div class="card-body">
       <h1>Liste des Covoiturages</h1>
@@ -38,3 +38,54 @@
     </div>
   </div>
 </div>
+<-->
+
+<section class="">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <h2>Covoiturages <b>proposés</b></h2><br>
+          </div> 
+        </div>
+        <div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="table-responsive-md">
+              <table class="table table-lined">
+                <thead>
+                  <tr>
+                    <th><b>#</b></th>
+                    <th scope="col"><b>Prix</b></th>
+                    <th scope="col"><b>Description</b></th>
+                    <th scope="col"><b>Golf</b></th>
+                    <th scope="col"><b>Places disponibles</b></th>
+                    <th scope="col"><b>Conducteur</b></th>
+                    <th scope="col"><b>Validé</b></th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% @carsharings.each do |i|%>
+                  <tr>
+                    <th scope="row"><%=i.id%></th>
+                    <td><%=i.description%></td>
+                    <td><%=i.golf_id%></td>
+                    <td><%=i.places%></td>
+                    <td><%=i.driver_id%></td>
+                    <td><%=i.validated%></td>
+
+                    <td>
+                    <%= link_to '<i class="fas fa-eye fa-1x"></i>'.html_safe, admin_carsharing_path(i), method: "get", class:""  %>
+                    </td>  
+                  </tr>
+
+                  <%end%>
+                 
+                
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
