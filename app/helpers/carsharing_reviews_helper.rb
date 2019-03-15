@@ -1,0 +1,2 @@
+module CarsharingReviewsHelper
+end

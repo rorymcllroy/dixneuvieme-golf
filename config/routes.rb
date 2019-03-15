@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :privatemessages
   resources :carsharings do 
     resources :passengers, only: [:new, :create, :index]
+    resources :carsharing_reviews, only: [:new, :create]
   end
 end
 
