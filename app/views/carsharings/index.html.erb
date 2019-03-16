@@ -1,20 +1,27 @@
 <!-- Page header -->
-<div class="page-header bg-light">
-  <div class="image-overlay">
-    <div class="container">
-      <div class="col text-white text-shadow">
+<section class="page-header bg-gradient-1">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-12 text-center">
         <h2>Les covoiturages disponibles près de chez moi</b></h2>
-        <%= link_to "Ajouter un covoiturage", new_carsharing_path, class: "btn btn-outline-white btn-rounded" %>
       </div>
-    </div>
+    </div>    
+  </div>
+</section>
+
+<!-- Content -->
+<div class="bg-gradient-2">
+  <br>
+  <div class="flex-end">
+    <%= link_to "Ajouter un covoiturage", new_carsharing_path, class: "btn btn-outline-primary btn-rounded" %>
+  </div>
+  <br>
+  <br>
+  <div class="flex">
+    <% @carsharing.each do |carsharing| %>
+      <%if carsharing.validated%>
+        <%= render 'card', carsharing: carsharing %>
+      <%end%>
+    <% end %>
   </div>
 </div>
-
-<!-- Carsharings index -->
-<section class="component-example flex">
-  <% @carsharing.each do |carsharing| %>
-    <%if carsharing.validated%>
-    <%= render 'card', carsharing: carsharing %>
-    <%end%>
-  <% end %>
-</section>

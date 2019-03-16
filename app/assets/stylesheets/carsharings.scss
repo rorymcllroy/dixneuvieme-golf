@@ -8,6 +8,11 @@
   flex-wrap: wrap;
 }
 
+.flex-end {
+  display: flex;
+  justify-content: center;
+}
+
 .card {
   margin-bottom: 40px;
   background-color: white;
@@ -80,7 +85,7 @@ p {
 }
 
 .bg-gradient-1 {
-  background: linear-gradient(#66888B, #f5f5f5);
+  background: linear-gradient(#B2B6B8 1%, #f5f5f5);
 }
 
 .bg-gradient-2 {
