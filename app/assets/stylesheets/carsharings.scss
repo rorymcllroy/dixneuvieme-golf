@@ -67,12 +67,24 @@ p {
 }
 
 .page-header {
-  height: 40vh;
-  background-image: url(golf-banner-pic.jpg)
+  height: 25vh;
+  padding-top: 80px;
 }
 
 .stripe-button-el {
   display: none !important;
+}
+
+.row {
+  padding-top: 40px;
+}
+
+.bg-gradient-1 {
+  background: linear-gradient(#66888B, #f5f5f5);
+}
+
+.bg-gradient-2 {
+  background: linear-gradient(#f5f5f5, #FFFFFF);
 }
 
 
