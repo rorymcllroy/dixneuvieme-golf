@@ -25,20 +25,22 @@
   background-color: #FFFFFF;
 }
 
-.text-left {
-  padding-top:15px; 
-  padding-left:40px;
-}
-
-.text-right {
-  padding-top:25px; 
-  padding-right:40px;
-}
-
 .icon-space-right {
   margin-right: 50px;
 }
 
-.col{
-  margin-bottom: 21px; 
+.fa-linkedin {
+  color: #0e76a8;
+}
+
+.fa-facebook {
+  color: #3b5998;
+}
+
+.fa-instagram {
+  color: #bc2a8d;
+}
+
+.fa-twitter {
+  color: #00acee;
 }
