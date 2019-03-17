@@ -34,7 +34,7 @@ end
 
 def destroy
   @golf = Golf.find(params[:id])
-  @Golf.destroy
+  @golf.destroy
   redirect_to Golf_path
 end
 

@@ -62,9 +62,10 @@ class Admin::GolfsController < AdminController
     
   
     def destroy
+      
       @golf = Golf.find(params[:id])
       @golf.destroy
-      redirect_to admin_golf_path
+      redirect_to admin_golfs_path
     end
 
 
