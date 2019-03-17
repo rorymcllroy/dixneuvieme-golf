@@ -1,3 +1,4 @@
+<section class='bg-light'>
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-3">
@@ -7,7 +8,7 @@
         <p>Nom du Golf: </p>
         <%= text_field_tag 'name', @golf.name, class: 'form-control' %>
         <p>Golf type: </p>
-        <%= text_field_tag 'title', @golf.course_type, class: 'form-control' %>
+        <%= select_tag(:course_type, options_for_select([['9 trous', "9 trous"], ['9 trous compact', "9 trous compact"], ['18 trous', "18 trous"]])) %>
         <p>Description: </p>
         <%= text_area_tag 'description', @golf.description, class: 'form-control' %>
         <p>Avatar: </p>
@@ -31,6 +32,8 @@
   </div>
 </div>
 
-<div class="btn btn-light">
+
+<div class="btn btn-light center">
     <%= link_to "Back", :back %>
 </div>
+</section>

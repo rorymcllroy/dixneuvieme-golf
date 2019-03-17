@@ -10,7 +10,33 @@ class Admin::GolfsController < AdminController
     
     end
 
+    def new
+
+      @golf = Golf.new
+    end
+
     def create
+
+      @golf = Golf.new(name: params[:name],
+                       lat: params[:lat],
+                       long: params[:long],
+                       description: params[:description],
+                       price_range: params[:price_range],
+                       course_type: params[:course_type],
+                       par: params[:par],
+                       length: params[:length],
+                       website: params[:website]
+                       )
+
+      if @golf.save
+
+        flash[:success] = 'Le golf a été crée!'
+        redirect_to admin_golfs_path
+      else
+
+      redirect_to admin_golfs_path, alert: "Oops! There was a problem, please try again"
+
+     end
     end
   
     def edit
@@ -26,6 +52,7 @@ class Admin::GolfsController < AdminController
       if @golf.update(golf_params)
         flash[:success] = 'Le golf a été mis à jour!'
         redirect_to admin_golfs_path
+
       else
         
         redirect_to admin_golfs_path, alert: "Oops! There was a problem, please try again"
