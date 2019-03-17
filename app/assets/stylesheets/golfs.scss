@@ -17,73 +17,79 @@
     margin-bottom: 3%;    
   }
 
-  .test {
+.test {
 
-    text-align: center;
+  text-align: center;
 
-  }
+}
 
-  .component-example {
+.component-example {
 
-    background: rgba(21, 21, 21, 0.1);    
-  }
+  background: rgba(21, 21, 21, 0.1);    
+}
 
-  .btn-primary {
+.fas {
+  font-size: 4em;
 
-     background-color:  #54AF5D;
+}
 
-  }
+.golf-flag{
 
-  .fas {
-    font-size: 4em;
+  width: 6em;
+  height: 6em;
+}
 
-  }
-
-  .golf-flag{
+.boxed {
   
-    width: 6em;
-    height: 6em;
-  }
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+.fa-star{
 
-  .boxed {
-    
-   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-  }
-  .fa-star{
+  font-size: 1em;
 
-    font-size: 1em;
+}
 
-  }
+.hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 
-  .hr {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
+.blockquote-2::before {
+  top: -2rem;
+  font-size: 6rem;
+  left: 0rem;
+}
 
-  .blockquote-2::before {
-    top: -2rem;
-    font-size: 6rem;
-    left: 0rem;
-  }
+.image {
+  background-image: url( golf-de-sperone-bonifacio-vuedrone-corse.jpg)
+}
 
-  .image {
-    background-image: url( golf-de-sperone-bonifacio-vuedrone-corse.jpg)
-  }
+.card-img {
+  height: 300px;
+}
 
-  .card-img {
-    height: 300px;
-  }
+.feature-size {
+  width: 130px;
+}
 
-  .feature-size {
-    width: 130px;
-  }
+.list-width {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
 
-  .list-width {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
+.feature-content {
+  padding-left: 10px;
+}
 
-  .feature-content {
-    padding-left: 10px;
-  }
+.golf-image {
+  width:100%;
+}
+
+.description-height {
+  height: 50%;
+}
+
+.comment-height {
+  height: 30%;
+}
