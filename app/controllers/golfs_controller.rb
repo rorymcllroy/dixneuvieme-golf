@@ -2,13 +2,13 @@ class GolfsController < ApplicationController
 
 def index
   @golfs = Golf.all
+
+
 end
 
 def show
   @golf= Golf.find(params[:id])
   @comments= Golfcomment.all
-  
-
 end
 
 def new
