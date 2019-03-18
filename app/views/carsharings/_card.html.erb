@@ -4,7 +4,7 @@
     <div class="flex-space-between">    
       <p><i class="fas fa-car-side fa-lg"></i> <%= carsharing.driver.city.name %></p>
       <p><i class="fas fa-angle-double-right fa-lg"></i><i class="fas fa-angle-double-right fa-lg"></i></p>
-      <p><i class="fas fa-golf-ball fa-lg"></i> <%= carsharing.golf.name %></p>
+      <p><i class="fas fa-golf-ball fa-lg"></i> <%= link_to "#{carsharing.golf.name}", golf_path(carsharing.golf.id) %></p>
     </div>
     <div class="flex-center">
       <%= image_tag "profile-pic-test.jpg", class: "avatar" %>
