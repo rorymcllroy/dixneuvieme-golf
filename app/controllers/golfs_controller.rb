@@ -1,5 +1,5 @@
 class GolfsController < ApplicationController
-  before_action :is_admin?, only: [:new, :destroy]
+  before_action :is_admin?, only: [:new, :destroy, :edit]
   
   def index
     @golfs = Golf.all
@@ -44,5 +44,4 @@ class GolfsController < ApplicationController
       redirect_to root_path, notice: "Accès non autorisé"
     end
   end
-  
 end
