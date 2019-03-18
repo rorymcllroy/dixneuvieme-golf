@@ -1,0 +1,47 @@
+<section class="">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <h2><b>Liste des utilistateurs</b></h2><br>
+            <%= link_to "Ajouter un Golf", new_admin_golf_path, class: "btn btn-secondary btn-rounded" %>
+          </div> 
+        </div>
+        <div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="table-responsive-md">
+              <table class="table table-lined">
+                <thead>
+                  <tr>
+                    <th scope="col"><b>Prénom</b></th>
+                    <th scope="col"><b>Nom</b></th>
+                    <th scope="col"><b>Email</b></th>
+                    <th scope="col"><b>Administrateur</b></th>
+                    <th scope="col"><b>Detail</b></th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% @users.each do |i|%>
+                  <tr>
+                    <th scope="row"><%=i.first_name%></th>
+                    <td><%=i.last_name%></td>
+                    <td><%=i.email%></td>
+                    <td><%=i.is_admin%></td>
+                    <td>
+                    <%= link_to '<i class="fas fa-eye fa-1x"></i>'.html_safe, golf_path(i), method: "get", class:""  %>
+                    <%= link_to '<i class="fas fa-edit fa-1x"></i>'.html_safe, edit_admin_golf_path(i), method: "get", class:""  %>  
+                    <%= link_to '<i class="fas fa-trash-alt fa-1x"></i>'.html_safe, admin_golf_path(i), method: "delete", class:"", data: { confirm: "Etes-vous sûr ?" } %>
+                    </td>  
+                  </tr>
+
+                  <%end%>
+                 
+                
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

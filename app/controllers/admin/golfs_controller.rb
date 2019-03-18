@@ -7,8 +7,7 @@ class Admin::GolfsController < AdminController
   
     def show
       @golf = Golf.find(params[:id])
-      @golf.golf_image.attach(params[:golf_image])
-
+      
     
     end
 
