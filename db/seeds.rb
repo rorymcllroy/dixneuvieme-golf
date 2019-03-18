@@ -6,27 +6,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#Create cities
-#City.create!(name: "Paris Ier");
-#City.create!(name: "Paris IIème");
-#City.create!(name: "Paris IIIème");
-#City.create!(name: "Paris IVème");
-#City.create!(name: "Paris Vème");
-#City.create!(name: "Paris VIème");
-#City.create!(name: "Paris VIIème");
-#City.create!(name: "Paris VIIIème");
-#City.create!(name: "Paris IXème");
-#City.create!(name: "Paris Xème");
-#ity.create!(name: "Paris XIème");
-#City.create!(name: "Paris XIIème");
-#City.create!(name: "Paris XIIIème");
-#City.create!(name: "Paris XIVème");
-#City.create!(name: "Paris XVème");
-#City.create!(name: "Paris XVIème");
-#City.create!(name: "Paris XVIIème");
-#City.create!(name: "Paris XVIIIème");
-#City.create!(name: "Paris XIXème");
-#City.create!(name: "Paris XXème");
+# Create cities
+City.create!(name: "Paris Ier");
+City.create!(name: "Paris IIème");
+City.create!(name: "Paris IIIème");
+City.create!(name: "Paris IVème");
+City.create!(name: "Paris Vème");
+City.create!(name: "Paris VIème");
+City.create!(name: "Paris VIIème");
+City.create!(name: "Paris VIIIème");
+City.create!(name: "Paris IXème");
+City.create!(name: "Paris Xème");
+City.create!(name: "Paris XIème");
+City.create!(name: "Paris XIIème");
+City.create!(name: "Paris XIIIème");
+City.create!(name: "Paris XIVème");
+City.create!(name: "Paris XVème");
+City.create!(name: "Paris XVIème");
+City.create!(name: "Paris XVIIème");
+City.create!(name: "Paris XVIIIème");
+City.create!(name: "Paris XIXème");
+City.create!(name: "Paris XXème");
 
 
 #Create golfs
@@ -41,25 +41,25 @@ Golf.create!(name: "Golf du Château de Cely", lat: "48.4590138", long: "2.53266
 Golf.create!(name: "Golf de la Vaucouleurs - Parcours Rivière", lat: "48.8668237", long: "1.6169513", price_range: "2", course_type: "18 trous", description: "Description à compléter ultérieurement.", par:"Par 73", length:"5608 mètres", website:"https://www.vaucouleurs.fr/");
 Golf.create!(name: "Golf National - Parcours Aigle", lat: "48.7709414", long: "2.0706084", price_range: "2", course_type: "18 trous", description: "Description à compléter ultérieurement.", par:"Par 71", length:"5728 mètres", website:"https://www.golf-national.com/l-aigle/");
 
-#Create 20 golf comments
-#20.times do
+# Create 20 golf comments
+# 20.times do
 #  comment = Golfcomment.new(content: Faker::Lorem.word)
 #  user = User.all.sample
 #  comment.user = user
 #  golf = Golf.all.sample
 #  comment.golf = golf
 #  comment.save!
-#end
+# end
 
-#Create 3 carsharings
-#3.times do
+# Create 3 carsharings
+# 3.times do
 #  carsharing = Carsharing.new(description: Faker::Marketing.buzzwords, date: Faker::Date.between(Date.today, 1.month.from_now) , places: "4", price: "10")
 #  user = User.all.sample
 #  carsharing.driver = user
 #  golf = Golf.all.sample
 #  carsharing.golf = golf
 #  carsharing.save!
-#end
+# end
 
 #Create 10 passengers
 #10.times do
