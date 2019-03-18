@@ -27,7 +27,11 @@
     <p class="card-title mb-0"> <%= carsharing.description %> </p>
     <hr class="w-25" style="margin-top:15px; margin-bottom:15px;">
     <div class="flex-center">
-      <%= render 'carsharings/stripe', carsharing: carsharing %>
+      <% if current_user %>
+        <%= render 'carsharings/stripe', carsharing: carsharing %>
+      <% else %>
+        <%= link_to "Rejoindre le trajet (#{carsharing.price == 0 ? "Gratuit" : "#{carsharing.price} €"})", new_user_session_path, class:"btn btn-outline-primary center" %>
+      <% end %>
     </div>
    </div>
   </div>

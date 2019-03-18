@@ -33,10 +33,9 @@
       </div>
       <hr class="w-25" style="margin-top:15px; margin-bottom:15px;">
       <div class="comment-height">
-        <% if @comments.where(golf_id:@golf.id).count > 0 %>
-          <h5><%= @comments.where(golf_id:@golf.id).sample.content %></h5>
-          <h6><i class="fas fa-star"></i> - <%= @comments.where(golf_id:@golf.id).sample.grade %></h6>
-          <p><%= @comments.sample.user.first_name %> <%= @comments.sample.user.last_name %> - <%= @comments.sample.created_at.day < 10  ? "0#{@comments.sample.created_at.day}" : "#{@comments.sample.created_at.day}" %>/<%= @comments.sample.created_at.month < 10 ? "0#{@comments.sample.created_at.month}" : "#{@comments.sample.created_at.month}" %>/<%= @comments.sample.created_at.year %></p>
+        <% if @comments.count > 0 %>
+          <p style="font-style: italic;"><%= @comment.content %></p>
+          <h6><i class="fas fa-star"></i> - <%= @comment.grade %> | <%= @comment.user.first_name %> <%= @comment.user.last_name %> - <%= @comment.created_at.day < 10  ? "0#{@comment.created_at.day}" : "#{@comment.created_at.day}" %>/<%= @comment.created_at.month < 10 ? "0#{@comment.created_at.month}" : "#{@comment.created_at.month}" %>/<%= @comment.created_at.year %></h6>
         <% else %>
           <h6> Sois le premier à laisser ton avis sur ce  golf.</h6>
         <% end %>
