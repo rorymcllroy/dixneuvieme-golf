@@ -1,11 +1,11 @@
-<section class='bg-light'>
+<section class='bg-gradient'>
   <div class="container">
-    <div class='row'>
+    <div class='row' style="padding:0; margin:0; margin-top: 40px;">
       <div class='col-md-6'>
-        <h2>Log in</h2>
+        <h2>Se connecter</h2>
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="padding-top:0;">
       <div class="col">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-row mb-1">
@@ -20,7 +20,7 @@
           <% if devise_mapping.rememberable? %>
             <div class="col">
               <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
+              <%= f.label :se_souvenir_de_moi %>
             </div>
           <% end %>
 

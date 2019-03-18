@@ -1,8 +1,13 @@
-<section class='bg-light'>
-  <h2 class='container'>Inscription</h2>
-  <div class="col">
-    <div class="row">
-      <div class='container'>
+<section class='bg-gradient'>
+  <div class="container">
+    <div class='row' style="padding:0; margin:0; margin-top: 40px;">
+      <div class='col-md-6'>
+        <h2>S'inscrire</h2>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="padding-top:0;">
+    <div class="col">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :multipart => true }) do |f| %>
         <div class='row'>
           <div class="col-md-6">
@@ -19,17 +24,19 @@
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-minimal', placeholder: 'Email' %>
               </div>
               <div class='col select-form'>
-                <%= f.select(:golf_level, options_for_select([["0-5", "0-5"], ["6-15", "6-15"], ["16-30", "16-30"], ["30+", "30+"]])) %>
+                <%= f.label 'Index'%>
+                <%= f.select(:golf_level, options_for_select([["Entre 0 et 5", "Entre 0 et 5"], ["Entre 6 et 15", "Entre 6 et 15"], ["Entre 16 et 30", "Entre 16 et 30"], ["30+", "30+"]])) %>
               </div>
 
                <div class='col select-form'>
+                <%= f.label 'Ville'%>
                 <%= f.select(:city_id, options_for_select(City.pluck(:name, :id), target_blank: true )) %>
               </div>
 
               </div>
             <div class="col-md-6">
               <div class="col">
-                <%= f.password_field :password, autocomplete: "new-password", class: 'form-control form-control-minimal', placeholder: 'Mot de passe (6 caractéres minimum)' %>
+                <%= f.password_field :password, autocomplete: "new-password", class: 'form-control form-control-minimal', placeholder: 'Mot de passe (6 caractères minimum)' %>
               </div>
 
               <div class="col">
@@ -52,7 +59,6 @@
                 <%= f.submit "Inscription", class: 'btn btn-primary px-5' %>
               </div>
             <% end %>
-        </div>
       </div>
     </div>
   </div>
