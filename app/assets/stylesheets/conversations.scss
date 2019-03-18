@@ -1,11 +1,9 @@
 textarea, input{
-  
   margin-bottom: 21px;
   margin-top: 21px;
 }
 
-textarea{
-  
+.text-area-message {
   width: 80% !important;
   margin: auto !important;
 }
@@ -19,18 +17,18 @@ textarea{
 }
 
 .recipient{
+  background-color:blue;
   margin-right: 0;
   margin-left: 15%;
+  border: 2px blue;
 }
 
 .name{
   color: black !important;
 }
 
-// .boxed{
-//   -moz-box-shadow: 1px 4px 5px 0px #656565;
-//   -webkit-box-shadow: 1px 4px 5px 0px #656565;
-//   -o-box-shadow: 1px 4px 5px 0px #656565;
-//   box-shadow: 1px 4px 5px 0px #656565;
-//   filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=165, Strength=5);
-// }
+.conversation-msg {
+  padding: 10px 50px; 
+  height: 400px; 
+  overflow: scroll;
+}
