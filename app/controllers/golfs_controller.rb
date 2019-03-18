@@ -1,4 +1,5 @@
 class GolfsController < ApplicationController
+  before_action :is_admin?, only: [:new, :destroy]
 
 def index
   @golfs = Golf.all
@@ -37,5 +38,13 @@ def destroy
   @Golf.destroy
   redirect_to Golf_path
 end
+
+private 
+
+  def is_admin?
+    if !(user_signed_in? && current_user.is_admin == true)
+      redirect_to root_path, notice: "Accès non autorisé"
+    end
+  end
 
 end

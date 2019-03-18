@@ -1,5 +1,5 @@
 class GolfcommentsController < ApplicationController
-  # before_action :authenticate_user, only: [:create]
+  before_action :authenticate_user!, only: [:new]
   #   before_action :author_comment, only: [:edit, :update, :destroy]
 
   def new
@@ -34,20 +34,5 @@ class GolfcommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
     redirect_to comment_path(params[:id])
-  end
-
-  def authenticate_user
-      unless current_user
-        flash[:danger] = "Please log in."
-        redirect_to new_session_path #check the name root
-    end
-  end
-
-  def author_comment
-    @comment = Comment.find(params[:id])
-    unless current_user == @comment.user
-        flash[:danger] = "Tu n'es pas l'auteur de ce commentaire."
-        redirect_to root_path
-    end
   end
 end
