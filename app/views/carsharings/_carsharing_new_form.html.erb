@@ -1,40 +1,32 @@
-<section class='bg-light'>
-  <div class='container'>
-    <div class='row'>
-      <div class='col'>
-      <%= form_tag carsharings_path, method: "post" do %>
-        <div class="form-row mb-1">
-          <div class="col-md-6">
-            <div class='col'>
+<div class='bg-gradient'>
+  <div class="container">
+    <div class="row" style="padding-top:0;">
+      <div class="col">
+        <%= form_tag carsharings_path, method: "post" do %>
+          <div class="form-row mb-1">
+            <div class="col">
               <%= label_tag 'Golf' %>
               <%= select_tag(:golf_id, options_for_select(Golf.pluck(:name, :id), target_blank: true )) %>
-            </div>
-            <div class='col select-form'>
               <%= label_tag 'Ville' %>
               <%= select_tag(:city_id, options_for_select(City.pluck(:name, :id), target_blank: true )) %>
-            </div>
-            <div class='col select-form'>
-            <%= label_tag 'Nombres de places' %>
+              <%= label_tag 'Nombres de places' %>
               <%= select_tag(:place, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4]])) %>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class='col select-form'>
               <%= label_tag 'Prix' %>
               <%= select_tag(:price, options_for_select([['Gratuit', 0], ['5€', 5], ['10€', 10], ['15€', 15], ['20€', 20]])) %>
-            </div> 
-            <div class='col'>
+            </div>
+            <div class="col">
               <%= label_tag 'Jour et heure du départ' %>
               <%= datetime_local_field_tag 'start_date', "" , class: 'form-control form-control-minimal', placeholder: 'Date'%>
-            </div>
-            <div class='col'>
-              <%= text_area_tag 'description' , nil , class: 'form-control form-control-minimal', placeholder: 'Description' %>
+              <%= text_area_tag 'description' , nil , class: 'form-control', placeholder: 'Description' %>            
             </div>
           </div>
-            <br>
-        </div>
-        <%= submit_tag "Créer",  class: "btn btn-primary px-5" %>
-      <% end %>
+          <div class="form-row mt-3">
+            <div class='col'>
+              <%= submit_tag "Nouveau covoiturage",  class: "btn btn-primary px-5" %>
+            </div> 
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</section>
+</div>
