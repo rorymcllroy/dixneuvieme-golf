@@ -42,7 +42,9 @@
         <div class="nav nav-tabs mb-1">
           <a class="nav-item nav-link active" data-toggle="tab" href="#demo-2-1">Profil</a>
           <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-2">Covoiturages</a>
-          <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-4">Conversations</a>
+          <% if user_signed_in? && current_user.id == @user.id %>
+            <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-4">Conversations</a>
+          <% end %>
           <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-3">Avis</a>
         </div>
       </div>
@@ -76,6 +78,7 @@
         </div>
       </div>   
       <!-- Conversations -->
+    <% if user_signed_in? && current_user.id == @user.id %>
       <div class="tab-pane" id="demo-2-4" role="tabpanel" aria-labelledby="demo-2-2">          
         <div class="row justify-content-center" style="padding-top:0;">
           <div class="col-md-10 col-lg-8">
@@ -83,7 +86,8 @@
             <%= link_to "Nouvelle conversation", new_privatemessage_path, class: "btn btn-outline-primary btn-rounded" %>
           </div>
         </div>
-      </div>    
+      </div> 
+    <% end %>   
     </div>
   </div>
 </div>
