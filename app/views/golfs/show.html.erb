@@ -20,7 +20,11 @@
   </div>
   <div class="flex">
     <div class="col-md-6" style="padding-left:10px;">
-      <%= image_tag("golf-paris.jpg", class: "golf-image") %>
+       <%if @golf.golf_image.attached?%>
+      <%= image_tag @golf.golf_image, alt: 'IMAGE' %>
+      <%else%>
+      <p>=== Il n'y a pas encore d'image liée à ce golf ===</p>
+      <%end%>
     </div>
     <div class="col-md-6" style="padding-top:40px;">
       <div class="description-height" style="border:2px red solid; overflow:scroll;">
