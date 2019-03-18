@@ -1,4 +1,5 @@
 class CarsharingsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
   
   def index
     @carsharing = Carsharing.all
@@ -15,9 +16,9 @@ class CarsharingsController < ApplicationController
   def create
     @carsharing = Carsharing.new(driver_id: current_user.id, date: params[:start_date], places: params[:place], description: params[:description], price: params[:price], golf_id: params[:golf_id])
     if @carsharing.save! # save carsharing in the db
-     redirect_to carsharings_path, :notice => "Nouveau covoiturage créé !"
+      redirect_to carsharings_path, :notice => "Nouveau covoiturage créé !"
     else
-     render 'new'
+      render 'new'
     end
   end
   
@@ -32,7 +33,7 @@ class CarsharingsController < ApplicationController
       redirect_to carsharings_path(params[:id])
     else
       redirect_to carsharings_path
-end
+    end
   end
   
   def destroy

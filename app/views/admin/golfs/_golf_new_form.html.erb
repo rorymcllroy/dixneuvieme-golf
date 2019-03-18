@@ -2,40 +2,70 @@
   <div class='container'>
     <div class='row'>
       <div class='col'>
-      <%= form_tag admin_golfs_path, method: "post" do %>
+      <%= form_tag url_for(action: 'create'), method: "post", multipart: true do %>
         <div class="form-row mb-1">
           <div class="col-md-6">
+
             <div class='col'>
-              <%= label_tag 'Name' %>
-              <input type="string" class="form-control form-control-minimal" id="exampleFormControlInput1" placeholder="">
+            <%= text_field_tag 'name', @golf.name, class: "form-control mb-1", placeholder: "Nom du Golf" %>
             </div>
-            <div class='col select-form'>
-              <%= label_tag 'Course type' %>
-              <%= select_tag(:course_type, options_for_select([['9 trous', "9 trous"], ['9 trous compact', "9 trous compact"], ['18 trous', "18 trous compacts"]])) %>
-            </div>
-            <div class='col select-form'>
-            <%= label_tag 'Price range' %>
-              <%= select_tag(:price_range, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4]])) %>
-            </div>
-          </div>
-          <div class="col-md-6">
+
             <div class='col select-form'>
               <%= label_tag 'Latitude' %>
-              <input type="string" class="form-control form-control-minimal" id="lat" placeholder="">
+              <%= text_field_tag 'lat', @golf.lat, class: "form-control mb-1", placeholder: "Latitude" %>
+            </div>
+
+            <div class='col select-form'>
+            <%= label_tag 'Longitude' %>
+            <%= text_field_tag 'long', @golf.long, class: "form-control mb-1", placeholder: "longitude" %>
+            </div>
+           </div>
+
+          <div class="col-md-6">
+            <div class='col select-form'>
+              <%= label_tag 'Prix' %>
+              <%= select_tag(:price_range, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4]])) %>
             </div> 
+
             <div class='col'>
-              <%= label_tag 'Longitude' %>
-              <input type="string" class="form-control form-control-minimal" id="long" placeholder="">
+              <%= label_tag 'Description' %>
+              <%= text_field_tag 'description', @golf.description, class: "form-control mb-1", placeholder: "Description" %>
             </div>
+
             <div class='col'>
-              <%= text_area_tag 'description' , nil , class: 'form-control form-control-minimal', placeholder: 'Description' %>
+            <%= select_tag(:course_type, options_for_select([['9 trous', "9 trous"], ['9 trous compact', "9 trous compact"], ['18 trous', "18 trous"]])) %>
             </div>
+
+            <div class="col-md-6">
+            <%= text_field_tag 'par', @golf.par, class: "form-control mb-1", placeholder: "Par" %>
+            </div>
+
+            <div class="col-md-6">
+            <%= text_field_tag 'length', @golf.length, class: "form-control mb-1", placeholder: "Longueur" %>
+            </div>
+
+            <div class="col-md-6">
+            <%= text_field_tag 'website', @golf.website, class: "form-control mb-1", placeholder: "Site web" %>
+            </div>
+
+            <div class="col-md-6">
+            <p>Image: </p>
+            <%= file_field_tag :golf_image %>  
+            </div>
+
           </div>
+
             <br>
         </div>
         <%= submit_tag "Créer",  class: "btn btn-primary px-5" %>
       <% end %>
     </div>
   </div>
+  <div class="btn btn-light center">
+    <%= link_to "Back", :back %>
+</div>
 </section>
+
+
+
 

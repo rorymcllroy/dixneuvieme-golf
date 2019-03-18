@@ -9,6 +9,7 @@
     <div class="flex-center">
       <%= image_tag "profile-pic-test.jpg", class: "avatar" %>
     </div>
+<<<<<<< HEAD
     <div class="flex-center">
       <h5 class="eyebrow mb-1" style="margin-top:10px;"><%= carsharing.driver.first_name %> <%= carsharing.driver.last_name %> <i class="fas fa-star"></i> 4.5 - 5 avis </h5>
     </div>
@@ -23,6 +24,16 @@
     <div class="flex-center">
       <%= render 'carsharings/stripe', carsharing: carsharing %>
     </div>
+=======
+    <hr>
+     <p class="card-title mb-0"> <%= carsharing.description %> </p>
+    <hr>
+    <% if user_signed_in? %>
+      <%= render 'carsharings/stripe', carsharing: carsharing %>
+    <% else %>
+      <button class='btn btn-outline-primary'><%= link_to "Rejoindre le trajet (#{carsharing.price}€)", new_user_session_path%></button>
+    <% end %>
+>>>>>>> new-development
    </div>
   </div>
 </div>
