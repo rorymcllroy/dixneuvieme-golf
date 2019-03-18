@@ -45,23 +45,3 @@ class GolfsController < ApplicationController
     end
   end
 end
-<<<<<<< HEAD
-=======
-
-
-def edit
-   @golf = Golf.find(params[:id])
-end
-
-def update
-##
-end
-
-def destroy
-  @golf = Golf.find(params[:id])
-  @golf.destroy
-  redirect_to Golf_path
-end
-
-end
->>>>>>> new-development
