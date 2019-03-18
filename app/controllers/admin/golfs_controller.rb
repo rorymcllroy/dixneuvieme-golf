@@ -25,8 +25,10 @@ class Admin::GolfsController < AdminController
                        course_type: params[:course_type],
                        par: params[:par],
                        length: params[:length],
-                       website: params[:website]
+                       website: params[:website],
+                       golf_image: params[:golf_image]
                        )
+      @golf.golf_image.attach(params[:golf_image])
 
       if @golf.save
 
@@ -46,7 +48,10 @@ class Admin::GolfsController < AdminController
     def update
       @golf = Golf.find(params[:id])
 
-      golf_params = params.permit(:name, :lat, :long, :description, :price_range, :course_type, :par, :length, :website)
+      @golf.golf_image.attach(params[:golf_image])
+
+
+      golf_params = params.permit(:name, :lat, :long, :description, :price_range, :course_type, :par, :length, :website, :golf_image)
     
 
       if @golf.update(golf_params)

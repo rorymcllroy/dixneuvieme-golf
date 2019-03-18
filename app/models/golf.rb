@@ -1,5 +1,6 @@
 class Golf < ApplicationRecord
   has_many :golfcomments
+  has_one_attached :golf_image
 
   validates :name, 
   presence: true

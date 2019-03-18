@@ -20,7 +20,11 @@
   </div>
   <div class="flex">
     <div class="col-md-6" style="padding-left:10px;">
-      <%= image_tag("golf-paris.jpg", class: "golf-image") %>
+       <%if @golf.golf_image.attached?%>
+      <%= image_tag @golf.golf_image, alt: 'IMAGE' %>
+      <%else%>
+      <p>=== Il n'y a pas encore d'image lié à cet utilisateur ===</p>
+      <%end%>
     </div>
     <div class="col-md-6" style="padding-top:40px;">
       <div class="description-height" style="border:2px red solid; overflow:scroll;">
@@ -31,10 +35,9 @@
         <div class="text-center">
           <%= link_to "Laisser un commentaire", new_golf_golfcomment_path(@golf.id), class: "btn btn-sm btn-primary" %>
         </div>
-        <div class="owl-carousel" data-items="[1,1]" data-autoplay="true" data-dots="true" data-loop="true" data-margin="50">   
-          <%= @comments.sample.content %>
-          <%= @comments.sample.user.first_name %>
-        </div>
+        
+     
+        
       </div>
     </div>
   </div>
