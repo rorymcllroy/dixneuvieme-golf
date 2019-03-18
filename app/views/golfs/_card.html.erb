@@ -1,7 +1,7 @@
 <div class="col-md-6 col-lg-4">
   <div class="card card-minimal">
     <a href="" class="card-img-container">
-      <%= link_to image_tag("<%= image_tag @golf.golf_image, alt: 'IMAGE' %>", class: "card-img"), golf_path(golf.id) %>
+      <%= link_to image_tag("golf-de-sperone-bonifacio-vuedrone-corse.jpg", class: "card-img"), golf_path(golf.id) %>
     </a>
     <div class="card-body">
       <h5 class="card-title"><%= link_to "#{golf.name}", golf_path(golf.id) %></h5>
