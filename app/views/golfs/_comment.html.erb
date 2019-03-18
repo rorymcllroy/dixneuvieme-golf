@@ -1,6 +1,8 @@
-<blockquote class="blockquote blockquote-1">
-  <p><%= comment.content %> - <i class="fas fa-star"></i> <strong><%= comment.grade %></strong></p>
-  <footer class="blockquote-footer">
-    <%= comment.user.first_name %> <%= comment.user.last_name %> 
-  </footer>          
-</blockquote>
+<div class="owl-carousel review-listing" data-items="[1]">
+  <blockquote class="review">
+    <span class="review-score bg-orange"><%= comment.grade %></span>
+    <p><%= comment.content %></p>
+    <hr>
+    <span><%= comment.user.first_name %> <%= comment.user.last_name %></span>
+  </blockquote>
+</div>

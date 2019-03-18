@@ -1,0 +1,52 @@
+<ul class="feature-list gutter-1 list-width" style="padding-left:65px;">
+  <li>
+    <div class="media bordered rounded p-2 align-items-center">
+      <i class="fab fa-font-awesome-flag fa-2x"></i>
+      <div class="media-body">
+      <div class="feature-size">
+        <span class="feature-content"><%= @golf.course_type %></span>
+      </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="media bordered rounded p-2 align-items-center">
+      <i class="fas fa-golf-ball fa-2x"></i>
+      <div class="media-body">
+      <div class="feature-size">
+        <span class="feature-content"> <%= @golf.par %> </span>
+      </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="media bordered rounded p-2 align-items-center">
+      <i class="fas fa-ruler fa-2x"></i>
+      <div class="media-body">
+      <div class="feature-size">
+        <span class="feature-content"> <%= @golf.length %> </span>
+      </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="media bordered rounded p-2 align-items-center">
+      <i class="fas fa-money-bill-alt fa-2x"></i>
+      <div class="media-body">
+        <div class="feature-size">
+          <h4 class="feature-content"> <%= price_range_display(@golf.price_range) %> </h4>
+        </div>      
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="media bordered rounded p-2 align-items-center">
+      <i class="fas fa-at fa-2x"></i>
+      <div class="media-body">
+      <div class="feature-size">
+        <span class="feature-content"><%= link_to "Site web", @golf.website, target: :_blank %></span>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>  

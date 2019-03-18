@@ -8,6 +8,11 @@
   flex-wrap: wrap;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
 .card {
   margin-bottom: 40px;
   background-color: white;
@@ -51,28 +56,30 @@ p {
   padding-top: 10px;
 }
 
-.btn-primary {
-  background-color: #49e179;
-  border: #49e179; 
-}
-
-.btn-primary:hover {
-  background-color: #31d863;
-  border: #31d863; 
-}
-
 .flex-carsharing-add {
   display: flex;
   justify-content: space-between;
 }
 
 .page-header {
-  height: 40vh;
-  background-image: url(golf-banner-pic.jpg)
+  height: 25vh;
+  padding-top: 80px;
 }
 
 .stripe-button-el {
   display: none !important;
+}
+
+.row {
+  padding-top: 40px;
+}
+
+.bg-gradient-1 {
+  background: linear-gradient(#B2B6B8 1%, #f5f5f5);
+}
+
+.bg-gradient-2 {
+  background: linear-gradient(#f5f5f5, #FFFFFF);
 }
 
 
