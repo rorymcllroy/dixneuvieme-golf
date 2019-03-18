@@ -13,17 +13,8 @@
   </head>
 
   <body>
-<<<<<<< HEAD
-    <% flash.each do |key, value| %>
-      <div class="<%= flash_class(key) %>">
-        <%= value %>
-      </div>
-    <% end %>
-
-=======
     <%= render 'layouts/header' %>
     <%= render 'layouts/flash'%>
->>>>>>> new-development
     <%= yield %>
     <%= render 'layouts/footer' %>    
   </body>

@@ -32,7 +32,6 @@
         <p class="lead"><%= @golf.description %></p>
       </div>
       <hr class="w-25" style="margin-top:15px; margin-bottom:15px;">
-<<<<<<< HEAD
       <div class="comment-height">
         <% if @comments.where(golf_id:@golf.id).count > 0 %>
           <h5><%= @comments.where(golf_id:@golf.id).sample.content %></h5>
@@ -44,20 +43,6 @@
       <div class="text-center">
         <%= link_to "Laisser un commentaire", new_golf_golfcomment_path(@golf.id), class: "btn btn-sm btn-primary" %>
       </div>
-=======
-      <div class="comment-height" style="border:2px red solid;">
-        <% if user_signed_in? %>
-          <div class="text-center">
-            <%= link_to "Laisser un commentaire", new_golf_golfcomment_path(@golf.id), class: "btn btn-sm btn-primary" %>
-          </div>
-        <% end %>
-        <div class="owl-carousel" data-items="[1,1]" data-autoplay="true" data-dots="true" data-loop="true" data-margin="50">
-          <%if @comments.all.sample != nil %>   
-           <%= @comments.all.sample.content %>
-           <%= @comments.all.sample.user.first_name %>
-          <%end %>
-        </div>
->>>>>>> new-development
       </div>
     </div>
   </div>
