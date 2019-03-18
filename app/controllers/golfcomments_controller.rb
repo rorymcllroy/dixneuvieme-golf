@@ -1,5 +1,4 @@
 class GolfcommentsController < ApplicationController
-
   # before_action :authenticate_user, only: [:create]
   #   before_action :author_comment, only: [:edit, :update, :destroy]
 
