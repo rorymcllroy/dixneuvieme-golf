@@ -1,16 +1,30 @@
 <div class="col-md-4">
-<div class="card"> 
+  <div class="card"> 
    <div class="card-body">
-    <div class="flex">
-      <%= image_tag "profile-pic-test.jpg", class: "avatar" %>
-      <div class="test">
-        <h5 class="eyebrow mb-1"><%= carsharing.driver.first_name %> <%= carsharing.driver.last_name %> <i class="fas fa-star"></i> 4.5 - 5 avis </h5>
-        <%= link_to "Voir profil >", user_path(carsharing.driver.id) %>
-        <p class="card-title mb-0">Destination: <%= carsharing.golf.name %> </p>
-        <p class="card-title mb-0">Places dispo: <%= carsharing.places - passengers_booked(carsharing.id) %> </p>
-        <p class="card-title mb-0"> Départ de <%= carsharing.driver.city.name %> le <%= carsharing.date.day %> <%= Date::MONTHNAMES[carsharing.date.month] %> à <%= carsharing.date.hour %>h<%= carsharing.date.min %> </p>
-      </div>
+    <div class="flex-space-between">    
+      <p><i class="fas fa-car-side fa-lg"></i> <%= carsharing.driver.city.name %></p>
+      <p><i class="fas fa-angle-double-right fa-lg"></i><i class="fas fa-angle-double-right fa-lg"></i></p>
+      <p><i class="fas fa-golf-ball fa-lg"></i> <%= link_to "#{carsharing.golf.name}", golf_path(carsharing.golf.id) %></p>
     </div>
+    <div class="flex-center">
+      <%= image_tag "profile-pic-test.jpg", class: "avatar" %>
+    </div>
+<<<<<<< HEAD
+    <div class="flex-center">
+      <h5 class="eyebrow mb-1" style="margin-top:10px;"><%= carsharing.driver.first_name %> <%= carsharing.driver.last_name %> <i class="fas fa-star"></i> 4.5 - 5 avis </h5>
+    </div>
+    <div class="flex-center">
+      <p> <%= link_to "Voir profil >", user_path(carsharing.driver.id) %> </p>
+    </div>
+    <p class="card-title mb-0"><i class="fas fa-users fa-sm"></i> <%= carsharing.places - passengers_booked(carsharing.id) %> place(s) dispo </p>
+    <p class="card-title mb-0"> <i class="far fa-clock fa-sm"></i> <%= carsharing.date.day %> <%= Date::MONTHNAMES[carsharing.date.month] %> à <%= carsharing.date.hour %>h<%= carsharing.date.min < 10 ? "0#{carsharing.date.min}": "#{carsharing.date.min}" %> </p>
+    <hr class="w-25" style="margin-top:15px; margin-bottom:15px;">
+    <p class="card-title mb-0"> <%= carsharing.description %> </p>
+    <hr class="w-25" style="margin-top:15px; margin-bottom:15px;">
+    <div class="flex-center">
+      <%= render 'carsharings/stripe', carsharing: carsharing %>
+    </div>
+=======
     <hr>
      <p class="card-title mb-0"> <%= carsharing.description %> </p>
     <hr>
@@ -19,6 +33,7 @@
     <% else %>
       <button class='btn btn-outline-primary'><%= link_to "Rejoindre le trajet (#{carsharing.price}€)", new_user_session_path%></button>
     <% end %>
+>>>>>>> new-development
    </div>
   </div>
 </div>

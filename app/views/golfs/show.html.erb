@@ -1,3 +1,4 @@
+<%= render 'carsharings/header_inner_pages' %>
 <!-- Page header -->
 <section class="page-header bg-gradient-1">
   <div class="container">
@@ -27,10 +28,23 @@
       <%end%>
     </div>
     <div class="col-md-6" style="padding-top:40px;">
-      <div class="description-height" style="border:2px red solid; overflow:scroll;">
+      <div class="description-height" style="overflow:scroll;">
         <p class="lead"><%= @golf.description %></p>
       </div>
       <hr class="w-25" style="margin-top:15px; margin-bottom:15px;">
+<<<<<<< HEAD
+      <div class="comment-height">
+        <% if @comments.where(golf_id:@golf.id).count > 0 %>
+          <h5><%= @comments.where(golf_id:@golf.id).sample.content %></h5>
+          <h6><i class="fas fa-star"></i> - <%= @comments.where(golf_id:@golf.id).sample.grade %></h6>
+          <p><%= @comments.sample.user.first_name %> <%= @comments.sample.user.last_name %> - <%= @comments.sample.created_at.day < 10  ? "0#{@comments.sample.created_at.day}" : "#{@comments.sample.created_at.day}" %>/<%= @comments.sample.created_at.month < 10 ? "0#{@comments.sample.created_at.month}" : "#{@comments.sample.created_at.month}" %>/<%= @comments.sample.created_at.year %></p>
+        <% else %>
+          <h6> Sois le premier à laisser ton avis sur ce  golf.</h6>
+        <% end %>
+      <div class="text-center">
+        <%= link_to "Laisser un commentaire", new_golf_golfcomment_path(@golf.id), class: "btn btn-sm btn-primary" %>
+      </div>
+=======
       <div class="comment-height" style="border:2px red solid;">
         <% if user_signed_in? %>
           <div class="text-center">
@@ -43,6 +57,7 @@
            <%= @comments.all.sample.user.first_name %>
           <%end %>
         </div>
+>>>>>>> new-development
       </div>
     </div>
   </div>
