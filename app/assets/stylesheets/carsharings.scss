@@ -13,14 +13,16 @@
   justify-content: center;
 }
 
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
 .card {
   margin-bottom: 40px;
   background-color: white;
 }
 
-.test {
-  margin-left: 7.5%;
-}
 
 .fa-star {
   color: gold;
