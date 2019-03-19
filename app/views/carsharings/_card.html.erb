@@ -39,10 +39,14 @@
         <h5><strong>Covoiturage complet</strong></h5>
       <% else %>
         <% if current_user %>
-          <% if carsharing.price != 0%>
-            <%= render 'carsharings/stripe', carsharing: carsharing %>
+          <% if current_user.id == carsharing.driver.id %>
+            <h5><strong>Je suis le conducteur</strong></h5>
           <% else %>
-            <%= link_to "Rejoindre le trajet (Gratuit)", carsharing_passengers_path(carsharing.id), class:"btn btn-outline-primary center", method: "post" %>
+            <% if carsharing.price != 0%>
+              <%= render 'carsharings/stripe', carsharing: carsharing %>
+            <% else %>
+              <%= link_to "Rejoindre le trajet (Gratuit)", carsharing_passengers_path(carsharing.id), class:"btn btn-outline-primary center", method: "post" %>
+            <% end %>
           <% end %>
         <% else %>
           <%= link_to "Rejoindre le trajet (#{carsharing.price == 0 ? "Gratuit" : "#{carsharing.price} €"})", new_user_session_path, class:"btn btn-outline-primary center" %>
@@ -52,4 +56,3 @@
    </div>
   </div>
 </div>
-
