@@ -1,4 +1,9 @@
 <% @carsharing.each do |carsharing| %>
+  <% if %>
+
+  <% else %>
+    
+  <% end %>
   <% if carsharing.driver_id == @user.id && passenger_of_a_carsharing(carsharing.id).count != 0%>
     <div class="row gutter-1">
       <div class="col-12">

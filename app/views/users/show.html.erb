@@ -28,7 +28,11 @@
           <div class="row align-items-center">
             <div class="col-md-8">
               <h3 class="mb-0"> <%= @user.first_name %> <%= @user.last_name %> </h3>
-              <span class="text-muted"><i class="fas fa-star"></i> <%= average_grade_by_driver(params[:id]) %> - <%= reviews_nb_by_driver(params[:id]) %> avis</span>
+              <% if reviews_nb_by_driver(params[:id]) == 0 %>
+                <span class="text-muted"><i class="fas fa-star"></i> Aucun avis</span>
+              <% else %>
+                <span class="text-muted"><i class="fas fa-star"></i> <%= average_grade_by_driver(params[:id]) %> - <%= reviews_nb_by_driver(params[:id]) %> avis</span>
+              <% end %>
             </div>
           </div>
         </div>
@@ -46,7 +50,9 @@
           <% if user_signed_in? && current_user.id == @user.id %>
             <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-4">Conversations</a>
           <% end %>
-          <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-3">Avis</a>
+          <% if reviews_nb_by_driver(params[:id]) != 0 %>
+            <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-3">Avis</a>
+          <% end%>
         </div>
       </div>
     </div>
@@ -79,7 +85,6 @@
         </div>
       </div>   
       <!-- Conversations -->
-    <% if user_signed_in? && current_user.id == @user.id %>
       <div class="tab-pane" id="demo-2-4" role="tabpanel" aria-labelledby="demo-2-2">          
         <div class="row justify-content-center" style="padding-top:0;">
           <div class="col-md-10 col-lg-8">
@@ -88,7 +93,6 @@
           </div>
         </div>
       </div> 
-    <% end %>   
     </div>
   </div>
 </div>
