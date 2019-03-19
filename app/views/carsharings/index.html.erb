@@ -18,11 +18,16 @@
   </div>
   <br>
   <br>
-  <div class="flex-center">
-    <% @carsharing.each do |carsharing| %>
-      <%if carsharing.validated%>
-        <%= render 'card', carsharing: carsharing %>
-      <%end%>
-    <% end %>
+  <% if @carsharing.count == 0 %>
+    Il n'y a pas encore de covoiturages de proposés
+  <% else %>
+    <div class="flex-center">
+      <% @carsharing.each do |carsharing| %>
+        <%if carsharing.validated%>
+          <%= render 'card', carsharing: carsharing %>
+        <%end%>
+      <% end %>
+    </div>
+  <% end %>
   </div>
 </div>
