@@ -12,7 +12,7 @@
 
 #### Le constat
 
-Etre golfeur à Paris, c'est bien mais aux dernière nouvelles, il y a pas de golf accessible en métro.
+Etre golfeur à Paris, c'est bien mais aux dernière nouvelles, il n'y a pas de golf accessible en métro.
 
 #### L'objectif
 
@@ -24,8 +24,23 @@ Etre golfeur à Paris, c'est bien mais aux dernière nouvelles, il y a pas de go
 
     * Les golfeurs avec voiture emmènent ceux sans voitures. D'une pierre deux coups. Tu peux dorénavant aller jouer et argrandir ta communauté de golfeurs.
 
+    --------------
 
-  Prêt à découvrir le service ? rendez-vous sur [19ème Trou](https://dixneuvieme-golf.herokuapp.com/) !
+#### Les Features 
+
+
+Fonctionnalité | Actions |
+:---: | :---: 
+*Mailer* | `Envoi d'email à l'inscription, mot passe oublié, rejoindre un covoiturage, lorsqu'un passager rejoint le covoiturage` | 
+*Devise* | `Gestion des utilisateurs` |
+*Activestorage* | `Gestion des photos de profil et des photos de golf` |
+*Interface Admin* | `Validation des golfs, gestion de la base de donnée des golfs, gestion des utilisateurs` |
+*Stripe* | `Paiement et validation pour rejoindre un covoiturage` |
+*Message privé* | `Fil de conversation sur le compte utilisateur (ajax)` |
+
+
+
+Prêt à découvrir le service ? rendez-vous sur [19ème Trou](https://dixneuvieme-golf.herokuapp.com/) !
 
 
 
