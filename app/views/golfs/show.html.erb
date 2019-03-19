@@ -21,7 +21,11 @@
   </div>
   <div class="flex">
     <div class="col-md-6" style="padding-left:10px;">
+    <% if @user.avatar.attached? %>
       <%= image_tag @golf.golf_image, alt: 'IMAGE', style: "height: 400px; width: 700px;" %>
+    <% else %>
+      <%= image_tag "golf-de-sperone-bonifacio-vuedrone-corse.jpg", style: "height: 400px; width: 700px;" %>
+    <% end %>
     </div>
     <div class="col-md-6" style="padding-top:40px;">
       <div class="description-height" style="overflow:scroll;">

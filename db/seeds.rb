@@ -7,26 +7,26 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Create cities
-#City.create!(name: "Paris Ier");
-#City.create!(name: "Paris IIème");
-#City.create!(name: "Paris IIIème");
-#City.create!(name: "Paris IVème");
-#City.create!(name: "Paris Vème");
-#City.create!(name: "Paris VIème");
-#City.create!(name: "Paris VIIème");
-#City.create!(name: "Paris VIIIème");
-#City.create!(name: "Paris IXème");
-#City.create!(name: "Paris Xème");
-#City.create!(name: "Paris XIème");
-#City.create!(name: "Paris XIIème");
-#City.create!(name: "Paris XIIIème");
-#City.create!(name: "Paris XIVème");
-#City.create!(name: "Paris XVème");
-#City.create!(name: "Paris XVIème");
-#City.create!(name: "Paris XVIIème");
-#City.create!(name: "Paris XVIIIème");
-#City.create!(name: "Paris XIXème");
-#City.create!(name: "Paris XXème");
+City.create!(name: "Paris Ier");
+City.create!(name: "Paris IIème");
+City.create!(name: "Paris IIIème");
+City.create!(name: "Paris IVème");
+City.create!(name: "Paris Vème");
+City.create!(name: "Paris VIème");
+City.create!(name: "Paris VIIème");
+City.create!(name: "Paris VIIIème");
+City.create!(name: "Paris IXème");
+City.create!(name: "Paris Xème");
+City.create!(name: "Paris XIème");
+City.create!(name: "Paris XIIème");
+City.create!(name: "Paris XIIIème");
+City.create!(name: "Paris XIVème");
+City.create!(name: "Paris XVème");
+City.create!(name: "Paris XVIème");
+City.create!(name: "Paris XVIIème");
+City.create!(name: "Paris XVIIIème");
+City.create!(name: "Paris XIXème");
+City.create!(name: "Paris XXème");
 
 
 #Create golfs
