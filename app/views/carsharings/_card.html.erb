@@ -13,7 +13,11 @@
       </div>
     </div>
     <div class="flex-center" style="margin-top:20px; margin-bottom:15px;">
-      <%= image_tag "profile-pic-test.jpg", class: "avatar" %>
+      <% if current_user.avatar.attached? %>
+        <%= image_tag current_user.avatar, class: "avatar" %>
+      <% else %>
+        <%= image_tag "profile-pic-test.jpg", class: "avatar" %>
+      <% end %>
     </div>
     <div class="flex-center">
       <% if reviews_nb_by_driver(carsharing.driver.id) == 0 %>
@@ -31,14 +35,18 @@
     <p class="card-title mb-0"> <%= carsharing.description %> </p>
     <hr class="w-25" style="margin-top:15px; margin-bottom:15px;">
     <div class="flex-center">
-      <% if current_user %>
-        <% if carsharing.price != 0%>
-          <%= render 'carsharings/stripe', carsharing: carsharing %>
-        <% else %>
-          <%= link_to "Rejoindre le trajet (Gratuit)", carsharing_passengers_path(carsharing.id), class:"btn btn-outline-primary center", method: "post" %>
-        <% end %>
+      <% if carsharing.places - passengers_booked(carsharing.id) <= 0 %>
+        <h5><strong>Covoiturage complet</strong></h5>
       <% else %>
-        <%= link_to "Rejoindre le trajet (#{carsharing.price == 0 ? "Gratuit" : "#{carsharing.price} €"})", new_user_session_path, class:"btn btn-outline-primary center" %>
+        <% if current_user %>
+          <% if carsharing.price != 0%>
+            <%= render 'carsharings/stripe', carsharing: carsharing %>
+          <% else %>
+            <%= link_to "Rejoindre le trajet (Gratuit)", carsharing_passengers_path(carsharing.id), class:"btn btn-outline-primary center", method: "post" %>
+          <% end %>
+        <% else %>
+          <%= link_to "Rejoindre le trajet (#{carsharing.price == 0 ? "Gratuit" : "#{carsharing.price} €"})", new_user_session_path, class:"btn btn-outline-primary center" %>
+        <% end %>
       <% end %>
     </div>
    </div>
