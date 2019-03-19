@@ -3,7 +3,6 @@ class GolfsController < ApplicationController
   
   def index
     @golfs = Golf.all
-    @golfcomments = Golfcomment.all
   end
   
   def show
