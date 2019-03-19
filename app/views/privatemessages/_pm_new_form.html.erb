@@ -1,11 +1,22 @@
-<%= form_tag privatemessages_path(current_user), method: "post" do %>
-  <div class="row">
-    <div class="col-md-6">
-      <p>Destinataire: </p>
-        <%= collection_select :recipient, :id, User.all, :id, :first_name %>
-      <p>Contenu: </p>
-        <%= text_field_tag 'content', "", class: 'form-control' %>
-        <%= submit_tag "Envoyer", class: "btn btn-lg btn-primary btn-block" %>
+<div class='bg-gradient'>
+  <div class="container">
+    <div class="row" style="padding-top:0;">
+      <div class="col">
+        <%= form_tag privatemessages_path(current_user), method: "post" do %>
+          <div class="form-row mb-1 flex-center">
+            <div class="col-md-7">
+              <%= label_tag 'Destinataire*' %>
+              <%= collection_select :recipient, :id, User.all, :id, :first_name %>
+              <%= text_area_tag 'content', nil ,class: 'form-control', rows: '6', placeholder: 'Contenu du message* (20 caractères minimum)' %>            
+            </div>
+          </div>
+          <div class="form-row mt-12">
+            <div class='col flex-center'>
+              <%= submit_tag "Envoyer", class: "btn btn-primary px-5" %>
+            </div> 
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
-<% end %>
+   </div>
+</div>

@@ -25,6 +25,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <%= link_to "Mon profil", user_path(current_user), class: "dropdown-item" %>
+              <%= link_to "Editer mon profil", edit_user_registration_path(current_user), class: "dropdown-item" %>
               <% if current_user.is_admin %>
                 <%= link_to "Gestion administrateur", admin_root_path, class: "dropdown-item" %>
               <% end %>
