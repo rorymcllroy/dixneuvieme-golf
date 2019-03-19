@@ -12,7 +12,7 @@ class Passenger < ApplicationRecord
     PassengerMailer.new_reservation_passenger_email(self).deliver_now
   end
 
-  def carsharing_review_email_send 
+  def carsharing_review_email_send
     PassengerMailer.carsharing_review_email(self).deliver_now
   end
 

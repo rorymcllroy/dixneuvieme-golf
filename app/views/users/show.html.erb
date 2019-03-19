@@ -28,7 +28,7 @@
           <div class="row align-items-center">
             <div class="col-md-8">
               <h3 class="mb-0"> <%= @user.first_name %> <%= @user.last_name %> </h3>
-              <span class="text-muted"><i class="fas fa-star"></i> 4.5 - 5 avis</span>
+              <span class="text-muted"><i class="fas fa-star"></i> <%= average_grade_by_driver(params[:id]) %> - <%= reviews_nb_by_driver(params[:id]) %> avis</span>
             </div>
           </div>
         </div>

@@ -5,21 +5,21 @@
         <%= form_tag carsharings_path, method: "post" do %>
           <div class="form-row mb-1 flex-center">
             <div class="col-md-7">
-              <%= label_tag 'Golf' %>
+              <%= label_tag 'Golf*' %>
               <%= select_tag(:golf_id, options_for_select(Golf.pluck(:name, :id), target_blank: true )) %>
               <br>
-              <%= label_tag 'Départ' %>
+              <%= label_tag 'Départ*' %>
               <%= select_tag(:city_id, options_for_select(City.pluck(:name, :id), target_blank: true )) %>
               <br>
-              <%= label_tag 'Nombres de places' %>
+              <%= label_tag 'Nombres de places*' %>
               <%= select_tag(:place, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4]])) %>
               <br>
-              <%= label_tag 'Prix' %>
+              <%= label_tag 'Prix*' %>
               <%= select_tag(:price, options_for_select([['Gratuit', 0], ['5€', 5], ['10€', 10], ['15€', 15], ['20€', 20]])) %>
               <br>
-              <%= label_tag 'Jour et heure du départ' %>
+              <%= label_tag 'Jour et heure du départ* (format: jj/mm/aaaa hh:mm)' %>
               <%= datetime_local_field_tag 'start_date', "" , class: 'form-control form-control-minimal', placeholder: 'Date'%>
-              <%= text_area_tag 'description', nil ,class: 'form-control', rows: '6', placeholder: 'Description (20 caractères minimum)' %>            
+              <%= text_area_tag 'description', nil ,class: 'form-control', rows: '6', placeholder: 'Description* (20 caractères minimum)' %>            
             </div>
           </div>
           <div class="form-row mt-12">
