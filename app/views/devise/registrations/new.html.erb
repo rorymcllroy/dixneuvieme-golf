@@ -12,15 +12,15 @@
           <div class="form-row mb-1 flex-center">
             <%= render "devise/shared/error_messages", resource: resource %>
             <div class="col-md-7">
-              <%= f.text_field :first_name, class: 'form-control form-control-minimal', placeholder: 'Prénom' %>
-              <%= f.text_field :last_name, class: 'form-control form-control-minimal', placeholder: 'Nom' %>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-minimal', placeholder: 'Email' %>
-              <%= f.password_field :password, autocomplete: "new-password", class: 'form-control form-control-minimal', placeholder: 'Mot de passe (6 caractères minimum)' %>
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control form-control-minimal', placeholder: 'Confirmer le mot de passe' %>
-              <%= f.label 'Index (niveau de golf)'%>
+              <%= f.text_field :first_name, class: 'form-control form-control-minimal', placeholder: 'Prénom *' %>
+              <%= f.text_field :last_name, class: 'form-control form-control-minimal', placeholder: 'Nom *' %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-minimal', placeholder: 'Email *' %>
+              <%= f.password_field :password, autocomplete: "new-password", class: 'form-control form-control-minimal', placeholder: 'Mot de passe (6 caractères minimum) *' %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control form-control-minimal', placeholder: 'Confirmer le mot de passe *' %>
+              <%= f.label 'Index (niveau de golf) *'%>
               <%= f.select(:golf_level, options_for_select([["Entre 0 et 5", "Entre 0 et 5"], ["Entre 6 et 15", "Entre 6 et 15"], ["Entre 16 et 30", "Entre 16 et 30"], ["30+", "30+"]])) %>
               <br>
-              <%= f.label 'Ville'%>
+              <%= f.label 'Ville *'%>
               <%= f.select(:city_id, options_for_select(City.pluck(:name, :id), target_blank: true )) %>
               <%= f.text_area :description, class: 'form-control', rows: "6", placeholder: 'Description (20 caractères minimum)'%>
               <%= f.label 'Photo de profil'%>
@@ -37,5 +37,3 @@
     </div>
   </div>
 </section>
-
-
