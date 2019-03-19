@@ -9,10 +9,10 @@
     </a>
     <div class="card-body">
       <h5 class="card-title"><%= link_to "#{golf.name}", golf_path(golf.id) %></h5>
-      <% if @golfcomments.where(golf_id: golf.id).count == 0 %>
+      <% if comments_by_golf(golf.id).count == 0 %>
         <p class="card-title"> <%= golf.course_type %> | Aucun avis </p>
       <% else %>
-        <p class="card-title"> <%= golf.course_type %> | <i class="fas fa-star"></i> <%= @golfcomments.where(golf_id: golf.id).sum(:grade) / @golfcomments.where(golf_id: golf.id).count %> - <%= @golfcomments.where(golf_id: golf.id).count %> avis </p>
+        <p class="card-title"> <%= golf.course_type %> | <i class="fas fa-star"></i> <%= comments_by_golf(golf.id).sum(:grade) / comments_by_golf(golf.id).count %> - <%= comments_by_golf(golf.id).count %> avis </p>
       <% end %>
     </div>
   </div>
