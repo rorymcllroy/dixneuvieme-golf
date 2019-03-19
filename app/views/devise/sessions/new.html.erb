@@ -29,7 +29,8 @@
           <div class="form-row mt-3">
             <div class='col'>
               <%= f.submit "Connexion", class: 'btn btn-primary px-5' %>
-            </div> 
+               <%= link_to 'Inscription', new_user_registration_path, class: 'btn btn-outline-primary' %>
+            </div>
           </div>
         <% end %>
       </div>

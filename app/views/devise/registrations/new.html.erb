@@ -17,7 +17,7 @@
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-minimal', placeholder: 'Email' %>
               <%= f.password_field :password, autocomplete: "new-password", class: 'form-control form-control-minimal', placeholder: 'Mot de passe (6 caractères minimum)' %>
               <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control form-control-minimal', placeholder: 'Confirmer le mot de passe' %>
-              <%= f.label 'Index'%>
+              <%= f.label 'Index (niveau de golf)'%>
               <%= f.select(:golf_level, options_for_select([["Entre 0 et 5", "Entre 0 et 5"], ["Entre 6 et 15", "Entre 6 et 15"], ["Entre 16 et 30", "Entre 16 et 30"], ["30+", "30+"]])) %>
               <br>
               <%= f.label 'Ville'%>
