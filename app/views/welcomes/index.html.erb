@@ -42,12 +42,9 @@
   </div>    
 </div>
 <!-- Map -->
-<section class="py-0">
   <div class="map-flex bg-gradient-2">
     <div id="map" class="vh-80 map-width"></div>
   </div>
 
   <%= javascript_include_tag('map.js') %>
   <script async defer src=<%="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_API_KEY']}&callback=initMap"%> type="text/javascript"></script>
-
-</section>

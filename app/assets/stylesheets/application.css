@@ -45,10 +45,23 @@
   color: #00acee;
 }
 
-.flash{
+.Divalert, .Divheader {
+  position: absolute;	
+}
+.Divheader {
+  position: fixed;
+  top: 0;
+}
+.Divalert {
+  opacity: 0.70;
   width: 30%;
-  height: 10%;
-  margin-left: auto;
-  margin-right: 1%;
   margin-top: 5%;
+  position: fixed;
+  top: 0;
+  left: 65%;
+  z-index: 900;
+}
+
+.social-media{
+  padding-right: 26px !important;
 }
