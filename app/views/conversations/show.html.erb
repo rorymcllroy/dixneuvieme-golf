@@ -1,43 +1,41 @@
+<%= render 'carsharings/header_inner_pages' %>
 <!-- Page header -->
-<section class="page-header">
-  <div class="image image-overlay"></div>
+<section class="page-header bg-gradient-1">
   <div class="container">
-      <div class="col text-white text-shadow">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-12 text-center">
         <h2>Conversation entre <%= current_user[:first_name] %> et <%= user_by_id(params[:id]).first_name %></b></h2>
-    </div>
+      </div>
+    </div>    
   </div>
 </section>
 
-<!-- Message list -->
-    <section id="default" class="component">
-      <div class="tab-content" id="component-1">
-        <div class="tab-pane show active bg-light" id="component-1-1" role="tabpanel" aria-labelledby="component-1-1">
-          <div class="component-example">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-4">
-                <% Privatemessage.all.each.with_index do |pm, index| %>
-                 <% if (pm.recipient.id == current_user.id && pm.sender.id == user_by_id(params[:id]).id) || (pm.sender.id == current_user.id && pm.recipient.id == user_by_id(params[:id]).id) %>
-                    <% if (pm.sender.id == current_user.id)%>
-                      <%= render 'private_message_sender', pm: pm %>
-                    <% else %>
-                      <%= render 'private_message_recipient', pm: pm %>
-                    <%end%>
-                 <% end %>
-                <% end %>
-                </div>
-              </div>
-            </div>
+<!-- Content -->
+<div class="bg-gradient-2">
+    <div class="container">
+      <div class="row flex-center" style="padding-top:10px;">
+        <div class="col-6">
+          <div class="conversation-msg bg-white">
+            <% @private_message.each.with_index do |pm, index| %>
+              <% if (pm.recipient.id == current_user.id && pm.sender.id == user_by_id(params[:id]).id) || (pm.sender.id == current_user.id && pm.recipient.id == user_by_id(params[:id]).id) %>
+                <% if (pm.sender.id == current_user.id)%>
+                  <%= render 'private_message_sender', pm: pm %>
+                <% else %>
+                  <%= render 'private_message_recipient', pm: pm %>
+                <%end%>
+              <% end %>
+            <% end %>
           </div>
+          <hr class="w-25">
+          <%= form_tag(user_conversations_path(current_user), method: :post, remote: true, id: 'pmForm') do %>
+            <div class='text-center'>
+              <%= hidden_field_tag(:authenticity_token, form_authenticity_token)%>
+              <%= hidden_field_tag(:recipient, user_by_id(params[:id]).id) %>
+              <%= text_area_tag(:content, nil ,placeholder: 'Ton message', rows:"1", class: 'form-control form-control-minimal text-center text-area-message') %>
+              <%= submit_tag('Envoyer', class: 'btn btn-outline-primary px-5')%>
+            </div>
+          <%end%>
         </div>
       </div>
-    </section>
-  <%= form_tag(user_conversations_path(current_user), method: :post, remote: true, id: 'pmForm') do %>
-    <div class='text-center'>
-      <%= hidden_field_tag(:authenticity_token, form_authenticity_token)%>
-      <%= hidden_field_tag(:recipient, user_by_id(params[:id]).id) %>
-      <%= text_area_tag(:content, nil ,placeholder: 'Votre message', class: 'form-control form-control-minimal text-center') %>
-      <%= submit_tag('Envoyer', class: 'btn btn-outline-primary px-5')%>
     </div>
-  <%end%>
-  
+</div>

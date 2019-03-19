@@ -3,7 +3,7 @@
       <div class="container">
         <div class="row">
           <div class="col text-center">
-            <h2>Golfs <b>référencés</b></h2><br>
+            <h2><b>Liste des utilistateurs</b></h2><br>
             <%= link_to "Ajouter un Golf", new_admin_golf_path, class: "btn btn-secondary btn-rounded" %>
           </div> 
         </div>
@@ -15,20 +15,20 @@
               <table class="table table-lined">
                 <thead>
                   <tr>
-                    <th scope="col"><b>Name</b></th>
-                    <th scope="col"><b>Description</b></th>
-                    <th scope="col"><b>Price</b></th>
-                    <th scope="col"><b>Course type</b></th>
+                    <th scope="col"><b>Prénom</b></th>
+                    <th scope="col"><b>Nom</b></th>
+                    <th scope="col"><b>Email</b></th>
+                    <th scope="col"><b>Administrateur</b></th>
                     <th scope="col"><b>Detail</b></th>
                   </tr>
                 </thead>
                 <tbody>
-                <% @golfs.each do |i|%>
+                <% @users.each do |i|%>
                   <tr>
-                    <th scope="row"><%=i.name%></th>
-                    <td><%=i.description%></td>
-                    <td><%=i.price_range%></td>
-                    <td><%=i.course_type%></td>
+                    <th scope="row"><%=i.first_name%></th>
+                    <td><%=i.last_name%></td>
+                    <td><%=i.email%></td>
+                    <td><%=i.is_admin%></td>
                     <td>
                     <%= link_to '<i class="fas fa-eye fa-1x"></i>'.html_safe, golf_path(i), method: "get", class:""  %>
                     <%= link_to '<i class="fas fa-edit fa-1x"></i>'.html_safe, edit_admin_golf_path(i), method: "get", class:""  %>  

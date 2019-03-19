@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :carsharings, :golfs
+    resources :carsharings, :golfs, :users
     root 'admin#index'
   end
   
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :privatemessages
   resources :carsharings do 
     resources :passengers, only: [:new, :create, :index]
-    resources :carsharing_reviews, only: [:new, :create]
+    resources :carsharingreviews, only: [:new, :create]
   end
 end
 

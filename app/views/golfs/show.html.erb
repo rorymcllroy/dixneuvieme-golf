@@ -21,21 +21,27 @@
   </div>
   <div class="flex">
     <div class="col-md-6" style="padding-left:10px;">
-      <%= image_tag("golf-paris.jpg", class: "golf-image") %>
+      <%if @golf.golf_image.attached?%>
+        <%= image_tag @golf.golf_image, alt: 'IMAGE', style: "height: 400px; width: 700px;" %>
+      <%else%>
+        <p>=== Il n'y a pas encore d'image liée à ce golf ===</p>
+      <%end%>
     </div>
     <div class="col-md-6" style="padding-top:40px;">
-      <div class="description-height" style="border:2px red solid; overflow:scroll;">
+      <div class="description-height" style="overflow:scroll;">
         <p class="lead"><%= @golf.description %></p>
       </div>
       <hr class="w-25" style="margin-top:15px; margin-bottom:15px;">
-      <div class="comment-height" style="border:2px red solid;">
-        <div class="text-center">
-          <%= link_to "Laisser un commentaire", new_golf_golfcomment_path(@golf.id), class: "btn btn-sm btn-primary" %>
-        </div>
-        <div class="owl-carousel" data-items="[1,1]" data-autoplay="6000" data-loop="true" data-margin="50">   
-          <p><%= @comments.sample.content %></p>
-          <p><%= @comments.sample.user.first_name %></p>
-        </div>
+      <div class="comment-height">
+        <% if @comments.count > 0 %>
+          <p style="font-style: italic;"><%= @comment.content %></p>
+          <h6><i class="fas fa-star"></i> - <%= @comment.grade %> | <%= @comment.user.first_name %> <%= @comment.user.last_name %> - <%= @comment.created_at.day < 10  ? "0#{@comment.created_at.day}" : "#{@comment.created_at.day}" %>/<%= @comment.created_at.month < 10 ? "0#{@comment.created_at.month}" : "#{@comment.created_at.month}" %>/<%= @comment.created_at.year %></h6>
+        <% else %>
+          <h6> Sois le premier à laisser ton avis sur ce  golf.</h6>
+        <% end %>
+      <div class="text-center">
+        <%= link_to "Laisser un commentaire", new_golf_golfcomment_path(@golf.id), class: "btn btn-sm btn-primary" %>
+      </div>
       </div>
     </div>
   </div>

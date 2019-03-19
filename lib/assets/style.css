@@ -1346,7 +1346,8 @@ select.form-control[size], select.form-control[multiple] {
   height: auto; }
 
 textarea.form-control {
-  height: auto; }
+  height: auto;
+  width: 10px; }
 
 .form-group {
   margin-bottom: 1rem; }
@@ -8679,13 +8680,6 @@ a.text-rss:hover, a.text-rss:focus {
 .fw-20 {
   flex: 0 0 20% !important;
   width: 20% !important; }
-
-@font-face {
-  font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?q2xewv");
-  src: url("../fonts/icomoon.eot?q2xewv#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?q2xewv") format("truetype"), url("../fonts/icomoon.woff?q2xewv") format("woff"), url("../fonts/icomoon.svg?q2xewv#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal; }
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */

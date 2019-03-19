@@ -1,11 +1,19 @@
 <div class="col-md-6 col-lg-4">
   <div class="card card-minimal">
     <a href="" class="card-img-container">
-      <%= link_to image_tag("golf-de-sperone-bonifacio-vuedrone-corse.jpg", class: "card-img"), golf_path(golf.id) %>
+    <% if golf.golf_image.attached? %>
+     <%= link_to image_tag(golf.golf_image, style: "height: 230px; width: 400px;"), golf_path(golf.id) %>
+    <% else %>
+     <%= link_to image_tag("golf-de-sperone-bonifacio-vuedrone-corse.jpg", class: "card-img"), golf_path(golf.id) %>
+   <% end %>
     </a>
     <div class="card-body">
       <h5 class="card-title"><%= link_to "#{golf.name}", golf_path(golf.id) %></h5>
-      <p class="card-title"> <%= golf.course_type %> | <i class="fas fa-star"></i> 4.5 - 5 avis </p>
+      <% if comments_by_golf(golf.id).count == 0 %>
+        <p class="card-title"> <%= golf.course_type %> | Aucun avis </p>
+      <% else %>
+        <p class="card-title"> <%= golf.course_type %> | <i class="fas fa-star"></i> <%= comments_by_golf(golf.id).sum(:grade) / comments_by_golf(golf.id).count %> - <%= comments_by_golf(golf.id).count %> avis </p>
+      <% end %>
     </div>
   </div>
 </div>
