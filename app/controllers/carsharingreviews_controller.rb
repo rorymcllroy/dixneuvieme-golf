@@ -1,6 +1,7 @@
-class CarsharingReviewsController < ApplicationController
+class CarsharingreviewsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
   def new
+    @carsharing = Carsharing.find(params[:carsharing_id])
   end
   
   def create
