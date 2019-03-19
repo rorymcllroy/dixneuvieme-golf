@@ -7,7 +7,8 @@ class GolfsController < ApplicationController
   
   def show
     @golf= Golf.find(params[:id])
-    @comments= Golfcomment.all
+    @comments= Golfcomment.all.where(golf_id:@golf.id)
+    @comment= Golfcomment.all.where(golf_id:@golf.id).sample
   end
   
   def new

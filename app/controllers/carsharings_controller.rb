@@ -14,7 +14,7 @@ class CarsharingsController < ApplicationController
   end
   
   def create
-    @carsharing = Carsharing.new(driver_id: current_user.id, date: params[:start_date], places: params[:place], description: params[:description], price: params[:price], golf_id: params[:golf_id])
+    @carsharing = Carsharing.new(driver_id: current_user.id, date: params[:start_date], places: params[:place], description: params[:description], price: params[:price], golf_id: params[:golf_id], city_id: params[:city_id])
     if @carsharing.save! # save carsharing in the db
       redirect_to carsharings_path, :notice => "Nouveau covoiturage créé !"
     else
