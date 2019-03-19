@@ -1,8 +1,9 @@
-<%= render 'carsharings/header_inner_pages' %>
-<div class= "container my-5">
-    <div class="card portfolio-card portfolio-list">
-    
-        <div id="description_item" class="card-body">
+<div class='bg-gradient'>
+<div class="container">
+  <div class="row" style="padding-top:0;">
+    <div class="col">
+    <div class="form-row mb-1 flex-center">
+            <div class="col-md-7">
           
             <h2 class="h3 font-weight-bold block-title"> Covoiturage proposé par : <%= User.find(@carsharing.driver_id).first_name %></h2>
 
@@ -24,7 +25,10 @@
               <%= submit_tag "Refuser",  class: "btn btn-rounded btn-danger px-5" %>
               <% end %>
             </div>
-
-        </div>
+            </div>
+        </div>    
+     
+      </div>
     </div>
-  </div> 
+  </div>
+</div>

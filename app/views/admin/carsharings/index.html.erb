@@ -1,5 +1,5 @@
 <%= render 'carsharings/header_inner_pages' %>
-<!-- old version ><div class="content row justify-content-md-center">
+<div class="content row justify-content-md-center">
   <div class="card col-lg-10">
     <div class="card-body">
       <h1>Liste des Covoiturages</h1>
@@ -23,9 +23,9 @@
                   
                     <td><%= i.price %></td>
                     <td> <%= i.description %></td>
-                    <td><%= i.golf_id %></td>
+                    <td><%= Golf.find(i.golf_id).name%></td>
                     <td><%= i.places %></td>
-                    <td><%= i.driver_id %></td>
+                    <td><%= User.find(i.driver_id).first_name %></td>
                     <td><%=i.validated%></td>
                     <td>
                       <%= link_to '<i class="fas fa-eye fa-1x"></i>'.html_safe, admin_carsharing_path(i), method: "get", class:""  %>
@@ -39,7 +39,7 @@
     </div>
   </div>
 </div>
-<-->
+
 
 <section class="">
       <div class="container">
@@ -69,10 +69,11 @@
                 <% @carsharings.each do |i|%>
                   <tr>
                     <th scope="row"><%=i.id%></th>
+                    <td><%=i.price%></td>
                     <td><%=i.description%></td>
-                    <td><%=i.golf_id%></td>
+                    <td><%=Golf.find(i.golf_id).name%></td>
                     <td><%=i.places%></td>
-                    <td><%=i.driver_id%></td>
+                    <td><%=User.find(i.driver_id).first_name%></td>
                     <td><%=i.validated%></td>
 
                     <td>
