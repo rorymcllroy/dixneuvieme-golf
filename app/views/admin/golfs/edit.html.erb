@@ -1,39 +1,17 @@
-<section class='bg-light'>
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <br><br><br>
-      <%= form_tag url_for(action: 'update'), method: "patch", multipart: true do %>
-        <h1 class="h3 mb-3 font-weight-normal text-center">Modifier : <%= @golf.name %> </h1>
-        <p>Nom du Golf: </p>
-        <%= text_field_tag 'name', @golf.name, class: 'form-control' %>
-        <p>Golf type: </p>
-        <%= select_tag(:course_type, options_for_select([['9 trous', "9 trous"], ['9 trous compact', "9 trous compact"], ['18 trous', "18 trous"]])) %>
-        <p>Description: </p>
-        <%= text_area_tag 'description', @golf.description, class: 'form-control' %>
-        <p>Image: </p>
-        <%= file_field_tag :golf_image %>        
-        <p>Latitude: </p>
-        <%= text_field_tag 'latitude', @golf.lat, class: 'form-control' %>
-        <p>Longitude: </p>
-        <%= text_field_tag 'longitude', @golf.long, class: 'form-control' %>
-        <p>Prix (entre 1 et 4): </p>
-        <%= number_field_tag 'price', @golf.price_range, class: 'form-control', in: 1..4, step: 1 %>
-        <p>Par: </p>
-        <%= text_field_tag 'par', @golf.par, class: 'form-control' %>
-        <p>Longueur du parcours: </p>
-        <%= text_field_tag 'length', @golf.length, class: 'form-control' %>
-        <p>Site web: </p>
-        <%= text_field_tag 'website', @golf.website, class: 'form-control' %>
-        <br>
-        <%= submit_tag "Modifier",  class: "btn btn-primary px-5" %>
-      <% end %>
-    </div>
-  </div>
-</div>
 
+<!-- Page header -->
+<section class="page-header bg-gradient-1">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-12 text-center">
+        <h2>Modifier : <%= @golf.name%></b></h2>
+      </div>
+    </div>    
+  </div>
+</section>
+
+<%= render 'golf_edit_form' %>
 
 <div class="btn btn-light center">
     <%= link_to "Back", :back %>
 </div>
-</section>
