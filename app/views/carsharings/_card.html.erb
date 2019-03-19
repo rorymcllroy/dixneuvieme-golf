@@ -32,7 +32,11 @@
     <hr class="w-25" style="margin-top:15px; margin-bottom:15px;">
     <div class="flex-center">
       <% if current_user %>
-        <%= render 'carsharings/stripe', carsharing: carsharing %>
+        <% if carsharing.price != 0%>
+          <%= render 'carsharings/stripe', carsharing: carsharing %>
+        <% else %>
+          <%= link_to "Rejoindre le trajet (Gratuit)", carsharing_passengers_path(carsharing.id), class:"btn btn-outline-primary center", method: "post" %>
+        <% end %>
       <% else %>
         <%= link_to "Rejoindre le trajet (#{carsharing.price == 0 ? "Gratuit" : "#{carsharing.price} €"})", new_user_session_path, class:"btn btn-outline-primary center" %>
       <% end %>

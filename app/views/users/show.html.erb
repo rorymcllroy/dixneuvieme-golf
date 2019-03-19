@@ -46,7 +46,9 @@
       <div class="col col-md-10 col-lg-8">
         <div class="nav nav-tabs mb-1">
           <a class="nav-item nav-link active" data-toggle="tab" href="#demo-2-1">Profil</a>
-          <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-2">Covoiturages</a>
+          <% if @carsharing.where(driver_id: params[:id]).count != 0 %>
+            <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-2">Covoiturages</a>
+          <% end%>
           <% if user_signed_in? && current_user.id == @user.id %>
             <a class="nav-item nav-link" data-toggle="tab" href="#demo-2-4">Conversations</a>
           <% end %>
