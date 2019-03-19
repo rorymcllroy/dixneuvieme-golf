@@ -3,7 +3,7 @@ class GolfcommentsController < ApplicationController
   #   before_action :author_comment, only: [:edit, :update, :destroy]
   
   def new
-    
+    @golf = Golf.find(params[:golf_id])
   end
   
   def create

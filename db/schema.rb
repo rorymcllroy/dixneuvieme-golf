@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_18_185102) do
+ActiveRecord::Schema.define(version: 2019_03_19_113502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,11 +43,11 @@ ActiveRecord::Schema.define(version: 2019_03_18_185102) do
 
   create_table "carsharingreviews", force: :cascade do |t|
     t.text "content"
-    t.string "grade"
     t.bigint "carsharing_id"
     t.bigint "passenger_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "grade"
     t.index ["carsharing_id"], name: "index_carsharingreviews_on_carsharing_id"
     t.index ["passenger_id"], name: "index_carsharingreviews_on_passenger_id"
   end
@@ -76,11 +76,11 @@ ActiveRecord::Schema.define(version: 2019_03_18_185102) do
 
   create_table "golfcomments", force: :cascade do |t|
     t.text "content"
-    t.string "grade"
     t.bigint "golf_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "grade"
     t.index ["golf_id"], name: "index_golfcomments_on_golf_id"
     t.index ["user_id"], name: "index_golfcomments_on_user_id"
   end

@@ -1,18 +1,14 @@
 <%= render 'carsharings/header_inner_pages' %>
-<!-- Page header -->
-<section class="page-header">
-  <div class="image image-overlay"></div>
+<section class='bg-gradient'>
   <div class="container">
-      <div class="col text-white text-shadow">
-        <h2>Mon avis sur le golf de Gonesse</b></h2>
+    <div class="row sign-up">
+      <div class='col-md-12'>
+        <h2>Mon avis sur le <%= @golf.name %></h2>
+      </div>
     </div>
+    <%= render 'comment_new_form' %>
   </div>
 </section>
-
-<%= render 'comment_new_form' %>
-
-  
-
 
 
 

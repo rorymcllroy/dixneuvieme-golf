@@ -12,11 +12,15 @@
         <i class="fas fa-golf-ball fa-lg"></i> <%= link_to "#{carsharing.golf.name}", golf_path(carsharing.golf.id) %>
       </div>
     </div>
-    <div class="flex-center" style="margin-top:10px;">
+    <div class="flex-center" style="margin-top:20px; margin-bottom:15px;">
       <%= image_tag "profile-pic-test.jpg", class: "avatar" %>
     </div>
     <div class="flex-center">
-      <h5 class="eyebrow mb-1" style="margin-top:10px;"><%= carsharing.driver.first_name %> <%= carsharing.driver.last_name %> <i class="fas fa-star"></i> 4.5 - 5 avis </h5>
+      <% if reviews_nb_by_driver(carsharing.driver.id) == 0 %>
+        <h5 class="eyebrow mb-1" style="margin-top:10px;"><%= carsharing.driver.first_name %> <%= carsharing.driver.last_name %> | Aucun avis </h5>
+      <% else %>
+        <h5 class="eyebrow mb-1" style="margin-top:10px;"><%= carsharing.driver.first_name %> <%= carsharing.driver.last_name %> <i class="fas fa-star"></i> <%= average_grade_by_driver(carsharing.driver.id) %> - <%= reviews_nb_by_driver(carsharing.driver.id) %> avis </h5>
+      <% end %>
     </div>
     <div class="flex-center">
       <p> <%= link_to "Voir le profil >", user_path(carsharing.driver.id) %> </p>
