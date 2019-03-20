@@ -25,13 +25,13 @@ RSpec.describe GolfsController, type: :controller do
   describe "GET show" do
     it "assigns @golfs" do
       # création d'une instance
-      golf = Golf.create
+      @golf = Golf.create
   
       # on va sur show
-      get :show, id: golfs.id
+      get :show, id: golfs
   
       # @user doit être user
-      expect(assigns(:golf)).to eq(golf)
+      expect(assigns(:golfs)).to eq(golf)
     end
   
     it "renders the show template" do
@@ -42,7 +42,5 @@ RSpec.describe GolfsController, type: :controller do
       expect(response).to render_template("show")
     end
   end
-
-
 
 end
