@@ -12,5 +12,5 @@
         data-email="<%= current_user.email %>"
         data-locale="auto">
     </script>
-    <button class="btn btn-outline-primary center" type="submit">Rejoindre le trajet (<%= carsharing.price == 0 ? "Gratuit" : "#{carsharing.price} €" %>)</button><br>
+    <button class="btn btn-secondary btn-sm" type="submit">Rejoindre le trajet (<%= carsharing.price == 0 ? "Gratuit" : "#{carsharing.price} €" %>)</button><br>
 <% end %>
