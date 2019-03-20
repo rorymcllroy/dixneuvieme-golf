@@ -91,7 +91,9 @@
         <div class="row justify-content-center" style="padding-top:0;">
           <div class="col-md-10 col-lg-8">
             <%= render 'conversation_list' %>
-            <%= link_to "Nouvelle conversation", new_privatemessage_path, class: "btn btn-outline-primary btn-rounded" %>
+            <div class="text-center">
+              <%= link_to "Nouvelle conversation", new_privatemessage_path, class: "btn btn-primary btn-sm btn-rounded" %>
+            </div>
           </div>
         </div>
       </div> 
