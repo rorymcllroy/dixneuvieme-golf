@@ -1263,7 +1263,7 @@ pre {
   color: #151515;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #A5CCD1;
+  border: 1px solid #80C27D;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media screen and (prefers-reduced-motion: reduce) {
@@ -1284,7 +1284,7 @@ pre {
   .form-control:disabled, .form-control[readonly] {
     background-color: rgba(0, 0, 0, 0.1);
     opacity: 1; }
-
+    
 select.form-control:focus::-ms-value {
   color: #151515;
   background-color: #fff; }
@@ -2191,7 +2191,7 @@ input[type="button"].btn-block {
   height: 0;
   margin: 0.5rem 0;
   overflow: hidden;
-  border-top: 1px solid #A5CCD1; }
+  border-top: 1px solid rgb(201,201,201); }
 
 .dropdown-item {
   display: block;
@@ -14009,11 +14009,12 @@ label {
   background: transparent;
   border-radius: 0;
   border: 0;
-  border-bottom: 1px solid #A5CCD1; }
+  border-bottom: 1px solid #80C27D; }
   .form-control-minimal::placeholder {
     color: #999; }
   .form-control-minimal:focus {
-    background: transparent; }
+    background: transparent;
+    border-bottom: 1px solid #73AE70; }
 
 .text-white .form-control {
   border-color: transparent;
