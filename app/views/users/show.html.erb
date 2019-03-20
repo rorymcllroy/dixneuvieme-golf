@@ -18,7 +18,7 @@
 <div class="bg-gradient-2">
   <div class="btn center">
     <% if current_user && current_user.is_admin%>
-      <%= link_to "Accueil administrateur", admin_root_path, class: "btn btn-sm btn-secondary" %>
+      <%= link_to "Retour administrateur", admin_users_path, class: "btn btn-sm btn-secondary" %>
     <% end %>
   </div>
   <br>
