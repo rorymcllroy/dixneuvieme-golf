@@ -13,7 +13,7 @@ class Passenger < ApplicationRecord
   end
 
   def carsharing_review_email_send
-    PassengerMailer.carsharing_review_email(self).deliver_later(wait: 2.minutes)
+    PassengerMailer.carsharing_review_email(self).deliver_later(wait:  Carsharing.find(Passenger.last.carsharing_id).date - date.now.seconds)
   end
 
   belongs_to :passenger, class_name: "User"
