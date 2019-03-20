@@ -2,9 +2,26 @@ require 'rails_helper'
 
 RSpec.describe GolfsController, type: :controller do
   
+  let(:valid_attributes) {
+    skip("Add a hash of attributes valid for your model")
+  }
+
+  let(:invalid_attributes) {
+    skip("Add a hash of attributes invalid for your model")
+  }
+
+  let(:valid_session) { {} }
+
+
   describe "GET #index" do
     subject { get :index }
   
+    it "returns a success response" do
+      Golf.create! valid_attributes
+      get :index, params: {}, session: valid_session
+      expect(response).to be_successful
+    end
+
     it "renders the index template" do
       expect(subject).to render_template(:index)
       expect(subject).to render_template("index")
@@ -22,25 +39,22 @@ RSpec.describe GolfsController, type: :controller do
 
   end
 
-  describe "GET show" do
-    it "assigns @golfs" do
-      # création d'une instance
-      @golf = Golf.create
-  
-      # on va sur show
-      get :show, id: golfs
-  
-      # @user doit être user
-      expect(assigns(:golfs)).to eq(golf)
+  describe "GET #show" do
+
+    it "returns a success response" do
+      golf = Golf.create! valid_attributes
+      get :show, params: {id: golf.to_param}, session: valid_session
+      expect(response).to be_successful
     end
-  
-    it "renders the show template" do
-      # va sur show
-      get :show
-  
-      # on doit rediriger vers show
-      expect(response).to render_template("show")
-    end
+
   end
+
+  describe "GET #edit" do
+  it "returns a success response" do
+    golf = Golf.create! valid_attributes
+    get :edit, params: {id: golf.to_param}, session: valid_session
+    expect(response).to be_successful
+  end
+end
 
 end
