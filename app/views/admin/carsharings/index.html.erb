@@ -1,4 +1,6 @@
 <%= render 'carsharings/header_inner_pages' %>
+
+<!-- Old version>
 <div class="content row justify-content-md-center">
   <div class="card col-lg-10">
     <div class="card-body">
@@ -27,8 +29,8 @@
                     <td><%= i.places %></td>
                     <td><%= User.find(i.driver_id).first_name %></td>
                     <td><%=i.validated%></td>
-                    <td>
-                      <%= link_to '<i class="fas fa-eye fa-1x"></i>'.html_safe, admin_carsharing_path(i), method: "get", class:""  %>
+                    <td title= "Voir">
+                      <%= link_to '<i class="fas fa-eye fa-1x"></i>'.html_safe, admin_carsharing_path(i), method: "get", class:""%>
                     </td>
                   </tr>
                 <% end %>
@@ -39,7 +41,7 @@
     </div>
   </div>
 </div>
-
+<-->
 
 <section class="">
       <div class="container">
@@ -52,11 +54,11 @@
         </div>
         <div class="row">
           <div class="col">
-            <div class="table-responsive-md">
+            <div class="table-responsive-lg">
               <table class="table table-lined">
                 <thead>
                   <tr>
-                    <th><b>#</b></th>
+                    <th><b>#id</b></th>
                     <th scope="col"><b>Prix</b></th>
                     <th scope="col"><b>Description</b></th>
                     <th scope="col"><b>Golf</b></th>
@@ -76,8 +78,8 @@
                     <td><%=User.find(i.driver_id).first_name%></td>
                     <td><%=i.validated%></td>
 
-                    <td>
-                    <%= link_to '<i class="fas fa-eye fa-1x"></i>'.html_safe, admin_carsharing_path(i), method: "get", class:""  %>
+                    <td  title= "Voir">
+                    <%= link_to '<i class="fas fa-eye fa-1x"></i>'.html_safe, admin_carsharing_path(i), method: "get", class:"" %>
                     </td>  
                   </tr>
 
@@ -91,3 +93,7 @@
         </div>
       </div>
     </section>
+
+    <div class="btn center">
+    <%= link_to "Retour", admin_root_path %>
+    </div>

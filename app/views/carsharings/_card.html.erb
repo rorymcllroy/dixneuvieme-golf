@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="flex-center" style="margin-top:20px; margin-bottom:15px;">
-      <% if current_user.avatar.attached? %>
+      <% if current_user && current_user.avatar.attached? %>
         <%= image_tag current_user.avatar, class: "avatar" %>
       <% else %>
         <%= image_tag "profile-pic-test.jpg", class: "avatar" %>
@@ -45,11 +45,11 @@
             <% if carsharing.price != 0%>
               <%= render 'carsharings/stripe', carsharing: carsharing %>
             <% else %>
-              <%= link_to "Rejoindre le trajet (Gratuit)", carsharing_passengers_path(carsharing.id), class:"btn btn-outline-primary center", method: "post" %>
+              <%= link_to "Rejoindre le trajet (Gratuit)", carsharing_passengers_path(carsharing.id), class:"btn btn-secondary btn-sm center", method: "post" %>
             <% end %>
           <% end %>
         <% else %>
-          <%= link_to "Rejoindre le trajet (#{carsharing.price == 0 ? "Gratuit" : "#{carsharing.price} €"})", new_user_session_path, class:"btn btn-outline-primary center" %>
+          <%= link_to "Rejoindre le trajet (#{carsharing.price == 0 ? "Gratuit" : "#{carsharing.price} €"})", new_user_session_path, class:"btn btn-secondary btn-sm center" %>
         <% end %>
       <% end %>
     </div>
