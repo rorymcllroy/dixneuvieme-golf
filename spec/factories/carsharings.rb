@@ -6,5 +6,6 @@ FactoryBot.define do
     golf_id { FactoryBot.create(:golf).id }
     driver_id { FactoryBot.create(:user).id }
     date { DateTime.now + 30000}
+    city_id { FactoryBot.create(:city).id }
   end
 end
