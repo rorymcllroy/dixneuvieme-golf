@@ -11,51 +11,32 @@
 </section>
 
 
-  <div class="bg-gradient-2">
-    <div class="flex-center">
-      <div class="col-md-5">
-        <div class="card text-center">
-                            
-                          
-                          
-                            
-                                      <div class="card-body">            
-                                      <h3><span class="mr-3">Places disponibles : <%= @carsharing.places %> <i class="far fa-user"></i> </span></h3>
-                                
-                                  
-                                      <h3 class="h4 font-weight-light">Prix : <%= @carsharing.price %> €</h3>
-                                      <p class="text-muted">Description : <%= @carsharing.description %></p>
-                                      </div>
-                                      
-                                        <%= form_tag admin_carsharing_path(@carsharing.id), method: "PUT" do %>
-                                        <%= hidden_field_tag 'validation', true %>
-                                        <%= submit_tag "Valider",  class: "btn btn-rounded btn-success px-5 ", style: "margin-right :5px;" %>
-                                        <% end %>
+<div class="bg-gradient-2">
+  <div class="flex-center">
+    <div class="col-md-5">
+      <div class="card text-center">
+        <div class="card-body">            
+          <h3><span class="mr-3">Places disponibles : <%= @carsharing.places %> <i class="far fa-user"></i> </span></h3>
 
-                                        <%= form_tag admin_carsharing_path(@carsharing.id), method: "PUT" do %>
-                                        <%= hidden_field_tag 'validation', false %>
-                                        <%= submit_tag "Refuser",  class: "btn btn-rounded btn-danger px-5" %>
-                                        <% end %>
-        </div>
+          <h3 class="h4 font-weight-light">Prix : <%= @carsharing.price %> €</h3>
+          
+          <p class="text-muted">Description : <%= @carsharing.description %></p>
+        
+          <p><%= form_tag admin_carsharing_path(@carsharing.id), method: "PUT" do %>
+            <%= hidden_field_tag 'validation', true %>
+            <%= submit_tag "Valider",  class: "btn btn-rounded btn-success px-5 ", style: "margin-right :5px;" %>
+            <% end %>
+            
+          <%= form_tag admin_carsharing_path(@carsharing.id), method: "PUT" do %>
+              <%= hidden_field_tag 'validation', false %>
+              <%= submit_tag "Refuser",  class: "btn btn-rounded btn-danger px-5" %>
+              <% end %></p>
+        </div>    
       </div>
-    </div>  
-  </div>                                          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
+  </div>  
+</div>                                          
+ 
 <div class="btn center">
-    <%= link_to "Retour", :back %>
+  <%= link_to "Retour", :back %>
 </div>
