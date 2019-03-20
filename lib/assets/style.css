@@ -14072,7 +14072,7 @@ select {
   -moz-transition-delay: 0s;
   transition-delay: 0s;
   border-radius: 0.25rem;
-  border: 1px solid #A5CCD1;
+  border: 1px solid #80C27D;
   background-color: transparent;
   position: relative; }
   .selectric .label {
@@ -14227,7 +14227,7 @@ select {
       border-bottom-left-radius: 0.25rem;
       border-bottom-right-radius: 0.25rem; }
     .selectric-items li:not(:first-child) {
-      border-top: 1px solid #A5CCD1; }
+      border-top: 1px solid rgb(201,201,201); }
     .selectric-items li.selected:before, .selectric-items li.selected:hover:before {
       background: #73AE70; }
     .selectric-items li:hover {
