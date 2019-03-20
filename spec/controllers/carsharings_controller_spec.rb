@@ -1,7 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe CarsharingsController, type: :controller do
-    
+
+  let(:valid_attributes) {
+    skip("Add a hash of attributes valid for your model")
+  }
+
+  let(:invalid_attributes) {
+    skip("Add a hash of attributes invalid for your model")
+  }
+
+  let(:valid_session) { {} }
+  
   describe "GET #index" do
     subject { get :index }
 
@@ -18,14 +28,13 @@ RSpec.describe CarsharingsController, type: :controller do
     it "returns a 200 OK status" do
         get :index
         expect(response).to have_http_status(:ok)
-    end    
-  end
-
-  describe "GET new" do
-  it "renders the new template" do
-    get :new
-    expect(subject).to render_template(:new)
-  end
+    end
+    
+    it "returns a success response" do
+      Carsharing.create! valid_attributes
+      get :index, params: {}, session: valid_session
+      expect(response).to be_successful
+    end
   end
 
 end
