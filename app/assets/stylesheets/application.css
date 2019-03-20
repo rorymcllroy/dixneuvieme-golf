@@ -66,10 +66,25 @@
   padding-right: 10px !important;
 }
 
+<<<<<<< HEAD
 body {
   position: relative;
   margin: 0;
   height: 100vh;
+=======
+/* solve scrolling horizontaly pb */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* solve footer pb*/
+
+body {
+  position: relative;
+  margin: 0;
+  height: 100%;
+>>>>>>> new-development
 }
 
 footer {
@@ -78,7 +93,12 @@ footer {
   bottom: 0px;
 }
 
+<<<<<<< HEAD
 html, body {
   max-width: 100%;
   overflow-x: hidden;
+=======
+.bg-gradient {
+  min-height: 100%;
+>>>>>>> new-development
 }
