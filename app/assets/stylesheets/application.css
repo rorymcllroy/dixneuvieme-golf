@@ -65,3 +65,15 @@
 .social-media{
   padding-right: 10px !important;
 }
+
+body {
+  position: relative;
+  margin: 0;
+  height: 100vh;
+}
+
+footer {
+  
+  position: absolute;
+  bottom: 0px;
+}

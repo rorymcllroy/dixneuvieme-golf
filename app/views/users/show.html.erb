@@ -99,7 +99,9 @@
   </div>
   <div class="text-center">
     <br>
-    <%= link_to "Supprimer mon profil", user_path(current_user), class: "btn btn-sm btn-primary", :confirm => "Es-tu sûr?", method:"delete" %>
+    <% if current_user && current_user.id == params[:id].to_i %>
+      <%= link_to "Supprimer mon profil", user_path(current_user), class: "btn btn-sm btn-secondary", :confirm => "Es-tu sûr?", method:"delete" %>
+    <% end %>
   </div>
 </div>
 
