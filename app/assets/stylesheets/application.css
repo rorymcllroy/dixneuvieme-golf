@@ -65,3 +65,27 @@
 .social-media{
   padding-right: 10px !important;
 }
+
+/* solve scrolling horizontaly pb */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* solve footer pb*/
+
+body {
+  position: relative;
+  margin: 0;
+  height: 100%;
+}
+
+footer {
+  
+  position: absolute;
+  bottom: 0px;
+}
+
+.bg-gradient {
+  min-height: 100%;
+}
