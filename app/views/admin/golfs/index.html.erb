@@ -45,8 +45,54 @@
           </div>
         </div>
       </div>
-    </section>
+</section>
 
-    <div class="btn center">
-    <%= link_to "Retour", admin_root_path %>
+
+<section>
+    <div class="container">
+      <div class="row" style="margin-bottom:0;">
+        <div class="col text-center">
+          <h2>Golfs <b>référencés</b></h2><br>
+        </div> 
+      </div>
+      <div class="btn center">
+        <%= link_to "Accueil administrateur", admin_root_path, class: "btn btn-sm btn-secondary" %>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="table-responsive-lg">
+            <table class="table table-lined">
+              <thead>
+                <tr>
+                  <th style="width:7%; padding:0; text-align:center;" scope="col"><b>#id</b></th>
+                  <th style="width:20%; padding:0; text-align:center;" scope="col"><b>Nom</b></th>
+                  <th style="width:30%; padding:0; text-align:center;" scope="col"><b>Description</b></th>
+                  <th style="width:7%; padding:0; text-align:center;" scope="col"><b>Parcours</b></th>
+                  <th style="width:15%; padding:0; text-align:center;" scope="col"><b>Par</b></th>
+                  <th style="width:7%; padding:0; text-align:center;" scope="col"><b>Distance</b></th>
+                  <th style="width:7%; padding:0; text-align:center;" scope="col"><b>Action</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @golfs.each do |golf|%>
+                  <tr>
+                    <td style="padding:20px 10px; text-align:center;"><%=golf.id%></td>
+                    <td style="padding:20px 10px; text-align:center;"><%=golf.name%></td>
+                    <td style="padding:20px 10px;"><%=golf.description%></td>
+                    <td style="padding:20px 10px; text-align:center;"><%=golf.course_type%></td>
+                    <td style="padding:20px 10px; text-align:center;"><%=golf.par%></td>
+                    <td style="padding:20px 10px; text-align:center;"><%=golf.length%></td>
+                    <td title= "Validation" style="padding:20px 10px; text-align:center;">
+                      <span title= "Voir" ><%= link_to '<i class="fas fa-eye fa-1x" style="color:black;"></i>'.html_safe, golf_path(golf)%></span>
+                      <span title= "Editer" ><%= link_to '<i class="fas fa-edit fa-1x" style="color:black;"></i>'.html_safe, edit_admin_golf_path(golf)%></span>
+                      <span title= "Supprimer" ><%= link_to '<i class="fas fa-trash-alt fa-1x" style="color:black;"></i>'.html_safe, golf_path(golf) , method: "delete", data: { confirm: "Es-tu sûr de vouloir supprimer ce profil ?" } %></span>                      
+                    </td>  
+                  </tr>
+                  <%end%>                                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
+</section>

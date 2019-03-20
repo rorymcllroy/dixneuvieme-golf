@@ -1,26 +1,23 @@
 <%= render 'carsharings/header_inner_pages' %>
-<section>
+<section >
 <div class="container">
-<h2 class="h3 block-title text-center mb-3">Interface administrateur : <b>Bienvenue <%=current_user.first_name%></b></h2>
-<div class="row justify-content-between">
-
-  <div class="col-md-4 text-center">
-      <i class="fas fa-car"></i><br>
-      <p><h3 class="fs-18 text-uppercase font-weight-normal">Les covoiturages</h3></p>
-      <%= link_to "Tous les covoiturages", admin_carsharings_path, class:"btn btn-secondary btn-sm mb-2" %>
-  </div>
-  <div class="col-md-4 text-center">
-      <i class="fas fa-users"></i><br>
-      <p><h3 class="fs-18 text-uppercase font-weight-normal">Les utilisateurs</h3></p>
-      <%= link_to "Tous les utilisateurs", admin_users_path, class:"btn btn-secondary btn-sm mb-2" %>
-  </div>
-  <div class="col-md-4 text-center">
-     <i class="fas fa-golf-ball"></i><br>
-     <p><h3 class="fs-18 text-uppercase font-weight-normal">Les Golfs</h3></p>
-      <%= link_to "Tous les golfs", admin_golfs_path, class:"btn btn-secondary btn-sm mb-2" %>
-  </div>
-
+  <h2 class="h3 block-title text-center mb-3">Interface administrateur : <b>Bienvenue <%=current_user.first_name%></b></h2>
+    <div class="row justify-content-between">
+      <div class="col-md-4 text-center">
+        <i class="fas fa-car"></i><br>
+        <p><h3 class="fs-18 text-uppercase font-weight-normal">Les covoiturages</h3></p>
+        <%= link_to "Tous les covoiturages", admin_carsharings_path, class:"btn btn-secondary btn-sm mb-2" %>
+      </div>
+      <div class="col-md-4 text-center">
+        <i class="fas fa-users"></i><br>
+        <p><h3 class="fs-18 text-uppercase font-weight-normal">Les utilisateurs</h3></p>
+        <%= link_to "Tous les utilisateurs", admin_users_path, class:"btn btn-secondary btn-sm mb-2" %>
+      </div>
+      <div class="col-md-4 text-center">
+        <i class="fas fa-golf-ball"></i><br>
+        <p><h3 class="fs-18 text-uppercase font-weight-normal">Les Golfs</h3></p>
+        <%= link_to "Tous les golfs", admin_golfs_path, class:"btn btn-secondary btn-sm mb-2" %>
+      </div>
+    </div>
 </div>
-</div>
-<hr class="mt-5">
 </section>
