@@ -12,7 +12,7 @@ class PassengersController < ApplicationController
         puts "Montant égal à 0"
         puts "<><><><><><><><><><><><><><><><>"
         @passenger = Passenger.new(passenger_id: current_user.id, carsharing_id: params[:carsharing_id], stripe_customer_id: "free")
-        if @passenger.save     
+        if @passenger.save
           redirect_to carsharings_path
           flash[:success] = "Vous avez rejoint ce covoiturage"
         end
