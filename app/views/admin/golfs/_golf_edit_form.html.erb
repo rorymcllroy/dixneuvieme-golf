@@ -10,22 +10,22 @@
               <%= text_field_tag 'name', @golf.name, class: 'form-control' %>
 
               <%= label_tag 'Type de parcours*' %>
-              <%= select_tag(:course_type, options_for_select(Golf.pluck(:course_type).uniq, target_blank: true )) %>
+              <%= select_tag(:course_type, options_for_select([["Compact", "Compact"], ["9 trous", "9 trous"], ["18 trous", "18 trous"]], @golf.course_type)) %>
               
               <%= label_tag 'Description*' %>
               <%= text_area_tag 'description', @golf.description, class: 'form-control' %>
               
               <%= label_tag 'Image*' %>
-              <%= file_field_tag :golf_image %>   
+              <%= file_field_tag :golf_image, value: "" %>   
               </br>
               <%= label_tag 'Latitude*' %>
-              <%= text_field_tag 'latitude', @golf.lat, class: 'form-control' %>   
+              <%= text_field_tag 'lat', @golf.lat, class: 'form-control' %>   
               
               <%= label_tag 'Longitude*' %>
-              <%= text_field_tag 'longitude', @golf.long, class: 'form-control' %>   
+              <%= text_field_tag 'long', @golf.long, class: 'form-control' %>   
               
               <%= label_tag 'Prix*' %>
-              <%= number_field_tag 'price', @golf.price_range, class: 'form-control', in: 1..4, step: 1 %>
+              <%= select_tag(:price_range, options_for_select([["€", "1"], ["€€", "2"], ["€€€", "3"]], @golf.price_range)) %>
               
               <%= label_tag 'Par*' %>
               <%= text_field_tag 'par', @golf.par, class: 'form-control' %>

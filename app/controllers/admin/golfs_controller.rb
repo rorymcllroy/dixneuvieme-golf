@@ -48,19 +48,13 @@ class Admin::GolfsController < AdminController
   
     def update
       @golf = Golf.find(params[:id])
-
       @golf.golf_image.attach(params[:golf_image])
-
-
       golf_params = params.permit(:name, :lat, :long, :description, :price_range, :course_type, :par, :length, :website, :golf_image)
     
-
       if @golf.update(golf_params)
         flash[:success] = 'Le golf a été mis à jour!'
         redirect_to admin_golfs_path
-
       else
-        
         redirect_to admin_golfs_path, alert: "Un problème est survenu"
       end
     end
