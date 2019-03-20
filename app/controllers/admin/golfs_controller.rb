@@ -37,7 +37,7 @@ class Admin::GolfsController < AdminController
         redirect_to admin_golfs_path
       else
 
-      redirect_to admin_golfs_path, alert: "Oops! There was a problem, please try again"
+      redirect_to admin_golfs_path, alert: "Un problème est survenu"
 
      end
     end
@@ -61,7 +61,7 @@ class Admin::GolfsController < AdminController
 
       else
         
-        redirect_to admin_golfs_path, alert: "Oops! There was a problem, please try again"
+        redirect_to admin_golfs_path, alert: "Un problème est survenu"
       end
     end
      
