@@ -1,2 +1,2 @@
-document.getElementsByClassName('col-lg-4')[0].insertAdjacentHTML('beforeend', '<%= j render "private_message_sender", pm: @new_pm %>');
+document.getElementsByClassName('conversation-msg')[0].insertAdjacentHTML('beforeend', '<%= j render "private_message_sender", pm: @new_pm %>');
 document.getElementById('pmForm').reset();

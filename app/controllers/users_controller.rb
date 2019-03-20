@@ -6,4 +6,9 @@ class UsersController < ApplicationController
     @passenger_array = []
     @passenger_id_array = []
   end
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "Profil supprimé"
+    redirect_to root_path
+  end
 end

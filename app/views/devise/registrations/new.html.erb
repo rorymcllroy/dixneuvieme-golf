@@ -18,7 +18,7 @@
               <%= f.password_field :password, autocomplete: "new-password", class: 'form-control form-control-minimal', placeholder: 'Mot de passe (6 caractères minimum)*' %>
               <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control form-control-minimal', placeholder: 'Confirmer le mot de passe*' %>
               <%= f.label 'Index*'%>
-              <%= f.select(:golf_level, options_for_select([["Entre 0 et 5", "Entre 0 et 5"], ["Entre 6 et 15", "Entre 6 et 15"], ["Entre 16 et 30", "Entre 16 et 30"], ["30+", "30+"]])) %>
+              <%= f.select(:golf_level, options_for_select([["Entre 0 et 5", "Entre 0 et 5"], ["Entre 6 et 15", "Entre 6 et 15"], ["Entre 16 et 30", "Entre 16 et 30"], ["30+", "30+"], ["Non classé", "Non classé"]])) %>
               <br>
               <%= f.label 'Ville*'%>
               <%= f.select(:city_id, options_for_select(City.pluck(:name, :id), target_blank: true )) %>

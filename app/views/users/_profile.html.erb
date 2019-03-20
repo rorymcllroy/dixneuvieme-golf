@@ -6,7 +6,7 @@
           <span class="text-muted">Membre depuis</span>
         </div>
         <div class="equal-footer">
-          <b class="h4"><%= @user.created_at.day %> <%= Date::MONTHNAMES[@user.created_at.month] %> <%=@user.created_at.year %></b>
+          <b class="h4"><%= @user.created_at.day < 10 ? "0#{@user.created_at.day}" : "#{@user.created_at.day}" %>/<%=@user.created_at.month < 10 ? "0#{@user.created_at.month}" : "#{@user.created_at.month}" %>/<%=@user.created_at.year %></b>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@
     <div class="equal">
       <div class="boxed">                      
         <div class="equal-header">
-          <span class="text-muted"> Covoiturages effectués</span>
+          <span class="text-muted"> Covoiturages rejoints</span>
         </div>
         <div class="equal-footer">
           <b class="h2"><%= carsharing_as_passenger(@user.id) %></b>

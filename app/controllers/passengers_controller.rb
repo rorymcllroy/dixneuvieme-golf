@@ -1,21 +1,30 @@
 class PassengersController < ApplicationController
   
-  before_action :authenticate_user!
-  
-  def index
-  end
-  
-  def show 
-  end
-  
+  before_action :authenticate_user!  
+
   def create
     @carsharing = Carsharing.find(params[:carsharing_id])
     # Amount in cents
     @amount = (@carsharing.price)*100 # *100 à ajouter
-    
-    customer = Stripe::Customer.create(
-      :email => params[:stripeEmail],
-      :source  => params[:stripeToken]
+
+      if @amount == 0 
+        puts "<><><><><><><><><><><><><><><><>"
+        puts "Montant égal à 0"
+        puts "<><><><><><><><><><><><><><><><>"
+        @passenger = Passenger.new(passenger_id: current_user.id, carsharing_id: params[:carsharing_id], stripe_customer_id: "free")
+        if @passenger.save     
+          redirect_to carsharings_path
+          flash[:success] = "Vous avez rejoint ce covoiturage"
+        end
+      else
+        puts "<><><><><><><><><><><><><><><><>"
+        puts "Montant différent de 0"
+        puts "<><><><><><><><><><><><><><><><>"
+      
+
+      customer = Stripe::Customer.create(
+        :email => params[:stripeEmail],
+        :source  => params[:stripeToken]
       )
       
       charge = Stripe::Charge.create(
@@ -23,27 +32,16 @@ class PassengersController < ApplicationController
         :amount      => @amount,
         :description => 'Paiement du participant',
         :currency    => 'eur'
-        )
+      )
         
-        @passenger = Passenger.new(passenger_id: current_user.id, carsharing_id: params[:carsharing_id], stripe_customer_id: customer.id)
-        if @passenger.save     
-          redirect_to carsharings_path
-          flash[:success] = "Vous avez rejoint ce covoiturage"
-        else
-        end
-        
-      rescue Stripe::CardError => e
-        flash[:error] = e.message
+      @passenger = Passenger.new(passenger_id: current_user.id, carsharing_id: params[:carsharing_id], stripe_customer_id: customer.id)
+      if @passenger.save     
         redirect_to carsharings_path
-        
+        flash[:success] = "Vous avez rejoint ce covoiturage"
       end
-      
-      def update
+    
+
+
       end
-      
-      def edit
-      end
-      
-      def destroy
-      end
-    end
+  end    
+end

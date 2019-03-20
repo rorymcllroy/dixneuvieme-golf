@@ -1,9 +1,4 @@
 <% @carsharing.each do |carsharing| %>
-  <% if %>
-
-  <% else %>
-    
-  <% end %>
   <% if carsharing.driver_id == @user.id && passenger_of_a_carsharing(carsharing.id).count != 0%>
     <div class="row gutter-1">
       <div class="col-12">
@@ -12,11 +7,25 @@
             <div class="col-10">
               <div class="media align-items-center">
                 <div class="media-body">
-                  <h5 class="mb-0"> <%= @user.first_name %> a partagé sa voiture avec <%= render 'passenger_list', carsharing: carsharing %> </h5>
-                  <p> <%= link_to carsharing.golf.name, user_conversation_path(current_user, carsharing.golf.id) %> </p>
-                  <% if carsharing.date != nil %>
-                    <span class="text-muted">Covoiturage effectué le <%= carsharing.date.day %> <%= Date::MONTHNAMES[carsharing.date.month] %> <%= carsharing.date.year %> </span>
-                  <% end %>  
+                  <h5> <%= link_to carsharing.golf.name, user_conversation_path(current_user, carsharing.golf.id) %> - <span class="text-muted"><%= carsharing.date.day < 10 ? "0#{carsharing.date.day}" : "#{carsharing.date.day}" %>/<%= carsharing.date.month < 10 ? "0#{carsharing.date.month}" : "#{carsharing.date.month}" %>/<%= carsharing.date.year %> </span></h5>
+                  <p class="text-muted"> Voiture partagée avec <%= render 'passenger_list', carsharing: carsharing %> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% elsif carsharing.driver_id == @user.id && passenger_of_a_carsharing(carsharing.id).count == 0 %>
+    <div class="row gutter-1">
+      <div class="col-12">
+        <div class="boxed p-2">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-10">
+              <div class="media align-items-center">
+                <div class="media-body">
+                  <h5> <%= link_to carsharing.golf.name, user_conversation_path(current_user, carsharing.golf.id) %> - <span class="text-muted"><%= carsharing.date.day %>/<%= carsharing.date.month %>/<%= carsharing.date.year %> </span></h5>
+                  <p class="text-muted"> Personne n'a encore rejoint ce covoiturage </p>
                 </div>
               </div>
             </div>

@@ -12,7 +12,5 @@ class CarsharingreviewsController < ApplicationController
       redirect_to new_carsharing_carsharing_review_path(params[:carsharing_id])
     end
   end
-  
-  def index
-  end
+
 end
