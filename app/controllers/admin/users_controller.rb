@@ -30,7 +30,7 @@ class Admin::UsersController < AdminController
   
     def destroy
       
-      @users = User.find(params[:id])
+      @user = User.find(params[:id])
       @user.destroy
       redirect_to admin_users_path
     end

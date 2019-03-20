@@ -19,7 +19,7 @@
                     <th scope="col"><b>Description</b></th>
                     <th scope="col"><b>Price</b></th>
                     <th scope="col"><b>Course type</b></th>
-                    <th scope="col"><b>Detail</b></th>
+                    <th scope="col"><b></b></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -30,9 +30,9 @@
                     <td><%=i.price_range%></td>
                     <td><%=i.course_type%></td>
                     <td>
-                    <%= link_to '<i class="fas fa-eye fa-1x"></i>'.html_safe, golf_path(i), method: "get", class:""  %>
-                    <%= link_to '<i class="fas fa-edit fa-1x"></i>'.html_safe, edit_admin_golf_path(i), method: "get", class:""  %>  
-                    <%= link_to '<i class="fas fa-trash-alt fa-1x"></i>'.html_safe, admin_golf_path(i), method: "delete", class:"", data: { confirm: "Etes-vous sûr ?" } %>
+                    <span title= "Voir"><%= link_to '<i class="fas fa-eye fa-1x"></i>'.html_safe, golf_path(i), method: "get", class:""  %></span>            
+                    <span title= "Editer"><%= link_to '<i class="fas fa-edit fa-1x"></i>'.html_safe, edit_admin_golf_path(i), method: "get", class:""  %></span>  
+                    <span title= "Supprimer"><%= link_to '<i class="fas fa-trash-alt fa-1x"></i>'.html_safe, admin_golf_path(i), method: "delete", class:"", data: { confirm: "Confirmez-vous la suppression ?" } %></span>
                     </td>  
                   </tr>
 
@@ -46,3 +46,7 @@
         </div>
       </div>
     </section>
+
+    <div class="btn center">
+    <%= link_to "Retour", :back %>
+    </div>
