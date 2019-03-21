@@ -12,6 +12,11 @@
 
 <!-- Content -->
 <div class="bg-gradient-2">
+  <div class="btn center">
+    <% if current_user && current_user.is_admin%>
+      <%= link_to "Retour administrateur", admin_golfs_path, class: "btn btn-sm btn-secondary" %>
+    <% end %>
+  </div>
   <br>
   <div class="flex-center">
     <%= link_to "Réserver un covoiturage", golf_golfcarsharings_path(params[:id]), class: "btn btn-primary btn-rounded" %>

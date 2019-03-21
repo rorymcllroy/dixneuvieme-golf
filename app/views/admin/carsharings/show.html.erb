@@ -1,42 +1,54 @@
 <%= render 'carsharings/header_inner_pages' %>
 
-<section class="page-header bg-gradient-1">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-12 col-lg-12 text-center">
-        <h2><h2>Covoiturage <b>proposé par <%= User.find(@carsharing.driver_id).first_name %></b></h2><br></b></h2>
-      </div>
-    </div>    
+<section>
+  <div class="btn center">
+    <%= link_to "Accueil administrateur", admin_root_path, class: "btn btn-sm btn-secondary" %>
   </div>
-</section>
-
-
-<div class="bg-gradient-2">
-  <div class="flex-center">
+  <div class="btn center">
     <div class="col-md-5">
-      <div class="card text-center">
-        <div class="card-body">            
-          <h3><span class="mr-3">Places disponibles : <%= @carsharing.places %> <i class="far fa-user"></i> </span></h3>
-
-          <h3 class="h4 font-weight-light">Prix : <%= @carsharing.price %> €</h3>
-          
-          <p class="text-muted">Description : <%= @carsharing.description %></p>
-        
-          <p><%= form_tag admin_carsharing_path(@carsharing.id), method: "PUT" do %>
-            <%= hidden_field_tag 'validation', true %>
-            <%= submit_tag "Valider",  class: "btn btn-rounded btn-success px-5 ", style: "margin-right :5px;" %>
+      <div class="card"> 
+        <div class="card-body">
+          <div class="flex-space-between">    
+            <div>
+              <i class="fas fa-car-side fa-lg"></i> <%= @carsharing.city.name %>
+            </div>
+            <div>
+              <i class="fas fa-angle-double-right fa-lg"></i><i class="fas fa-angle-double-right fa-lg"></i><i class="fas fa-angle-double-right fa-lg"></i>
+            </div>
+            <div class="card-header-golf">
+              <i class="fas fa-golf-ball fa-lg"></i> <%= link_to "#{@carsharing.golf.name}", golf_path(@carsharing.golf.id) %>
+            </div>
+          </div>
+          <div class="flex-center" style="margin-top:20px; margin-bottom:15px;">
+            <% if @carsharing.driver.avatar.attached? %>
+              <%= image_tag @carsharing.driver.avatar, class: "avatar" %>
+            <% else %>
+              <%= image_tag "profile-pic-test.jpg", class: "avatar" %>
             <% end %>
-            
-          <%= form_tag admin_carsharing_path(@carsharing.id), method: "PUT" do %>
-              <%= hidden_field_tag 'validation', false %>
-              <%= submit_tag "Refuser",  class: "btn btn-rounded btn-danger px-5" %>
-              <% end %></p>
-        </div>    
+          </div>
+          <div class="flex-center">
+            <% if reviews_nb_by_driver(@carsharing.driver.id) == 0 %>
+              <h5 class="eyebrow mb-1" style="margin-top:10px;"><%= @carsharing.driver.first_name %> <%= @carsharing.driver.last_name %> | Aucun avis </h5>
+            <% else %>
+              <h5 class="eyebrow mb-1" style="margin-top:10px;"><%= @carsharing.driver.first_name %> <%= @carsharing.driver.last_name %> <i class="fas fa-star"></i> <%= average_grade_by_driver(@carsharing.driver.id) %> - <%= reviews_nb_by_driver(@carsharing.driver.id) %> avis </h5>
+            <% end %>
+          </div>
+          <div class="flex-center">
+            <p> <%= link_to "Voir le profil >", user_path(@carsharing.driver.id) %> </p>
+          </div>
+          <p class="card-title mb-0"><i class="fas fa-users fa-sm"></i> <%= @carsharing.places - passengers_booked(@carsharing.id) %> place(s) dispo </p>
+          <p class="card-title mb-0"> <i class="far fa-clock fa-sm"></i> <%= @carsharing.date.day < 10 ? "0#{@carsharing.date.day}" : "#{@carsharing.date.day}"%>/<%=@carsharing.date.month < 10 ? "0#{@carsharing.date.month}" : "#{@carsharing.date.month}"%>/<%=@carsharing.date.year%> à <%= @carsharing.date.hour %>h<%= @carsharing.date.min < 10 ? "0#{@carsharing.date.min}": "#{@carsharing.date.min}" %> </p>
+          <hr class="w-25" style="margin-top:15px; margin-bottom:15px;">
+          <p class="card-title mb-0"> <%= @carsharing.description %> </p>
+          <hr class="w-25" style="margin-top:15px; margin-bottom:15px;">
+          <div class="flex-center">
+            <%= form_tag admin_carsharing_path(@carsharing.id), method: "PUT" do %>
+            <%= hidden_field_tag 'validation', true %>
+            <%= submit_tag "Valider le covoiturage",  class: "btn btn-rounded btn-primary px-5 ", style: "margin-right :5px;" %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>  
-</div>                                          
- 
-<div class="btn center">
-  <%= link_to "Retour", :back %>
-</div>
+  </div>
+</section>  

@@ -22,7 +22,8 @@
               <%= f.select(:golf_level, options_for_select([["Entre 0 et 5", "Entre 0 et 5"], ["Entre 6 et 15", "Entre 6 et 15"], ["Entre 16 et 30", "Entre 16 et 30"], ["30+", "30+"], ["Non classé", "Non classé"]], current_user.golf_level)) %>
               <br>
               <%= f.label 'Ville*'%>
-              <%= f.select(:city_id, options_for_select(City.pluck(:name, :id), target_blank: true)) %>
+              current_user.city.id
+              <%= f.select(:city_id, options_for_select(City.pluck(:name, :id), current_user.city.id)) %>
               <%= f.text_area :description, class: 'form-control', rows: "6", placeholder: 'Description* (20 caractères minimum)'%>
               <%= f.label 'Photo de profil'%>
               <%= f.file_field :avatar %>
