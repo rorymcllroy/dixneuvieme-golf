@@ -51,6 +51,12 @@ RSpec.describe Carsharing, type: :model do
       expect(bad_event).not_to be_valid
       expect(bad_event.errors.include?(:price)).to eq(true)
     end
+
+    it 'is not valid without city' do
+      bad_event = FactoryBot.build(:carsharing, city: nil)
+      expect(bad_event).not_to be_valid
+      expect(bad_event.errors.include?(:city)).to eq(true)
+    end
   end
 
 

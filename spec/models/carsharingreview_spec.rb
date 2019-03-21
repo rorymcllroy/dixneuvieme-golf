@@ -38,7 +38,6 @@ RSpec.describe Carsharingreview, type: :model do
   context "public instance methods" do
     describe "should return :" do
       it 'string' do
-        expect(@csr.grade).to be_a(String)
         expect(@csr.content).to be_a(String)
       end
     end
