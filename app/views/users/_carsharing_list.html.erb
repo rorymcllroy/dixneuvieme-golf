@@ -1,6 +1,6 @@
 <% @carsharing.each do |carsharing| %>
   <% if carsharing.driver_id == @user.id && passenger_of_a_carsharing(carsharing.id).count != 0%>
-    <div class="row gutter-1">
+    <div class="row gutter-1" style="padding-top:0; margin:0;">
       <div class="col-12">
         <div class="boxed p-2">
           <div class="row align-items-center justify-content-between">
@@ -17,7 +17,7 @@
       </div>
     </div>
   <% elsif carsharing.driver_id == @user.id && passenger_of_a_carsharing(carsharing.id).count == 0 %>
-    <div class="row gutter-1">
+    <div class="row gutter-1" style="padding-top:0; margin:0;">
       <div class="col-12">
         <div class="boxed p-2">
           <div class="row align-items-center justify-content-between">
