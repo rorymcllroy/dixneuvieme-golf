@@ -1,3 +1,5 @@
+require 'rspec/rails'
+require 'capybara/rails'
 describe "the signin process", type: :feature do
   it 'sign me in' do
     visit 'devise/sessions#new'
