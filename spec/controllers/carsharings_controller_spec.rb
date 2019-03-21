@@ -1,7 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe CarsharingsController, type: :controller do
-    
+
+  let(:valid_attributes) {
+    skip("Add a hash of attributes valid for your model")
+  }
+
+  let(:invalid_attributes) {
+    skip("Add a hash of attributes invalid for your model")
+  }
+
+  let(:valid_session) { {} }
+  
   describe "GET #index" do
     subject { get :index }
 
@@ -18,61 +28,13 @@ RSpec.describe CarsharingsController, type: :controller do
     it "returns a 200 OK status" do
         get :index
         expect(response).to have_http_status(:ok)
-    end    
-  end
-  
-  describe "GET show" do
-    it 'assigns @carsharings' do
-        carsharing = Carsharing.create
-        get :show, id: carsharing.id  
-        expect(assigns(:carsharing)).to eq(carsharing)
     end
-  
-    it 'renders the show template' do
-        get :show
-        expect(response).to render_template("show")
-    end
-
-  end
-
-  describe "GET new" do
-    it "renders the new template" do
-      get :new
-      expect(response).to render_template("new")
+    
+    it "returns a success response" do
+      Carsharing.create! valid_attributes
+      get :index, params: {}, session: valid_session
+      expect(response).to be_successful
     end
   end
-
-  describe "GET edit" do
-    it "assigns @carsharings" do
-      # création d'une instance
-      carsharing = Carsharing.create
-  
-      # on va sur edit
-      get :edit, id: carsharing.id
-  
-      # @user doit être user
-      expect(assigns(:carsharing)).to eq(carsharing)
-    end
-  
-    it "renders the edit template" do
-      # va sur edit
-      get :edit
-  
-      # on doit rediriger vers edit
-      expect(response).to render_template("edit")
-    end
-  end
-
-#   describe "POST #create" do
-#     # des tests
-#   end
-
-#   describe "PUT #update" do
-#     # des tests
-#   end
-
-#   describe "DELETE #destroy" do
-#     # des tests
-#   end
 
 end
