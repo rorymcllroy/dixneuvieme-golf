@@ -38,7 +38,6 @@ RSpec.describe Golfcomment, type: :model do
   context "public instance methods" do
     describe "should return :" do
       it 'string' do
-        expect(@golfcomment.grade).to be_a(String)
         expect(@golfcomment.content).to be_a(String)
       end
     end
