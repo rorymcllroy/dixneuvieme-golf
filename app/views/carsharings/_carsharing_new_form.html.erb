@@ -15,7 +15,7 @@
               <%= select_tag(:place, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4]])) %>
               <br>
               <%= label_tag 'Prix*' %>
-              <%= select_tag(:price, options_for_select([['Gratuit', 0], ['5€', 5], ['10€', 10], ['15€', 15], ['20€', 20]])) %>
+              <%= select_tag(:price, options_for_select([['Gratuit', 0], ['5€', 5], ['10€', 10], ['15€', 15], ['20€', 20]]), {class: 'test'})%>
               <br>
               <%= label_tag 'Jour et heure du départ* (format: jj/mm/aaaa hh:mm)' %>
               <%= datetime_local_field_tag 'start_date', "" , class: 'form-control form-control-minimal', placeholder: 'Date'%>

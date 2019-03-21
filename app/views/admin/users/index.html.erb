@@ -1,52 +1,47 @@
 <%= render 'carsharings/header_inner_pages' %>
-<section class="">
-      <div class="container">
-        <div class="row">
-          <div class="col text-center">
-            <h2><b>Liste des utilistateurs</b></h2><br>
-            <%= link_to "Ajouter un Golf", new_admin_golf_path, class: "btn btn-secondary btn-rounded" %>
-          </div> 
-        </div>
-        <div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <div class="table-responsive-md">
-              <table class="table table-lined">
-                <thead>
+<section>
+    <div class="container">
+      <div class="row" style="margin-bottom:0;">
+        <div class="col text-center">
+          <h2>Covoiturages <b>proposés</b></h2><br>
+        </div> 
+      </div>
+      <div class="btn center">
+        <%= link_to "Accueil administrateur", admin_root_path, class: "btn btn-sm btn-secondary" %>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="table-responsive-lg">
+            <table class="table table-lined">
+              <thead>
+                <tr>
+                  <th style="width:7%; padding:0; text-align:center;" scope="col"><b>#id</b></th>
+                  <th style="width:21.5%; padding:0; text-align:center;" scope="col"><b>Prénom</b></th>
+                  <th style="width:21.5%; padding:0; text-align:center;" scope="col"><b>Nom</b></th>
+                  <th style="width:21.5%; padding:0; text-align:center;" scope="col"><b>E-mail</b></th>
+                  <th style="width:21.5%; padding:0; text-align:center;" scope="col"><b>Administrateur</b></th>
+                  <th style="width:7%; padding:0; text-align:center;" scope="col"><b>Action</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @users.each do |user|%>
                   <tr>
-                    <th scope="col"><b>Prénom</b></th>
-                    <th scope="col"><b>Nom</b></th>
-                    <th scope="col"><b>Email</b></th>
-                    <th scope="col"><b>Administrateur</b></th>
-                    <th scope="col"><b></b></th>
-                  </tr>
-                </thead>
-                <tbody>
-                <% @users.each do |i|%>
-                  <tr>
-                    <th scope="row"><%=i.first_name%></th>
-                    <td><%=i.last_name%></td>
-                    <td><%=i.email%></td>
-                    <td><%=i.is_admin%></td>
-                    <td>
-                    <span title= "Voir"><%= link_to '<i class="fas fa-eye fa-1x"></i>'.html_safe, user_path(i), method: "get", class:""  %></span>
-                    <span title= "Editer"><%= link_to '<i class="fas fa-edit fa-1x"></i>'.html_safe, edit_admin_user_path(i), method: "get", class:""  %></span>
-                    <span title= "Supprimer"><%= link_to '<i class="fas fa-trash-alt fa-1x"></i>'.html_safe, admin_user_path(i), method: "delete", class:"", data: { confirm: "Confirmez-vous la suppression ?" } %></span>
+                    <td style="padding:20px 10px; text-align:center;"><%=user.id%></td>
+                    <td style="padding:20px 10px; text-align:center;"><%=user.first_name%></td>
+                    <td style="padding:20px 10px; text-align:center;"><%=user.last_name%></td>
+                    <td style="padding:20px 10px; text-align:center;"><%=user.email%></td>
+                    <td style="padding:20px 10px; text-align:center;"><%=user.is_admin ? "Oui" : "Non"%></td>
+                    <td style="padding:20px 10px; text-align:center;">
+                      <span title= "Voir" ><%= link_to '<i class="fas fa-eye fa-1x" style="color:black;"></i>'.html_safe, user_path(user)%></span>
+                      <span title= "Editer" ><%= link_to '<i class="fas fa-edit fa-1x" style="color:black;"></i>'.html_safe, edit_admin_user_path(user)%></span>
+                      <span title= "Supprimer" ><%= link_to '<i class="fas fa-trash-alt fa-1x" style="color:black;"></i>'.html_safe, user_path(user) , method: "delete", data: { confirm: "Es-tu sûr de vouloir supprimer ce profil ?" } %></span>
                     </td>  
                   </tr>
-
-                  <%end%>
-                 
-                
-                </tbody>
-              </table>
-            </div>
+                  <%end%>                                
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-    </section>
-
-    <div class="btn center">
-    <%= link_to "Retour", admin_root_path %>
     </div>
+</section>
