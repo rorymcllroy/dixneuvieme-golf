@@ -5,7 +5,7 @@
 # Bienvenue sur 19ème trou
 
 
-### 19ème trou transforme en oportunité une difficulté rencontrée par les golfeurs citadins.
+### 19ème trou transforme en opportunité une difficulté rencontrée par les golfeurs citadins.
 
 #### Le constat
 
