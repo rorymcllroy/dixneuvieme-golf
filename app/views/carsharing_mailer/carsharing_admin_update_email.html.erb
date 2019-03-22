@@ -5,8 +5,9 @@
 </head>
 <body>
   <h3> Bonjour <%= @carsharing.driver.first_name %>, </h3>
-  <p style="margin:0;"> <%= @passenger.first_name %> <%= @passenger.last_name %> a rejoint votre covoiturage.</p>
-  <p style="margin:0;"> Lieu de prise en charge: <%= @carsharing.city.name %> (adresse exacte à confirmer avant le départ)</p>
+  <p style="margin:0;"> Ton covoiturage a été validé par un administrateur.</p>
+  <p style="margin:0;"> Golf: <%= @carsharing.golf.name %> </p>
+  <p style="margin:0;"> Lieu de prise en charge: <%= @carsharing.city.name %> </p>
   <p style="margin:0;"> Date et heure du départ: <%= @carsharing.date.day < 10 ? "0#{@carsharing.date.day}" : "#{@carsharing.date.day}"%>/<%=@carsharing.date.month < 10 ? "0#{@carsharing.date.month}" : "#{@carsharing.date.month}"%>/<%=@carsharing.date.year%> à <%= @carsharing.date.hour %>h<%= @carsharing.date.min < 10 ? "0#{@carsharing.date.min}": "#{@carsharing.date.min}" %> </p>
   <br>
   <hr style="width:30%;">

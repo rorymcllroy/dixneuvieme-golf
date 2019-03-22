@@ -3,24 +3,24 @@
 en:
   devise:
     confirmations:
-      confirmed: "Ton adresse mail à bien été modifer."
+      confirmed: "Ton adresse mail a bien été modifé."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
     failure:
       already_authenticated: "Tu es déja connecté."
       inactive: "Your account is not activated yet."
       invalid: "Email ou mot de passe invalide."
-      locked: "Ton compte est verouillé"
+      locked: "Ton compte est verouillé."
       last_attempt: "You have one more attempt before your account is locked."
       not_found_in_database: "Email ou mot de passe invalide."
-      timeout: "Ta session à expiré, reconnecte toi."
-      unauthenticated: "Il faut que tu te connecte ou que tu t'inscrive pour continuer."
-      unconfirmed: "Il faut comfirmer ton adresse mail pour continuer."
+      timeout: "Session expirée, reconnecte toi."
+      unauthenticated: "Connexion nécessaire pour continuer."
+      unconfirmed: "Confirme ton adresse mail pour continuer."
     mailer:
       confirmation_instructions:
         subject: "Instructions de confirmation"
       reset_password_instructions:
-        subject: "Instructions de récupération du mot passe"
+        subject: "Réinitialisation du mot de passe"
       unlock_instructions:
         subject: "Unlock instructions"
       email_changed:
