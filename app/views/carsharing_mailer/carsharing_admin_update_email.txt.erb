@@ -1,0 +1,12 @@
+Bonjour <%= @carsharing.driver.first_name %>,
+==========================================================
+ 
+Ton covoiturage a été validé par un administrateur.
+Golf: <%= @carsharing.golf.name %>
+Lieu de prise en charge: <%= @carsharing.city.name %>
+Date et heure du départ: <%= @carsharing.date.day < 10 ? "0#{@carsharing.date.day}" : "#{@carsharing.date.day}"%>/<%=@carsharing.date.month < 10 ? "0#{@carsharing.date.month}" : "#{@carsharing.date.month}"%>/<%=@carsharing.date.year%> à <%= @carsharing.date.hour %>h<%= @carsharing.date.min < 10 ? "0#{@carsharing.date.min}": "#{@carsharing.date.min}" %>
+
+19ème trou est une application s'enrichissant constamment des retours utilisateurs. N'hésite donc pas à nous faire part de tes remarques à l'adresse suivante: dixneuvieme.golf@gmail.com
+ 
+À très vite sur les greens de France,
+L'équipe 19ème trou

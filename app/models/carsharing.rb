@@ -3,6 +3,12 @@ class Carsharing < ApplicationRecord
   belongs_to :golf
   belongs_to :city
 
+  after_update :carsharing_admin_update_email_send
+
+  def carsharing_admin_update_email_send
+    CarsharingMailer.carsharing_admin_update_email(self).deliver_now
+  end
+
   validates :date,
   presence: true
   validates :places, 
