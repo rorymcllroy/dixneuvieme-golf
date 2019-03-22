@@ -2,9 +2,9 @@
 
 
 
-# Bienvenue sur 19ème trou
+<p align="center"># Bienvenue sur 19ème trou </p>
 
-[![Demo CountPages alpha](https://github.com/rorymcllroy/dixneuvieme-golf/blob/new-development/app/assets/images/welcome.jpg)](https://youtu.be/THE9po82cn8)
+<p align="center"> [![Demo CountPages alpha](https://github.com/rorymcllroy/dixneuvieme-golf/blob/new-development/app/assets/images/welcome.jpg)](https://youtu.be/THE9po82cn8) </p>
 
 --------
 
