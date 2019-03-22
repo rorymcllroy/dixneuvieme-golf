@@ -4,9 +4,10 @@
   <meta content='text/html; charset=utf-8' http-esquiv='Content-Type'>
 </head>
 <body>
-  <h3> Bonjour <%= @passenger.first_name %>, </h3>
-  <p style="margin:0;"> Confirmation de ton inscription au covoiturage de <%= @carsharing.driver.first_name %> <%= @carsharing.driver.last_name %>.</p>
-  <p style="margin:0;"> Lieu de prise en charge: <%= @carsharing.city.name %> (le chauffeur te confirmera l'adresse exacte avant le départ)</p>
+  <h3> Bonjour <%= @carsharing.driver.first_name %>, </h3>
+  <p style="margin:0;"> Ton covoiturage a été validé par un administrateur.</p>
+  <p style="margin:0;"> Golf: <%= @carsharing.golf.name %> </p>
+  <p style="margin:0;"> Lieu de prise en charge: <%= @carsharing.city.name %> </p>
   <p style="margin:0;"> Date et heure du départ: <%= @carsharing.date.day < 10 ? "0#{@carsharing.date.day}" : "#{@carsharing.date.day}"%>/<%=@carsharing.date.month < 10 ? "0#{@carsharing.date.month}" : "#{@carsharing.date.month}"%>/<%=@carsharing.date.year%> à <%= @carsharing.date.hour %>h<%= @carsharing.date.min < 10 ? "0#{@carsharing.date.min}": "#{@carsharing.date.min}" %> </p>
   <br>
   <hr style="width:30%;">
