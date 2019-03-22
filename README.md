@@ -1,49 +1,41 @@
+[![Demo CountPages alpha](https://github.com/rorymcllroy/dixneuvieme-golf/blob/new-development/app/assets/images/welcome.jpg)](https://youtu.be/THE9po82cn8)
+
+# 19ème trou l'application de covoiturage pour golfeur citadin
+
 <p align="center"><img width=12.5% src="https://github.com/rorymcllroy/dixneuvieme-golf/blob/new-development/app/assets/images/logo-temp.png"></p>
 
 
+### Le constat
 
-# Bienvenue sur 19ème trou
+Dans les grandes villes, il n'est pas aisé d'aller jouer au golf lorsque l'on n'a pas de voiture. Les golfs ne sont pas forcément très loin des centres villes mais la desserte en transport en commun est rarement optimale. D'autant plus que le matériel de golf peut s'avérer encombrant.
 
-[![Demo CountPages alpha](https://github.com/rorymcllroy/dixneuvieme-golf/blob/new-development/app/assets/images/welcome.jpg)](https://youtu.be/THE9po82cn8)
+### L'objectif
 
+* Proposer un service de covoiturage de proximité aux golfeurs citadins
+* Favoriser l'économie de partage et créer une communauté autour d'une passion commune
 
---------
+### Le service
 
-### 19ème trou transforme en opportunité une difficulté rencontrée par les golfeurs citadins.
+Une application web proposant un service de covoiturage où se retrouve une communauté de golfeurs. Chacun est libre de proposer ou rejoindre un covoiturage à partir d'une liste de golfs se trouvant autour de lui. 
 
-#### Le constat
+### Les caractéristiques techniques
 
-Etre golfeur à Paris, c'est bien mais aux dernière nouvelles, il n'y a pas de golf accessible en métro.
-
-#### L'objectif
-
-* Proposer un moyen de transport pour rejoindre ton golf préféré
-
-* Trouver des partenaires de jeu en accord avec tes objectifs
-
-#### Le service
-
-* Les golfeurs avec voiture emmènent ceux sans voitures. D'une pierre deux coups. Tu peux dorénavant aller jouer et argrandir ta communauté de golfeurs.
-
---------------
-
-#### Les Features 
-
-
-Fonctionnalité | Actions |
+Outil | Utilisation |
 :---: | :---: 
-*Mailer* | `Envoi d'email à l'inscription, mot passe oublié, rejoindre un covoiturage, lorsqu'un passager rejoint le covoiturage` | 
 *Devise* | `Gestion des utilisateurs` |
-*Activestorage* | `Gestion des photos de profil et des photos de golf` |
-*Interface Admin* | `Validation des golfs, gestion de la base de donnée des golfs, gestion des utilisateurs` |
-*Stripe* | `Paiement et validation pour rejoindre un covoiturage` |
-*Message privé* | `Fil de conversation sur le compte utilisateur (ajax)` |
+*ActiveStorage* | `Gestion de l'upload de fichiers sur le site` |
+*Interface Admin* | `Gestion/validation/modification des covoiturages, des golfs et des utilisateurs` |
+*Messages privés* | `Fils de conversations entre utilisateurs (AJAX)` |
+*API AWS S3* | `Stockage des documents chargés sur le site (photos de profil entre autre)` | 
+*API SendGrid* | `Gestion de l'envoi de notifications par mail` | 
+*API Stripe* | `Gestion des fonctionnalités de paiement` |
+*API GoogleMaps* | `Géolocalisation des golfs` |
 
 --------------
 
-Prêt à découvrir le service ? rendez-vous sur [19ème Trou](https://dixneuvieme-golf.herokuapp.com/) !
+Envie de découvrir le service ? Alors, rendez-vous sur [19ème trou](https://dixneuvieme-golf.herokuapp.com/) !
 
 --------------
 
-Tu peux également découvrir le parcours utilisateur ici [Démo](https://youtu.be/THE9po82cn8)
+Tu peux également découvrir le parcours utilisateur sur [YouTube](https://youtu.be/THE9po82cn8)
 
