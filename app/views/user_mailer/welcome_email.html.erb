@@ -4,10 +4,19 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Salut <%= @user.email %> et bienvenue chez nous !</h1>
+    <h3> Bonjour <%= @user.first_name %>, </h3>
     <p>
-      Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
+      Ton inscription est confirmée! 19ème trou est heureux de t'accueillir au sein de sa communauté. Pour accéder à ton espace personnel, connecte-toi sur : <%= @url %>.
     </p>
-    <p> À très vite sur Dix neuvieme trou !
+    <br>
+    <hr style="width:30%;">
+    <br>
+    <footer>
+      <p style="font-style:italic;">
+        19ème trou est une application s'enrichissant constamment des retours utilisateurs. N'hésite donc pas à nous faire part de tes remarques à l'adresse suivante: dixneuvieme.golf@gmail.com
+      </p>
+      <h4 style="margin:0;"> À très vite sur les greens de France,</h4>
+      <h4  style="margin:0;"> L'équipe 19ème trou </h4>
+    </footer>
   </body>
 </html>

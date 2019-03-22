@@ -4,7 +4,7 @@
     <% if golf.golf_image.attached? %>
       <%= link_to image_tag(golf.golf_image, style: "height: 230px; width: 400px;"), golf_path(golf.id) %>
     <% else%>
-      <%= link_to image_tag("golf-de-sperone-bonifacio-vuedrone-corse.jpg", style: "height: 230px; width: 400px;"), golf_path(golf.id) %>  
+      <%= link_to image_tag("golf-default.jpg", style: "height: 230px; width: 400px;"), golf_path(golf.id) %>  
     <% end %>
     </a>
     <div class="card-body">

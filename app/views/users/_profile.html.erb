@@ -6,7 +6,7 @@
           <span class="text-muted">Membre depuis</span>
         </div>
         <div class="equal-footer">
-          <b class="h4"><%= @user.created_at.day < 10 ? "0#{@user.created_at.day}" : "#{@user.created_at.day}" %>/<%=@user.created_at.month < 10 ? "0#{@user.created_at.month}" : "#{@user.created_at.month}" %>/<%=@user.created_at.year %></b>
+          <b class="h4"><%= @user.created_at.day < 10 ? "0#{@user.created_at.day}" : "#{@user.created_at.day}" %>/<%=@user.created_at.month < 10 ? "0#{@user.created_at.month}" : "#{@user.created_at.month}" %>/<%=@user.created_at.year - 2000 %></b>
         </div>
       </div>
     </div>
