@@ -24,7 +24,7 @@
             <div class="col-10">
               <div class="media align-items-center">
                 <div class="media-body">
-                  <h5> <%= link_to carsharing.golf.name, user_conversation_path(current_user, carsharing.golf.id) %> - <span class="text-muted"><%= carsharing.date.day %>/<%= carsharing.date.month %>/<%= carsharing.date.year %> </span></h5>
+                  <h5> <%= link_to carsharing.golf.name, golf_path(carsharing.golf.id) %> - <span class="text-muted"><%= carsharing.date.day %>/<%= carsharing.date.month %>/<%= carsharing.date.year %> </span></h5>
                   <p class="text-muted"> Personne n'a encore rejoint ce covoiturage </p>
                 </div>
               </div>

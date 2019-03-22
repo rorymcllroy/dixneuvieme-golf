@@ -11,5 +11,19 @@
   <p>
     À très vite sur https://dixneuvieme-golf.herokuapp.com/ !
   </p>
+  <h3> Bonjour <%= @carsharing.driver.first_name, %> </h3>
+  <p style="margin:0;"> Confirmation de ton inscription au covoiturage de <%= @carsharing.driver.first_name %> <%= @carsharing.driver.last_name %>.</p>
+  <p style="margin:0;"> Lieu de prise en charge: <%= @carsharing.city.name %> (le chauffeur te confirmera l'adresse exacte avant le départ)</p>
+  <p style="margin:0;"> Date et heure du départ: <%= @carsharing.date.day < 10 ? "0#{@carsharing.date.day}" : "#{@carsharing.date.day}"%>/<%=@carsharing.date.month < 10 ? "0#{@carsharing.date.month}" : "#{@carsharing.date.month}"%>/<%=@carsharing.date.year%> à <%= @carsharing.date.hour %>h<%= @carsharing.date.min < 10 ? "0#{@carsharing.date.min}": "#{@carsharing.date.min}" %> </p>
+  <br>
+  <hr style="width:30%;">
+  <br>
+  <footer>
+    <p style="font-style:italic;">
+      19ème trou est une application s'enrichissant constamment des retours utilisateurs. N'hésite donc pas à nous faire part de tes remarques à l'adresse suivante: dixneuvieme.golf@gmail.com
+    </p>
+    <h4 style="margin:0;"> À très vite sur les greens de France,</h4>
+    <h4 style="margin:0;"> L'équipe 19ème trou </h4>
+  </footer>
 </body>
 </html>
