@@ -8,7 +8,7 @@
 ![Alt Text](https://media.giphy.com/media/xT5LMx8fnWUpFfqWVa/giphy.gif)
 
 
-### 19ème trou transforme en oportunité une difficulté rencontrée par les golfeurs citadins.
+### 19ème trou transforme en opportunité une difficulté rencontrée par les golfeurs citadins.
 
 #### Le constat
 
