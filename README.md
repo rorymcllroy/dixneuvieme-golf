@@ -1,5 +1,3 @@
-[![Demo CountPages alpha](https://github.com/rorymcllroy/dixneuvieme-golf/blob/new-development/app/assets/images/welcome.jpg)](https://youtu.be/THE9po82cn8)
-
 # 19ème trou l'application de covoiturage pour golfeur citadin
 
 <p align="center"><img width=12.5% src="https://github.com/rorymcllroy/dixneuvieme-golf/blob/new-development/app/assets/images/logo-temp.png"></p>
@@ -31,11 +29,7 @@ Outil | Utilisation |
 *API Stripe* | `Gestion des fonctionnalités de paiement` |
 *API GoogleMaps* | `Géolocalisation des golfs` |
 
---------------
-
 Envie de découvrir le service ? Alors, rendez-vous sur [19ème trou](https://dixneuvieme-golf.herokuapp.com/) !
-
---------------
 
 Tu peux également découvrir le parcours utilisateur sur [YouTube](https://youtu.be/THE9po82cn8)
 
