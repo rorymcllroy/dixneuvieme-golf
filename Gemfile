@@ -75,3 +75,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'table_print'
 gem 'gon'
+gem "aws-sdk-s3", require: false
