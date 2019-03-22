@@ -8,10 +8,12 @@ class GolfcommentsController < ApplicationController
   
   def create
     @comment = Golfcomment.new(user_id: current_user.id, grade: params[:grade], content: params[:content], golf_id: params[:golf_id])
-    if @comment.save!
-      redirect_to golf_path(params[:golf_id]), :notice => "Commentaire ajouté!"
+    if @comment.save
+      redirect_to golf_path(params[:golf_id])
+      flash[:success] = "Commentaire ajouté."
     else
-      render 'new'
+      redirect_to golf_path(params[:golf_id])
+      flash[:error] = "Erreur - commentaire non ajouté."
     end
   end
   

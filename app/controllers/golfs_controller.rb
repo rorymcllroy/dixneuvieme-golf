@@ -18,10 +18,12 @@ class GolfsController < ApplicationController
   def create
     @golf = Golf.new(name: params[:name], description: params[:description], price_range: params[:price_range], lat: params[:lat], long: params[:long] )
     
-    if @golf.save # try to save  golf in the db
-      redirect_to root_path, :notice => "Nouveau Golf créé !"
+    if @golf.save
+      redirect_to admin_root_path 
+      flash[:success] = "Nouveau golf créé avec succès."
     else
-      render 'new'
+      redirect_to admin_golfs_path 
+      flash[:error] = "Erreur - golf non créé."
     end
   end
   

@@ -9,11 +9,11 @@ class ConversationsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to user_conversation_path(current_user, params[:recipient]) }
         format.js
-        flash[:success] = "Message envoyé avec succès"
+        flash[:success] = "Message envoyé avec succès."
       end
     else
-      flash[:danger] = "Erreur dans l'envoi du message"
       redirect_to new_user_private_message_path(current_user)
+      flash[:danger] = "Erreur dans l'envoi du message."
     end
   end
 end
