@@ -5,9 +5,6 @@
 # Bienvenue sur 19ème trou
 
 
-![Alt Text](https://media.giphy.com/media/xT5LMx8fnWUpFfqWVa/giphy.gif)
-
-
 ### 19ème trou transforme en oportunité une difficulté rencontrée par les golfeurs citadins.
 
 #### Le constat
@@ -16,15 +13,15 @@ Etre golfeur à Paris, c'est bien mais aux dernière nouvelles, il n'y a pas de 
 
 #### L'objectif
 
-    * Proposer un moyen de transport pour rejoindre ton golf préféré
+* Proposer un moyen de transport pour rejoindre ton golf préféré
 
-    * Trouver des partenaires de jeu en accord avec tes objectifs
+* Trouver des partenaires de jeu en accord avec tes objectifs
 
 #### Le service
 
-    * Les golfeurs avec voiture emmènent ceux sans voitures. D'une pierre deux coups. Tu peux dorénavant aller jouer et argrandir ta communauté de golfeurs.
+* Les golfeurs avec voiture emmènent ceux sans voitures. D'une pierre deux coups. Tu peux dorénavant aller jouer et argrandir ta communauté de golfeurs.
 
-    --------------
+--------------
 
 #### Les Features 
 
@@ -38,9 +35,11 @@ Fonctionnalité | Actions |
 *Stripe* | `Paiement et validation pour rejoindre un covoiturage` |
 *Message privé* | `Fil de conversation sur le compte utilisateur (ajax)` |
 
-
+--------------
 
 Prêt à découvrir le service ? rendez-vous sur [19ème Trou](https://dixneuvieme-golf.herokuapp.com/) !
 
+--------------
 
+Tu peux également découvrir le parcours utilisateur ici [Démo](https://youtu.be/THE9po82cn8)
 
