@@ -5,9 +5,6 @@
 # Bienvenue sur 19ème trou
 
 
-<iframe src="https://giphy.com/embed/xT5LMx8fnWUpFfqWVa" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/golf-gopro-xT5LMx8fnWUpFfqWVa">via GIPHY</a></p>
-
-
 ### 19ème trou transforme en oportunité une difficulté rencontrée par les golfeurs citadins.
 
 #### Le constat
@@ -38,9 +35,11 @@ Fonctionnalité | Actions |
 *Stripe* | `Paiement et validation pour rejoindre un covoiturage` |
 *Message privé* | `Fil de conversation sur le compte utilisateur (ajax)` |
 
-
+--------------
 
 Prêt à découvrir le service ? rendez-vous sur [19ème Trou](https://dixneuvieme-golf.herokuapp.com/) !
 
+--------------
 
+Tu peux également découvrir le parcours utilisateur ici [Démo](https://youtu.be/THE9po82cn8)
 
