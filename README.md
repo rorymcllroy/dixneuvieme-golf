@@ -5,7 +5,7 @@
 # Bienvenue sur 19ème trou
 
 
-![Alt Text](https://media.giphy.com/media/xT5LMx8fnWUpFfqWVa/giphy.gif)
+<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/xT5LMx8fnWUpFfqWVa" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/golf-gopro-xT5LMx8fnWUpFfqWVa">via GIPHY</a></p>
 
 
 ### 19ème trou transforme en oportunité une difficulté rencontrée par les golfeurs citadins.
@@ -16,15 +16,15 @@ Etre golfeur à Paris, c'est bien mais aux dernière nouvelles, il n'y a pas de 
 
 #### L'objectif
 
-    * Proposer un moyen de transport pour rejoindre ton golf préféré
+* Proposer un moyen de transport pour rejoindre ton golf préféré
 
-    * Trouver des partenaires de jeu en accord avec tes objectifs
+* Trouver des partenaires de jeu en accord avec tes objectifs
 
 #### Le service
 
-    * Les golfeurs avec voiture emmènent ceux sans voitures. D'une pierre deux coups. Tu peux dorénavant aller jouer et argrandir ta communauté de golfeurs.
+* Les golfeurs avec voiture emmènent ceux sans voitures. D'une pierre deux coups. Tu peux dorénavant aller jouer et argrandir ta communauté de golfeurs.
 
-    --------------
+--------------
 
 #### Les Features 
 
