@@ -99,3 +99,11 @@ footer {
   padding:0; 
   text-align:center;
 }
+
+.adjust-footer-left{
+  padding-left: 135px;
+}
+
+.adjust-footer-right{
+  padding-right: 120px;
+}
