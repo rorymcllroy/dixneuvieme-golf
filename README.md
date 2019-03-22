@@ -5,7 +5,7 @@
 # Bienvenue sur 19ème trou
 
 
-<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/xT5LMx8fnWUpFfqWVa" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/golf-gopro-xT5LMx8fnWUpFfqWVa">via GIPHY</a></p>
+<iframe src="https://giphy.com/embed/xT5LMx8fnWUpFfqWVa" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/golf-gopro-xT5LMx8fnWUpFfqWVa">via GIPHY</a></p>
 
 
 ### 19ème trou transforme en oportunité une difficulté rencontrée par les golfeurs citadins.
