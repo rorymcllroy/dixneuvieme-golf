@@ -16694,7 +16694,7 @@ footer {
     height: auto; }
   .avatar[class*="-xl"] {
     width: 10rem;
-    height: auto; }
+    height: 10rem; }
 
 .user-grid {
   -webkit-user-select: none;
