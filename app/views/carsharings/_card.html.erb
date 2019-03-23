@@ -42,10 +42,14 @@
           <% if current_user.id == carsharing.driver.id %>
             <h5><strong>Je suis le conducteur</strong></h5>
           <% else %>
-            <% if carsharing.price != 0%>
-              <%= render 'carsharings/stripe', carsharing: carsharing %>
+            <% if already_a_passenger(carsharing.id, current_user.id) %>
+              <h5><strong>Vous avez rejoint ce covoiturage</strong></h5>
             <% else %>
-              <%= link_to "Rejoindre le trajet (Gratuit)", carsharing_passengers_path(carsharing.id), class:"btn btn-secondary btn-sm center", method: "post" %>
+              <% if carsharing.price != 0%>
+                <%= render 'carsharings/stripe', carsharing: carsharing %>
+              <% else %>
+                <%= link_to "Rejoindre le trajet (Gratuit)", carsharing_passengers_path(carsharing.id), class:"btn btn-secondary btn-sm center", method: "post" %>
+              <% end %>
             <% end %>
           <% end %>
         <% else %>
