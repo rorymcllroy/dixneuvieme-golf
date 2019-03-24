@@ -3,7 +3,7 @@ class PrivatemessageMailer < ApplicationMailer
 
   def new_pm_email(pm)
     @pm = pm
-    @url  = 'http://localhost:3000/'
+    @url  = 'https://dixneuvieme-golf-production.herokuapp.com/'
     mail(to: @pm.recipient.email, subject: 'Tu as reçu un nouveau message')
   end
 end
