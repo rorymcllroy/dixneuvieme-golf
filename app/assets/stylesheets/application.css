@@ -90,16 +90,6 @@ footer {
   min-height: 100%;
 }
 
-.admin-tabs{
-  padding:20px 10px;
-  text-align:center;
-}
-
-.admin-tabs-th{
-  padding:0; 
-  text-align:center;
-}
-
 .adjust-footer-left{
   padding-left: 100px;
 }
