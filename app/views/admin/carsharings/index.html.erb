@@ -29,10 +29,10 @@
                 <% @carsharings.each do |carsharing|%>
                   <tr>
                     <td style="padding:20px 10px; text-align:center;"><%=carsharing.id%></td>
-                    <td style="padding:20px 10px; text-align:center;"><%=Golf.find(carsharing.golf_id).name%></td>
+                    <td style="padding:20px 10px; text-align:center;"><%=golf_by_id(carsharing.golf_id).name%></td>
                     <td style="padding:20px 10px;"><%=carsharing.description%></td>
                     <td style="padding:20px 10px; text-align:center;"><%=carsharing.places%></td>
-                    <td style="padding:20px 10px; text-align:center;"><%=User.find(carsharing.driver_id).first_name%> <%=User.find(carsharing.driver_id).last_name%></td>
+                    <td style="padding:20px 10px; text-align:center;"><%=user_by_id(carsharing.driver_id).first_name%> <%=User.find(carsharing.driver_id).last_name%></td>
                     <td style="padding:20px 10px; text-align:center;"><%=carsharing.price == 0 ? "Gratuit" : "#{carsharing.price}€"%></td>
                     <td style="padding:20px 10px; text-align:center;"><%=carsharing.validated ? "Oui" : "Non" %></td>
                     <td style="padding:20px 10px; text-align:center;">

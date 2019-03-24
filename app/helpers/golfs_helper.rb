@@ -9,4 +9,7 @@ module GolfsHelper
        "€€€"
     end
   end
+  def golf_by_id(golf_if)
+    Golf.find(golf_if)
+  end
 end
