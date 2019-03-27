@@ -1,2 +1,5 @@
 document.getElementsByClassName('conversation-msg')[0].insertAdjacentHTML('beforeend', '<%= j render "private_message_sender", pm: @new_pm %>');
 document.getElementById('pmForm').reset();
+
+document.getElementsByClassName("conversation-msg")[0].scrollTop = document.getElementsByClassName("conversation-msg")[0].scrollHeight
+

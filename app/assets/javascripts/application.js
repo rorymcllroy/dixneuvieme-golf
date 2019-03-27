@@ -25,3 +25,13 @@ window.setTimeout(function () {
     $(this).remove();
   });
 }, 5000);
+
+window.addEventListener("load", 
+function() {
+  let msgBox = document.getElementsByClassName("conversation-msg")[0]
+  msgBox.scrollTop = msgBox.scrollHeight
+  }
+)
+
+
+

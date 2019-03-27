@@ -35,3 +35,7 @@ textarea, input{
   height: 400px; 
   overflow: scroll;
 }
+
+blockquote.boxed:last-child {
+  margin-bottom: 120px;
+}
