@@ -9,4 +9,11 @@ module CarsharingsHelper
         return false
      end
   end
+  def conversation_exist?(user1_id, user2_id)   
+      if Privatemessage.all.where(recipient_id: user1_id, sender_id: user2_id).count + Privatemessage.all.where(recipient_id: user2_id, sender_id: user1_id).count > 0
+         return true
+      else
+         return false
+      end
+  end
 end

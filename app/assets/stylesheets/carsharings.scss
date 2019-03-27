@@ -19,6 +19,13 @@
   justify-content: space-between;
 }
 
+.flex-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .card {
   margin-bottom: 40px;
   background-color: white;
@@ -92,4 +99,8 @@ p {
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 0;
+}
+
+.fa-envelope-open-text {
+  color: var(--primary)
 }

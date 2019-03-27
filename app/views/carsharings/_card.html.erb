@@ -36,14 +36,32 @@
     <hr class="w-25" style="margin-top:15px; margin-bottom:15px;">
     <div class="flex-center">
       <% if carsharing.places - passengers_booked(carsharing.id) <= 0 %>
-        <h5><strong>Covoiturage complet</strong></h5>
+        <% if current_user && already_a_passenger(carsharing.id, current_user.id) %>
+            <div class="flex-vertical">
+              <h5><strong>Vous avez rejoint ce covoiturage</strong></h5>
+              <% if conversation_exist?(carsharing.driver.id,current_user.id)%>
+                <%= link_to '<i title="Contacter le chauffeur" class="fas fa-envelope-open-text fa-3x"></i>'.html_safe, user_conversation_path(current_user, carsharing.driver.id) %>
+              <% else %>            
+                <%= link_to '<i title="Contacter le chauffeur" class="fas fa-envelope-open-text fa-3x"></i>'.html_safe, new_privatemessage_path %>
+              <% end %>
+            </div>
+        <% else %>
+          <h5><strong>Covoiturage complet</strong></h5>
+        <% end %>
       <% else %>
         <% if current_user %>
           <% if current_user.id == carsharing.driver.id %>
             <h5><strong>Je suis le conducteur</strong></h5>
           <% else %>
             <% if already_a_passenger(carsharing.id, current_user.id) %>
-              <h5><strong>Vous avez rejoint ce covoiturage</strong></h5>
+              <div class="flex-vertical">
+                <h5><strong>Vous avez rejoint ce covoiturage</strong></h5>
+                <% if conversation_exist?(carsharing.driver.id,current_user.id)%>
+                  <%= link_to '<i title="Contacter le chauffeur" class="fas fa-envelope-open-text fa-3x"></i>'.html_safe, user_conversation_path(current_user, carsharing.driver.id) %>
+                <% else %>            
+                  <%= link_to '<i title="Contacter le chauffeur" class="fas fa-envelope-open-text fa-3x"></i>'.html_safe, new_privatemessage_path %>
+                <% end %>
+              </div>
             <% else %>
               <% if carsharing.price != 0%>
                 <%= render 'carsharings/stripe', carsharing: carsharing %>
