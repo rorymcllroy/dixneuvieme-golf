@@ -2,6 +2,8 @@
 
 # 19ème trou l'application de covoiturage pour golfeur citadin
 
+Test du transfert de propriété du répertoire GitHub
+
 ### Le constat
 
 Dans les grandes villes, il n'est pas aisé d'aller jouer au golf lorsque l'on n'a pas de voiture. Les golfs ne sont pas forcément très loin des centres villes mais la desserte en transport en commun est rarement optimale. D'autant plus que le matériel de golf peut s'avérer encombrant.
