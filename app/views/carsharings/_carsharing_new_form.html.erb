@@ -19,7 +19,7 @@
               <br>
               <%= label_tag 'Jour et heure du départ* (format: jj/mm/aaaa hh:mm)' %>
               <%= datetime_local_field_tag 'start_date', "" , class: 'form-control form-control-minimal', placeholder: 'Date'%>
-              <%= text_area_tag 'description', nil ,class: 'form-control', rows: '6', placeholder: 'Description* (20 caractères minimum)' %>            
+              <%= text_area_tag 'description', nil ,class: 'form-control', rows: '6', placeholder: 'Description* (140 caractères maximum)' %>            
             </div>
           </div>
           <div class="form-row mt-12">

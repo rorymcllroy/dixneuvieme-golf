@@ -22,7 +22,7 @@
               <br>
               <%= f.label 'Ville*'%>
               <%= f.select(:city_id, options_for_select(City.pluck(:name, :id), target_blank: true )) %>
-              <%= f.text_area :description, class: 'form-control', rows: "6", placeholder: 'Description* (20 caractères minimum)'%>
+              <%= f.text_area :description, class: 'form-control', rows: "6", placeholder: 'Description* (140 caractères maximum)'%>
               <%= f.label 'Photo de profil'%>
               <%= f.file_field :avatar %>
             </div>
