@@ -4,7 +4,7 @@ class Carsharingreview < ApplicationRecord
 
   validates :content,
   presence: true,
-  length: { in: 20..1000 }
+  length: { in: 1..140 }
   validates :grade,
   presence: true
   

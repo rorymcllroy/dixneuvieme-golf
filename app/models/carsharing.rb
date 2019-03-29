@@ -15,7 +15,7 @@ class Carsharing < ApplicationRecord
   presence: true
   validates :description, 
   presence: true,
-  length: { in: 20..1000 }
+  length: { in: 1..140 }
   validates :price,
   presence: true
   validate :date_not_in_past
