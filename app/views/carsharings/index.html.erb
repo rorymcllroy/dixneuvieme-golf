@@ -23,7 +23,7 @@
   <% else %>
     <div class="flex-center">
       <% @carsharing.each do |carsharing| %>
-        <%if carsharing.validated%>
+        <%if carsharing.validated && carsharing.date > DateTime.now %>
           <%= render 'card', carsharing: carsharing %>
         <%end%>
       <% end %>
