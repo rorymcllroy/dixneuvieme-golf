@@ -6,7 +6,7 @@
 <body>
   <h3> Bonjour <%= @passenger.first_name %>, </h3>
   <p style="margin:0;"> Confirmation de ton inscription au covoiturage de <%= @carsharing.driver.first_name %> <%= @carsharing.driver.last_name %>.</p>
-  <p style="margin:0;"> Lieu de prise en charge: <%= @carsharing.city.name %> (le chauffeur te confirmera l'adresse exacte avant le départ)</p>
+  <p style="margin:0;"> Lieu de prise en charge: <%= @carsharing.city.name %> (tu peux contacter le chauffeur directement depuis la page des covoiturages)</p>
   <p style="margin:0;"> Date et heure du départ: <%= @carsharing.date.day < 10 ? "0#{@carsharing.date.day}" : "#{@carsharing.date.day}"%>/<%=@carsharing.date.month < 10 ? "0#{@carsharing.date.month}" : "#{@carsharing.date.month}"%>/<%=@carsharing.date.year%> à <%= @carsharing.date.hour %>h<%= @carsharing.date.min < 10 ? "0#{@carsharing.date.min}": "#{@carsharing.date.min}" %> </p>
   <br>
   <hr style="width:30%;">

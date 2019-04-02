@@ -20,7 +20,7 @@ class PassengerMailer < ApplicationMailer
     @carsharing = passenger.carsharing
     @passenger = passenger.passenger
     @url  = 'https://dixneuvieme-golf-production.herokuapp.com/'
-    mail(to: @passenger.email, subject: 'Noter le covoiturage !')
+    mail(to: @passenger.email, subject: 'Note ton dernier covoiturage!')
   end
   
 end
