@@ -10,12 +10,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :city, optional: true
-  has_many :golfcomments
-  has_many :drivers, foreign_key: 'driver_id', class_name: "Carsharing"
-  has_many :passengers, foreign_key: 'passenger_id', class_name: "Passenger"
-  has_many :carsharingreviews, foreign_key: 'passenger_id', class_name: "Carsharingreview"
-  has_many :sent_messages, foreign_key: 'sender_id', class_name: "Privatemessage"
-  has_many :received_messages, foreign_key: 'recipient_id', class_name: "Privatemessage"
+  has_many :golfcomments, dependent: :destroy
+  has_many :drivers, foreign_key: 'driver_id', class_name: "Carsharing", dependent: :destroy
+  has_many :passengers, foreign_key: 'passenger_id', class_name: "Passenger", dependent: :destroy
+  has_many :carsharingreviews, foreign_key: 'passenger_id', class_name: "Carsharingreview", dependent: :destroy
+  has_many :sent_messages, foreign_key: 'sender_id', class_name: "Privatemessage", dependent: :destroy
+  has_many :received_messages, foreign_key: 'recipient_id', class_name: "Privatemessage", dependent: :destroy
   has_one_attached :avatar
 
   validates :first_name, 
