@@ -34,7 +34,11 @@
     <p class="card-title mb-0"><i class="fas fa-users fa-sm"></i> 
       <% if passengers_booked(carsharing.id) > 0 %>
         <% passenger_of_carsharing_array(carsharing.id).each do |passenger| %>
-          <%= image_tag user_by_id(passenger.passenger_id).avatar, class: "avatar-sm", title: "#{user_by_id(passenger.passenger_id).first_name}" %>
+          <% if user_by_id(passenger.passenger_id).avatar.attached? %>
+            <%= image_tag user_by_id(passenger.passenger_id).avatar, class: "avatar-sm", title: "#{user_by_id(passenger.passenger_id).first_name}" %>
+          <% else %>
+            <%= image_tag "profile-pic-test.jpg", class: "avatar-sm", title: "#{user_by_id(passenger.passenger_id).first_name}" %>
+          <% end %>
         <%end%>
       <% else %>
         <span style="font-style:italic;">Sois le premier passager ! </span>
