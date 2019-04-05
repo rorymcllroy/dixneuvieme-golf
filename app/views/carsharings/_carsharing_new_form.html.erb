@@ -7,9 +7,7 @@
             <div class="col-md-7">
               <%= label_tag 'Golf*' %>
               <%= select_tag(:golf_id, options_for_select(Golf.pluck(:name, :id), target_blank: true )) %>
-              <br>
-              <%= label_tag 'Départ*' %>
-              <%= select_tag(:city_id, options_for_select(City.pluck(:name, :id), target_blank: true )) %>
+              <%= text_field_tag 'city_name', nil, class: 'form-control form-control-minimal city-autocompletion', placeholder: 'Ville de départ du covoiturage*' %>
               <br>
               <%= label_tag 'Nombres de places*' %>
               <%= select_tag(:place, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4]])) %>

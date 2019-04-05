@@ -13,9 +13,12 @@ class CarsharingsController < ApplicationController
     @carsharing = Carsharing.new
   end
   
-  def create
-    @carsharing = Carsharing.new(driver_id: current_user.id, date: params[:start_date], places: params[:place], description: params[:description], price: params[:price], golf_id: params[:golf_id], city_id: params[:city_id])
-    if @carsharing.save # save carsharing in the db
+  def create  
+    
+    city_id = City.find_or_create_by(name: params[:city_name]).id
+
+    @carsharing = Carsharing.new(driver_id: current_user.id, date: params[:start_date], places: params[:place], description: params[:description], price: params[:price], golf_id: params[:golf_id], city_id: city_id)
+    if @carsharing.save! # save carsharing in the db
       redirect_to carsharings_path
       flash[:notice] = "Covoiturage en attente de validation."
     else

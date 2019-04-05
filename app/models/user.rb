@@ -9,14 +9,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :city, optional: true
+  belongs_to :city
 
   def city_name
     city.try(:name)
   end
 
   def city_name=(name)
-    self.city = City.find_or_create_by_name(name) if name.present?
+    self.city = City.find_or_create_by(name: name) if name.present?
   end
 
   has_many :golfcomments, dependent: :destroy
