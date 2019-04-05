@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     resources :passengers, only: [:new, :create, :index]
     resources :carsharingreviews, only: [:new, :create]
   end
+  resources :cities
 end
 

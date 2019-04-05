@@ -10,6 +10,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :city, optional: true
+
+  def city_name
+    city.try(:name)
+  end
+
+  def city_name=(name)
+    self.city = City.find_or_create_by_name(name) if name.present?
+  end
+
   has_many :golfcomments, dependent: :destroy
   has_many :drivers, foreign_key: 'driver_id', class_name: "Carsharing", dependent: :destroy
   has_many :passengers, foreign_key: 'passenger_id', class_name: "Passenger", dependent: :destroy

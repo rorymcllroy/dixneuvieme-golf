@@ -14,6 +14,7 @@
             <div class="col-md-7">
               <%= f.text_field :first_name, class: 'form-control form-control-minimal', placeholder: 'Prénom*' %>
               <%= f.text_field :last_name, class: 'form-control form-control-minimal', placeholder: 'Nom*' %>
+              <%= f.text_field :city_name, class: 'form-control form-control-minimal city-autocompletion', placeholder: 'Ville*' %>
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-minimal', placeholder: 'Email*' %>
               <%= f.password_field :password, autocomplete: "new-password", class: 'form-control form-control-minimal', placeholder: 'Mot de passe (6 caractères minimum)*' %>
               <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control form-control-minimal', placeholder: 'Confirmer le mot de passe*' %>
@@ -37,3 +38,7 @@
     </div>
   </div>
 </section>
+
+<form>
+    <input type="text" class="city-autocompletion" />
+</form>

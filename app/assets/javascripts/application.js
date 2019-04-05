@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
 //= require activestorage
 //= require_tree .
 //= require vendor.min
@@ -19,6 +20,8 @@
 //= require vendor/modernizr
 //= require vendor/prism
 //= require assets/app
+//= require jquery-ui/widgets/autocomplete
+
 
 window.setTimeout(function () {
   $(".alert").fadeTo(500, 0).slideUp(500, function () {

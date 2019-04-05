@@ -13,6 +13,7 @@
 
  *= require vendor
  *= require assets/style
+ *= require jquery-ui
  *= require_tree .
  *= require_self
  
