@@ -1,0 +1,899 @@
+[
+ {
+   "name": "Marseille"
+ },
+ {
+   "name": "Lyon"
+ },
+ {
+   "name": "Toulouse"
+ },
+ {
+   "name": "Nice"
+ },
+ {
+   "name": "Nantes"
+ },
+ {
+   "name": "Montpellier"
+ },
+ {
+   "name": "Strasbourg"
+ },
+ {
+   "name": "Bordeaux"
+ },
+ {
+   "name": "Lille"
+ },
+ {
+   "name": "Rennes"
+ },
+ {
+   "name": "Reims"
+ },
+ {
+   "name": "Saint-Étienne"
+ },
+ {
+   "name": "Le Havre"
+ },
+ {
+   "name": "Toulon"
+ },
+ {
+   "name": "Grenoble"
+ },
+ {
+   "name": "Dijon"
+ },
+ {
+   "name": "Angers"
+ },
+ {
+   "name": "Nîmes"
+ },
+ {
+   "name": "Villeurbanne"
+ },
+ {
+   "name": "Saint-Denis"
+ },
+ {
+   "name": "Aix-en-Provence"
+ },
+ {
+   "name": "Le Mans"
+ },
+ {
+   "name": "Clermont-Ferrand"
+ },
+ {
+   "name": "Brest"
+ },
+ {
+   "name": "Tours"
+ },
+ {
+   "name": "Amiens"
+ },
+ {
+   "name": "Limoges"
+ },
+ {
+   "name": "Annecy"
+ },
+ {
+   "name": "Perpignan"
+ },
+ {
+   "name": "Boulogne-Billancourt"
+ },
+ {
+   "name": "Metz"
+ },
+ {
+   "name": "Besançon"
+ },
+ {
+   "name": "Orléans"
+ },
+ {
+   "name": "Saint-Denis"
+ },
+ {
+   "name": "Argenteuil"
+ },
+ {
+   "name": "Rouen"
+ },
+ {
+   "name": "Mulhouse"
+ },
+ {
+   "name": "Montreuil"
+ },
+ {
+   "name": "Saint-Paul"
+ },
+ {
+   "name": "Caen"
+ },
+ {
+   "name": "Nancy"
+ },
+ {
+   "name": "Nouméa"
+ },
+ {
+   "name": "Tourcoing"
+ },
+ {
+   "name": "Roubaix"
+ },
+ {
+   "name": "Nanterre"
+ },
+ {
+   "name": "Vitry-sur-Seine"
+ },
+ {
+   "name": "Avignon"
+ },
+ {
+   "name": "Créteil"
+ },
+ {
+   "name": "Dunkerque"
+ },
+ {
+   "name": "Poitiers"
+ },
+ {
+   "name": "Aubervilliers"
+ },
+ {
+   "name": "Asnières-sur-Seine"
+ },
+ {
+   "name": "Colombes"
+ },
+ {
+   "name": "Versailles"
+ },
+ {
+   "name": "Aulnay-sous-Bois"
+ },
+ {
+   "name": "Saint-Pierre"
+ },
+ {
+   "name": "Courbevoie"
+ },
+ {
+   "name": "Fort-de-France"
+ },
+ {
+   "name": "Cherbourg-en-Cotentin"
+ },
+ {
+   "name": "Rueil-Malmaison"
+ },
+ {
+   "name": "Champigny-sur-Marne"
+ },
+ {
+   "name": "Le Tampon"
+ },
+ {
+   "name": "Pau"
+ },
+ {
+   "name": "Béziers"
+ },
+ {
+   "name": "La Rochelle"
+ },
+ {
+   "name": "Calais"
+ },
+ {
+   "name": "Saint-Maur-des-Fossés"
+ },
+ {
+   "name": "Antibes"
+ },
+ {
+   "name": "Cannes"
+ },
+ {
+   "name": "Mérignac"
+ },
+ {
+   "name": "Drancy"
+ },
+ {
+   "name": "Colmar"
+ },
+ {
+   "name": "Saint-Nazaire"
+ },
+ {
+   "name": "Ajaccio"
+ },
+ {
+   "name": "Issy-les-Moulineaux"
+ },
+ {
+   "name": "Évry-Courcouronnes"
+ },
+ {
+   "name": "Noisy-le-Grand"
+ },
+ {
+   "name": "Bourges"
+ },
+ {
+   "name": "Vénissieux"
+ },
+ {
+   "name": "La Seyne-sur-Mer"
+ },
+ {
+   "name": "Cergy"
+ },
+ {
+   "name": "Levallois-Perret"
+ },
+ {
+   "name": "Quimper"
+ },
+ {
+   "name": "Valence"
+ },
+ {
+   "name": "Villeneuve-d'Ascq"
+ },
+ {
+   "name": "Antony"
+ },
+ {
+   "name": "Pessac"
+ },
+ {
+   "name": "Clichy"
+ },
+ {
+   "name": "Ivry-sur-Seine"
+ },
+ {
+   "name": "Troyes"
+ },
+ {
+   "name": "Cayenne"
+ },
+ {
+   "name": "Neuilly-sur-Seine"
+ },
+ {
+   "name": "Montauban"
+ },
+ {
+   "name": "Chambéry"
+ },
+ {
+   "name": "Niort"
+ },
+ {
+   "name": "Sarcelles"
+ },
+ {
+   "name": "Lorient"
+ },
+ {
+   "name": "Beauvais"
+ },
+ {
+   "name": "Le Blanc-Mesnil"
+ },
+ {
+   "name": "Hyères"
+ },
+ {
+   "name": "Saint-André"
+ },
+ {
+   "name": "Épinay-sur-Seine"
+ },
+ {
+   "name": "Villejuif"
+ },
+ {
+   "name": "Pantin"
+ },
+ {
+   "name": "Maisons-Alfort"
+ },
+ {
+   "name": "Saint-Quentin"
+ },
+ {
+   "name": "Meaux"
+ },
+ {
+   "name": "Les Abymes"
+ },
+ {
+   "name": "Chelles"
+ },
+ {
+   "name": "La Roche-sur-Yon"
+ },
+ {
+   "name": "Cholet"
+ },
+ {
+   "name": "Narbonne"
+ },
+ {
+   "name": "Fontenay-sous-Bois"
+ },
+ {
+   "name": "Saint-Louis"
+ },
+ {
+   "name": "Vannes"
+ },
+ {
+   "name": "Fréjus"
+ },
+ {
+   "name": "Bondy"
+ },
+ {
+   "name": "Arles"
+ },
+ {
+   "name": "Sartrouville"
+ },
+ {
+   "name": "Clamart"
+ },
+ {
+   "name": "Bobigny"
+ },
+ {
+   "name": "Corbeil-Essonnes"
+ },
+ {
+   "name": "Sevran"
+ },
+ {
+   "name": "Bayonne"
+ },
+ {
+   "name": "Grasse"
+ },
+ {
+   "name": "Massy"
+ },
+ {
+   "name": "Cagnes-sur-Mer"
+ },
+ {
+   "name": "Vincennes"
+ },
+ {
+   "name": "Saint-Ouen-sur-Seine"
+ },
+ {
+   "name": "Laval"
+ },
+ {
+   "name": "Montrouge"
+ },
+ {
+   "name": "Albi"
+ },
+ {
+   "name": "Belfort"
+ },
+ {
+   "name": "Évreux"
+ },
+ {
+   "name": "Martigues"
+ },
+ {
+   "name": "Suresnes"
+ },
+ {
+   "name": "Vaulx-en-Velin"
+ },
+ {
+   "name": "Brive-la-Gaillarde"
+ },
+ {
+   "name": "Charleville-Mézières"
+ },
+ {
+   "name": "Gennevilliers"
+ },
+ {
+   "name": "Saint-Herblain"
+ },
+ {
+   "name": "Saint-Malo"
+ },
+ {
+   "name": "Carcassonne"
+ },
+ {
+   "name": "Saint-Priest"
+ },
+ {
+   "name": "Blois"
+ },
+ {
+   "name": "Salon-de-Provence"
+ },
+ {
+   "name": "Chalon-sur-Saône"
+ },
+ {
+   "name": "Rosny-sous-Bois"
+ },
+ {
+   "name": "Meudon"
+ },
+ {
+   "name": "Aubagne"
+ },
+ {
+   "name": "Saint-Brieuc"
+ },
+ {
+   "name": "Châlons-en-Champagne"
+ },
+ {
+   "name": "Bastia"
+ },
+ {
+   "name": "Puteaux"
+ },
+ {
+   "name": "Livry-Gargan"
+ },
+ {
+   "name": "Choisy-le-Roi"
+ },
+ {
+   "name": "Châteauroux"
+ },
+ {
+   "name": "Saint-Germain-en-Laye"
+ },
+ {
+   "name": "Mantes-la-Jolie"
+ },
+ {
+   "name": "Alfortville"
+ },
+ {
+   "name": "Saint-Laurent-du-Maroni"
+ },
+ {
+   "name": "Valenciennes"
+ },
+ {
+   "name": "Sète"
+ },
+ {
+   "name": "Noisy-le-Sec"
+ },
+ {
+   "name": "Les Sables-d'Olonne"
+ },
+ {
+   "name": "Istres"
+ },
+ {
+   "name": "Caluire-et-Cuire"
+ },
+ {
+   "name": "Talence"
+ },
+ {
+   "name": "Garges-lès-Gonesse"
+ },
+ {
+   "name": "La Courneuve"
+ },
+ {
+   "name": "Angoulême"
+ },
+ {
+   "name": "Boulogne-sur-Mer"
+ },
+ {
+   "name": "Le Cannet"
+ },
+ {
+   "name": "Bourg-en-Bresse"
+ },
+ {
+   "name": "Wattrelos"
+ },
+ {
+   "name": "Castres"
+ },
+ {
+   "name": "Thionville"
+ },
+ {
+   "name": "Bron"
+ },
+ {
+   "name": "Arras"
+ },
+ {
+   "name": "Gap"
+ },
+ {
+   "name": "Rezé"
+ },
+ {
+   "name": "Tarbes"
+ },
+ {
+   "name": "Compiègne"
+ },
+ {
+   "name": "Melun"
+ },
+ {
+   "name": "Le Lamentin"
+ },
+ {
+   "name": "Draguignan"
+ },
+ {
+   "name": "Alès"
+ },
+ {
+   "name": "Bagneux"
+ },
+ {
+   "name": "Douai"
+ },
+ {
+   "name": "Stains"
+ },
+ {
+   "name": "Marcq-en-Barœul"
+ },
+ {
+   "name": "Gagny"
+ },
+ {
+   "name": "Chartres"
+ },
+ {
+   "name": "Anglet"
+ },
+ {
+   "name": "Colomiers"
+ },
+ {
+   "name": "Montélimar"
+ },
+ {
+   "name": "Saint-Martin-d'Hères"
+ },
+ {
+   "name": "Pontault-Combault"
+ },
+ {
+   "name": "Saint-Benoît"
+ },
+ {
+   "name": "Saint-Joseph"
+ },
+ {
+   "name": "Joué-lès-Tours"
+ },
+ {
+   "name": "Villefranche-sur-Saône"
+ },
+ {
+   "name": "Poissy"
+ },
+ {
+   "name": "Châtillon"
+ },
+ {
+   "name": "Villepinte"
+ },
+ {
+   "name": "Savigny-sur-Orge"
+ },
+ {
+   "name": "Montluçon"
+ },
+ {
+   "name": "Franconville"
+ },
+ {
+   "name": "Bagnolet"
+ },
+ {
+   "name": "Sainte-Geneviève-des-Bois"
+ },
+ {
+   "name": "Échirolles"
+ },
+ {
+   "name": "Creil"
+ },
+ {
+   "name": "Saint-Martin"
+ },
+ {
+   "name": "Tremblay-en-France"
+ },
+ {
+   "name": "Conflans-Sainte-Honorine"
+ },
+ {
+   "name": "La Ciotat"
+ },
+ {
+   "name": "Saint-Chamond"
+ },
+ {
+   "name": "Saint-Raphaël"
+ },
+ {
+   "name": "Thonon-les-Bains"
+ },
+ {
+   "name": "Annemasse"
+ },
+ {
+   "name": "Auxerre"
+ },
+ {
+   "name": "Le Port"
+ },
+ {
+   "name": "Neuilly-sur-Marne"
+ },
+ {
+   "name": "Roanne"
+ },
+ {
+   "name": "Haguenau"
+ },
+ {
+   "name": "Palaiseau"
+ },
+ {
+   "name": "Le Perreux-sur-Marne"
+ },
+ {
+   "name": "Vitrolles"
+ },
+ {
+   "name": "Saint-Leu"
+ },
+ {
+   "name": "Athis-Mons"
+ },
+ {
+   "name": "Marignane"
+ },
+ {
+   "name": "Agen"
+ },
+ {
+   "name": "Mâcon"
+ },
+ {
+   "name": "Nevers"
+ },
+ {
+   "name": "Romans-sur-Isère"
+ },
+ {
+   "name": "Six-Fours-les-Plages"
+ },
+ {
+   "name": "Sainte-Marie"
+ },
+ {
+   "name": "Châtenay-Malabry"
+ },
+ {
+   "name": "Meyzieu"
+ },
+ {
+   "name": "Montigny-le-Bretonneux"
+ },
+ {
+   "name": "La Possession"
+ },
+ {
+   "name": "Villeneuve-Saint-Georges"
+ },
+ {
+   "name": "Villenave-d'Ornon"
+ },
+ {
+   "name": "Trappes"
+ },
+ {
+   "name": "Cambrai"
+ },
+ {
+   "name": "Les Mureaux"
+ },
+ {
+   "name": "Matoury"
+ },
+ {
+   "name": "Koungou"
+ },
+ {
+   "name": "Châtellerault"
+ },
+ {
+   "name": "Nogent-sur-Marne"
+ },
+ {
+   "name": "Dumbéa"
+ },
+ {
+   "name": "Schiltigheim"
+ },
+ {
+   "name": "Houilles"
+ },
+ {
+   "name": "Plaisir"
+ },
+ {
+   "name": "Épinal"
+ },
+ {
+   "name": "Le Chesnay-Rocquencourt"
+ },
+ {
+   "name": "Vigneux-sur-Seine"
+ },
+ {
+   "name": "L'Haÿ-les-Roses"
+ },
+ {
+   "name": "Chatou"
+ },
+ {
+   "name": "Dreux"
+ },
+ {
+   "name": "Saint-Médard-en-Jalles"
+ },
+ {
+   "name": "Goussainville"
+ },
+ {
+   "name": "Liévin"
+ },
+ {
+   "name": "Baie-Mahault"
+ },
+ {
+   "name": "Pontoise"
+ },
+ {
+   "name": "Lens"
+ },
+ {
+   "name": "Viry-Châtillon"
+ },
+ {
+   "name": "Rillieux-la-Pape"
+ },
+ {
+   "name": "Charenton-le-Pont"
+ },
+ {
+   "name": "Cachan"
+ },
+ {
+   "name": "Saint-Cloud"
+ },
+ {
+   "name": "Vandœuvre-lès-Nancy"
+ },
+ {
+   "name": "Savigny-le-Temple"
+ },
+ {
+   "name": "Villemomble"
+ },
+ {
+   "name": "Malakoff"
+ },
+ {
+   "name": "Périgueux"
+ },
+ {
+   "name": "Mont-de-Marsan"
+ },
+ {
+   "name": "Clichy-sous-Bois"
+ },
+ {
+   "name": "Aix-les-Bains"
+ },
+ {
+   "name": "Maubeuge"
+ },
+ {
+   "name": "Dieppe"
+ },
+ {
+   "name": "Vienne"
+ },
+ {
+   "name": "Sotteville-lès-Rouen"
+ },
+ {
+   "name": "Saint-Étienne-du-Rouvray"
+ },
+ {
+   "name": "Saint-Laurent-du-Var"
+ },
+ {
+   "name": "Soissons"
+ },
+ {
+   "name": "Saumur"
+ },
+ {
+   "name": "Vallauris"
+ },
+ {
+   "name": "Vierzon"
+ },
+ {
+   "name": "Alençon"
+ },
+ {
+   "name": "Aurillac"
+ },
+ {
+   "name": "Le Grand-Quevilly"
+ },
+ {
+   "name": "Montbéliard"
+ },
+ {
+   "name": "Saint-Dizier"
+ },
+ {
+   "name": "Biarritz"
+ },
+ {
+   "name": "Vichy"
+ },
+ {
+   "name": "Orly"
+ },
+ {
+   "name": "Bruay-la-Buissière"
+ },
+ {
+   "name": "Le Creusot"
+ }
+]

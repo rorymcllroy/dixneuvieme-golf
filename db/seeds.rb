@@ -6,27 +6,34 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Create cities
-City.create!(name: "Paris Ier");
-City.create!(name: "Paris IIème");
-City.create!(name: "Paris IIIème");
-City.create!(name: "Paris IVème");
-City.create!(name: "Paris Vème");
-City.create!(name: "Paris VIème");
-City.create!(name: "Paris VIIème");
-City.create!(name: "Paris VIIIème");
-City.create!(name: "Paris IXème");
-City.create!(name: "Paris Xème");
-City.create!(name: "Paris XIème");
-City.create!(name: "Paris XIIème");
-City.create!(name: "Paris XIIIème");
-City.create!(name: "Paris XIVème");
-City.create!(name: "Paris XVème");
-City.create!(name: "Paris XVIème");
-City.create!(name: "Paris XVIIème");
-City.create!(name: "Paris XVIIIème");
-City.create!(name: "Paris XIXème");
-City.create!(name: "Paris XXème");
+#Create cities (Paris)
+#City.create!(name: "Paris Ier");
+#City.create!(name: "Paris IIème");
+#City.create!(name: "Paris IIIème");
+#City.create!(name: "Paris IVème");
+#City.create!(name: "Paris Vème");
+#City.create!(name: "Paris VIème");
+#City.create!(name: "Paris VIIème");
+#City.create!(name: "Paris VIIIème");
+#City.create!(name: "Paris IXème");
+#City.create!(name: "Paris Xème");
+#City.create!(name: "Paris XIème");
+#City.create!(name: "Paris XIIème");
+#City.create!(name: "Paris XIIIème");
+#City.create!(name: "Paris XIVème");
+#City.create!(name: "Paris XVème");
+#City.create!(name: "Paris XVIème");
+#City.create!(name: "Paris XVIIème");
+#City.create!(name: "Paris XVIIIème");
+#City.create!(name: "Paris XIXème");
+#City.create!(name: "Paris XXème");
+
+#Create cities (CSV file)
+json = ActiveSupport::JSON.decode(File.read('db/cities.json'))
+
+json.each do |a|
+  City.create!(name: a['name'])
+end
 
 
 #Create golfs
@@ -40,53 +47,3 @@ City.create!(name: "Paris XXème");
 #Golf.create!(name: "Golf du Château de Cely", lat: "48.4590138", long: "2.5326635", price_range: "3", course_type: "18 trous", description: "Situé aux alentours de Fontainebleau, le golf s'articule autour d'un château du XIVème siècle. Parcours très bien entretenu avec quelques trous offrant une vue imprenable sur le château.", par:"Par 72", length:"5431 mètres", website:"https://jouer.golf/cely/");
 #Golf.create!(name: "Golf de la Vaucouleurs - Parcours Rivière", lat: "48.8668237", long: "1.6169513", price_range: "2", course_type: "18 trous", description: "Le golf de la Vaucouleurs est un 36 trous situé aux confins des Yvelines. Le parcours Rivière offre un 18 trous boisé qui s'étend le long de la Vaucouleurs.", par:"Par 73", length:"5608 mètres", website:"https://www.vaucouleurs.fr/");
 #Golf.create!(name: "Golf National - Parcours Aigle", lat: "48.7709414", long: "2.0706084", price_range: "2", course_type: "18 trous", description: "Le Golf National est principalement connu pour l'Albatros, le parcours de championnat ayant accueilli la Ryder Cup en 2018. Dans l'ombre de l'Albatros, le parcours Aigle est un links exigeant qui mérite le détour.", par:"Par 71", length:"5728 mètres", website:"https://www.golf-national.com/l-aigle/");
-
-# Create 20 golf comments
-# 20.times do
-#  comment = Golfcomment.new(content: Faker::Lorem.word)
-#  user = User.all.sample
-#  comment.user = user
-#  golf = Golf.all.sample
-#  comment.golf = golf
-#  comment.save!
-# end
-
-# Create 3 carsharings
-# 3.times do
-#  carsharing = Carsharing.new(description: Faker::Marketing.buzzwords, date: Faker::Date.between(Date.today, 1.month.from_now) , places: "4", price: "10")
-#  user = User.all.sample
-#  carsharing.driver = user
-#  golf = Golf.all.sample
-#  carsharing.golf = golf
-#  carsharing.save!
-# end
-
-#Create 10 passengers
-#10.times do
-#  passenger = Passenger.new(stripe_customer_id: Faker::Number.number(10))
-#  carsharing = Carsharing.all.sample
-#  passenger.carsharing = carsharing
-#  user = User.all.sample
-#  passenger.passenger = user
-#  passenger.save!
-#end
-
-#Create 5 carsharingreviews
-#5.times do
-#  review = Carsharingreview.new(content: Faker::Lorem.word)
-#  user = User.all.sample
-#  review.passenger = user
-#  carsharing = Carsharing.all.sample
-#  review.carsharing = carsharing
-#  review.save!
-#end
-
-#Create 10 private messages 
-#10.times do 
-#  private_message = Privatemessage.new(content: Faker::Lorem.word)
-#  user = User.all.sample
-#  private_message.sender = user
-#  user = User.all.sample
-#  private_message.recipient = user
-#  private_message.save!
-#end
