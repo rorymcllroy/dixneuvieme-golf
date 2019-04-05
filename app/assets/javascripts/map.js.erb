@@ -1,197 +1,226 @@
-function initMap() {
-
-// Generate Map and Related CSS
-let map = new google.maps.Map(document.getElementById('map'), {
-  center: {lat: 48.866667, lng: 2.333333},
-  zoom: 9,
-  disableDefaultUI: true,
-  styles: [
-	{
-	  "elementType": "geometry",
-	  "stylers": [
-		{
-		  "color": "#f5f5f5"
-		}
-	  ]
-	},
-	{
-	  "elementType": "labels.icon",
-	  "stylers": [
-		{
-		  "visibility": "off"
-		}
-	  ]
-	},
-	{
-	  "elementType": "labels.text.fill",
-	  "stylers": [
-		{
-		  "color": "#616161"
-		}
-	  ]
-	},
-	{
-	  "elementType": "labels.text.stroke",
-	  "stylers": [
-		{
-		  "color": "#f5f5f5"
-		}
-	  ]
-	},
-	{
-	  "featureType": "administrative.land_parcel",
-	  "elementType": "labels.text.fill",
-	  "stylers": [
-		{
-		  "color": "#bdbdbd"
-		}
-	  ]
-	},
-	{
-	  "featureType": "poi",
-	  "elementType": "geometry",
-	  "stylers": [
-		{
-		  "color": "#eeeeee"
-		}
-	  ]
-	},
-	{
-	  "featureType": "poi",
-	  "elementType": "labels.text.fill",
-	  "stylers": [
-		{
-		  "color": "#757575"
-		}
-	  ]
-	},
-	{
-	  "featureType": "poi.park",
-	  "elementType": "geometry",
-	  "stylers": [
-		{
-		  "color": "#e5e5e5"
-		}
-	  ]
-	},
-	{
-	  "featureType": "poi.park",
-	  "elementType": "labels.text.fill",
-	  "stylers": [
-		{
-		  "color": "#9e9e9e"
-		}
-	  ]
-	},
-	{
-	  "featureType": "road",
-	  "elementType": "geometry",
-	  "stylers": [
-		{
-		  "color": "#ffffff"
-		}
-	  ]
-	},
-	{
-	  "featureType": "road.arterial",
-	  "elementType": "labels.text.fill",
-	  "stylers": [
-		{
-		  "color": "#757575"
-		}
-	  ]
-	},
-	{
-	  "featureType": "road.highway",
-	  "elementType": "geometry",
-	  "stylers": [
-		{
-		  "color": "#dadada"
-		}
-	  ]
-	},
-	{
-	  "featureType": "road.highway",
-	  "elementType": "labels.text.fill",
-	  "stylers": [
-		{
-		  "color": "#616161"
-		}
-	  ]
-	},
-	{
-	  "featureType": "road.local",
-	  "elementType": "labels.text.fill",
-	  "stylers": [
-		{
-		  "color": "#9e9e9e"
-		}
-	  ]
-	},
-	{
-	  "featureType": "transit.line",
-	  "elementType": "geometry",
-	  "stylers": [
-		{
-		  "color": "#e5e5e5"
-		}
-	  ]
-	},
-	{
-	  "featureType": "transit.station",
-	  "elementType": "geometry",
-	  "stylers": [
-		{
-		  "color": "#eeeeee"
-		}
-	  ]
-	},
-	{
-	  "featureType": "water",
-	  "elementType": "geometry",
-	  "stylers": [
-		{
-		  "color": "#c9c9c9"
-		}
-	  ]
-	},
-	{
-	  "featureType": "water",
-	  "elementType": "labels.text.fill",
-	  "stylers": [
-		{
-		  "color": "#9e9e9e"
-		}
-	  ]
-	}
-  ]
-});
-
-// Custom pin
-//var pin = 
-  
-//Configure InfoWindow
-let infowindow = new google.maps.InfoWindow({
-content: ""
-});
-
-for(let i = 0; i < gon.golfs.length; i++){
-
- // Current marker
- let marker = new google.maps.Marker({
-	position: new google.maps.LatLng(gon.golfs[i].lat,gon.golfs[i].long),
-	map: map
-  });
-
-  //Golf name
-	let golf = gon.golfs[i].name
-  let golflink = golf.link("golfs/"+gon.golfs[i].id)
-  
-  // Open InfoWindow on click
-  google.maps.event.addListener(marker, 'click', function() {
-	infowindow.setContent(golflink);
-	infowindow.open(map, marker);
-  });
- }
+var crd; 
+var posLat;	
+var posLng;
+function success(pos) {
+	this.crd = pos.coords;
+	console.log('Votre position actuelle est :');
+	console.log('Latitude : ' + this.crd.latitude);
+	console.log('Longitude : ' + this.crd.longitude);
+	console.log('La précision est de ' + this.crd.accuracy +  'mètres.');
+	return this.crd;
 }
+
+document.onreadystatechange = setTimeout(function () {
+    if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(success);
+    } else {
+        alert("You don't support this");
+    }
+},100);
+
+document.onreadystatechange = setTimeout(function myMap() {
+
+	posLat = crd.latitude;
+	posLng = crd.longitude;
+
+	// Map options
+	var mapProp= {
+		center:{lat:posLat,lng:posLng},
+		zoom:9,
+		disableDefaultUI: true,
+			styles: [
+			{
+				"elementType": "geometry",
+				"stylers": [
+				{
+					"color": "#f5f5f5"
+				}
+				]
+			},
+			{
+				"elementType": "labels.icon",
+				"stylers": [
+				{
+					"visibility": "off"
+				}
+				]
+			},
+			{
+				"elementType": "labels.text.fill",
+				"stylers": [
+				{
+					"color": "#616161"
+				}
+				]
+			},
+			{
+				"elementType": "labels.text.stroke",
+				"stylers": [
+				{
+					"color": "#f5f5f5"
+				}
+				]
+			},
+			{
+				"featureType": "administrative.land_parcel",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				{
+					"color": "#bdbdbd"
+				}
+				]
+			},
+			{
+				"featureType": "poi",
+				"elementType": "geometry",
+				"stylers": [
+				{
+					"color": "#eeeeee"
+				}
+				]
+			},
+			{
+				"featureType": "poi",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				{
+					"color": "#757575"
+				}
+				]
+			},
+			{
+				"featureType": "poi.park",
+				"elementType": "geometry",
+				"stylers": [
+				{
+					"color": "#e5e5e5"
+				}
+				]
+			},
+			{
+				"featureType": "poi.park",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				{
+					"color": "#9e9e9e"
+				}
+				]
+			},
+			{
+				"featureType": "road",
+				"elementType": "geometry",
+				"stylers": [
+				{
+					"color": "#ffffff"
+				}
+				]
+			},
+			{
+				"featureType": "road.arterial",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				{
+					"color": "#757575"
+				}
+				]
+			},
+			{
+				"featureType": "road.highway",
+				"elementType": "geometry",
+				"stylers": [
+				{
+					"color": "#dadada"
+				}
+				]
+			},
+			{
+				"featureType": "road.highway",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				{
+					"color": "#616161"
+				}
+				]
+			},
+			{
+				"featureType": "road.local",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				{
+					"color": "#9e9e9e"
+				}
+				]
+			},
+			{
+				"featureType": "transit.line",
+				"elementType": "geometry",
+				"stylers": [
+				{
+					"color": "#e5e5e5"
+				}
+				]
+			},
+			{
+				"featureType": "transit.station",
+				"elementType": "geometry",
+				"stylers": [
+				{
+					"color": "#eeeeee"
+				}
+				]
+			},
+			{
+				"featureType": "water",
+				"elementType": "geometry",
+				"stylers": [
+				{
+					"color": "#c9c9c9"
+				}
+				]
+			},
+			{
+				"featureType": "water",
+				"elementType": "labels.text.fill",
+				"stylers": [
+				{
+					"color": "#9e9e9e"
+				}
+				]
+			}
+			]
+	};
+
+	// New map
+	var map=new google.maps.Map(document.getElementById('map'),mapProp);
+
+	// Add marker
+	var marker= new google.maps.Marker({
+		position: {lat:48.875661,lng:2.485932},	
+		map: map,
+	});
+			
+	//Configure InfoWindow
+	let infowindow = new google.maps.InfoWindow({
+	content: ""
+	});
+
+	for(let i = 0; i < gon.golfs.length; i++){
+
+		// Current marker
+		let marker = new google.maps.Marker({
+			position: new google.maps.LatLng(gon.golfs[i].lat,gon.golfs[i].long),
+			map: map
+		});
+		
+		//Golf name
+		let golf = gon.golfs[i].name
+		let golflink = golf.link("golfs/"+gon.golfs[i].id)
+			
+		// Open InfoWindow on click
+		google.maps.event.addListener(marker, 'click', function() {
+			infowindow.setContent(golflink);
+			infowindow.open(map, marker);
+		});
+	}
+},100);
 
