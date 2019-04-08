@@ -26,7 +26,7 @@
                 </tr>
               </thead>
               <tbody>
-                <% @golfs.each do |golf|%>
+                <% @golfs..order(:id).each do |golf|%>
                   <tr>
                     <td style="padding:20px 10px; text-align:center;"><%=golf.id%></td>
                     <td style="padding:20px 10px; text-align:center;"><%=golf.name%></td>
