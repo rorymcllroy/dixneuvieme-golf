@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-12 col-lg-12 text-center">
-        <h2>Les golfs autour de moi</h2>
+        <h2>Les golfs les mieux notés</h2>
       </div>
     </div>    
   </div>
@@ -14,7 +14,7 @@
 <div class="bg-gradient-2">
   <br>
   <div class="flex">
-    <% @golfs.order(average_grade: :desc).each do |golf| %>
+    <% @golfs.order(average_grade: :desc).first(3).each do |golf| %>
       <%= render 'card', golf: golf %>
     <% end %>
   </div>
