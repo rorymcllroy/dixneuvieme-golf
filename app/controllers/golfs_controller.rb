@@ -1,8 +1,16 @@
 class GolfsController < ApplicationController
   before_action :is_admin?, only: [:new, :destroy, :edit]
-  
+  include GolfcommentsHelper
+
   def index
     @golfs = Golf.all
+    Golf.all.each do |golf|
+      if comments_by_golf(golf.id).count == 0
+        golf.update(average_grade: 0)
+      else
+        golf.update(average_grade: comments_by_golf(golf.id).sum(:grade) / comments_by_golf(golf.id).count)
+      end
+    end
   end
   
   def show
