@@ -14,7 +14,7 @@
 <div class="bg-gradient-2">
   <br>
   <div class="flex">
-    <% @golfs.each do |golf| %>
+    <% @golfs.order(average_grade: :desc).each do |golf| %>
       <%= render 'card', golf: golf %>
     <% end %>
   </div>
