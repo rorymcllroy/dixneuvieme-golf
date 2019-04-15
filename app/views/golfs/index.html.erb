@@ -7,7 +7,7 @@
         <% if params[:term] %>
           <h2>Résultats de ma recherche</h2>        
         <% else %>
-          <h2>Les golfs les mieux notés</h2>
+          <h2>Les golfs du moment les mieux notés</h2>
         <% end %>
       </div>
     </div>    
@@ -16,17 +16,26 @@
 
 <!-- Content -->
 
-<%= form_tag(golfs_path, method: :get) do %>
-  <%= text_field_tag :term, params[:term], class:'golf-autocompletion' %>
-  <%= submit_tag 'Search', name: nil  %>
-<% end %>
-
 <div class="bg-gradient-2">
+  <div class="flex-center">
+    <%= form_tag(golfs_path, method: :get) do %>
+      <div class="flex-center">
+        <%= text_field_tag :term, params[:term], class:'golf-autocompletion golf-search-bar', placeholder: 'Saisir un golf', style:'margin:0px;'%>
+      </div>
+      <div class="flex-center">
+        <%= submit_tag "Rechercher", class: 'btn btn-primary btn-sm mb-2', style:'margin:0px; margin-top:5px;' %>
+      </div>
+    <% end %>
+  </div>
   <br>
   <div class="flex">
     <% if params[:term] %>
-      <% @golfs.order(average_grade: :desc).each do |golf| %>
-        <%= render 'card', golf: golf %>
+      <% if @golfs.length == 0 %>
+        <h3>Ce golf n'est pas encore répertorié.</h3>
+      <% else %>
+        <% @golfs.order(average_grade: :desc).each do |golf| %>
+          <%= render 'card', golf: golf %>
+        <% end %>
       <% end %>
     <% else %>
       <% @golfs.order(average_grade: :desc).first(3).each do |golf| %>

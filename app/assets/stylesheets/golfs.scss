@@ -95,3 +95,32 @@
   height: 50%;
   overflow-y: scroll;
 }
+
+
+.golf-search-bar {
+  -webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+  font-size: 100%;
+  background: #FFFFFF url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px rgb(201,201,201);
+	padding: 9px 10px 9px 32px;
+	width: 75%;
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+
+.golf-search-bar:focus {
+  outline: none;
+	width: 100%;
+	background-color: #FFFFFF;
+	border-color: #73AE70;
+}
+
+
+
