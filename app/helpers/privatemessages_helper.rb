@@ -5,4 +5,7 @@ module PrivatemessagesHelper
   def unread_message(recipient_id)
     Privatemessage.where(recipient_id: recipient_id).where(is_read: false).count
   end
+  def unread_message_by_sender(recipient_id, sender_id)
+    Privatemessage.where(recipient_id: recipient_id).where(sender_id: sender_id).where(is_read: false).count
+  end
 end

@@ -8,7 +8,7 @@
               <div class="col-10">
                 <div class="media align-items-center">
                   <div class="media-body">
-                    <h5 class="mb-0"> <%= link_to "#{user.first_name} (#{unread_message(current_user.id)} message(s) non lu(s))", user_conversation_path(current_user, user.id) %> </h5>
+                    <h5 class="mb-0"> <%= link_to "#{user.first_name} (#{unread_message_by_sender(current_user.id,user.id)} message(s) non lu(s))", user_conversation_path(current_user, user.id) %> </h5>
                       <p> Nombre de messages: <%= pm_count(current_user.id, user.id) %> </p>
                   </div>
                 </div>
