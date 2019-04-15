@@ -11,6 +11,11 @@ class GolfsController < ApplicationController
         golf.update(average_grade: comments_by_golf(golf.id).sum(:grade) / comments_by_golf(golf.id).count)
       end
     end
+    if params[:term]
+      @golfs = Golf.where('name ILIKE ?', "%#{params[:term]}%")
+    else
+      @golf = Golf.all
+    end
   end
   
   def show

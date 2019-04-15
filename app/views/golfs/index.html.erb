@@ -11,10 +11,16 @@
 </section>
 
 <!-- Content -->
+
+<%= form_tag(golfs_path, method: :get) do %>
+  <%= text_field_tag :term, params[:term] %>
+  <%= submit_tag 'Search', name: nil  %>
+<% end %>
+
 <div class="bg-gradient-2">
   <br>
   <div class="flex">
-    <% @golfs.order(average_grade: :desc).first(3).each do |golf| %>
+    <% @golfs.order(average_grade: :desc).each do |golf| %>
       <%= render 'card', golf: golf %>
     <% end %>
   </div>
