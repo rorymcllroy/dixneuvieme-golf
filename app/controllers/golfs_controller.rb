@@ -12,9 +12,7 @@ class GolfsController < ApplicationController
       end
     end
     if params[:term]
-      @golfs = Golf.where('name ILIKE ?', "%#{params[:term]}%")
-    else
-      @golf = Golf.all
+      @golfs = Golf.where('name ILIKE ?', "#{params[:term]}%")
     end
   end
   

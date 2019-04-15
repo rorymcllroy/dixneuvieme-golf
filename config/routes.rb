@@ -21,5 +21,6 @@ Rails.application.routes.draw do
     resources :carsharingreviews, only: [:new, :create]
   end
   resources :cities
+  resources :golfs_json
 end
 
