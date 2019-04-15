@@ -22,5 +22,6 @@ Rails.application.routes.draw do
   end
   resources :cities
   resources :golfs_json
+  resources :contacts, only:[:new, :create]
 end
 

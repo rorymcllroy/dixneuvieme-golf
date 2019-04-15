@@ -41,17 +41,6 @@ ActiveRecord::Schema.define(version: 2019_04_15_142344) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "carsharingreviews", force: :cascade do |t|
-    t.text "content"
-    t.bigint "carsharing_id"
-    t.bigint "passenger_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.float "grade"
-    t.index ["carsharing_id"], name: "index_carsharingreviews_on_carsharing_id"
-    t.index ["passenger_id"], name: "index_carsharingreviews_on_passenger_id"
-  end
-
   create_table "carsharings", force: :cascade do |t|
     t.datetime "date"
     t.integer "places"
@@ -118,7 +107,6 @@ ActiveRecord::Schema.define(version: 2019_04_15_142344) do
   create_table "passengers", force: :cascade do |t|
     t.string "stripe_customer_id"
     t.bigint "passenger_id"
-    t.bigint "carsharing_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["carsharing_id"], name: "index_passengers_on_carsharing_id"
