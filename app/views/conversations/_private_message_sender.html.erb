@@ -1,4 +1,4 @@
 <blockquote class="boxed sender">
-  <p><%= pm.content %> </p>
+  <p><%= pm.content %></p>
   <footer class="blockquote-footer name"> Envoyé le <%= pm.created_at.day < 10 ? "0#{pm.created_at.day}" : "#{pm.created_at.day}" %>/<%= pm.created_at.month < 10 ? "0#{pm.created_at.month}" : "#{pm.created_at.month}" %>/<%= pm.created_at.year %> à <%= pm.created_at.hour %>h<%= pm.created_at.min < 10 ? "0#{pm.created_at.min}" : "#{pm.created_at.min}" %> </footer>
 </blockquote>

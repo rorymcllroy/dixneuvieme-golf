@@ -98,3 +98,18 @@ footer {
 .adjust-footer-right{
   padding-right: 80px;
 }
+
+/* New message */
+
+.badge {
+  font-size: 14px;
+  color: #FFFFFF;
+  line-height: 20px !important;
+  width: 20px !important;
+  padding: 0 !important;
+  background: #73AE70 !important;
+  position: relative !important;
+  top: -8px !important;
+  left: -12px !important;
+  border-radius: 50%;
+}

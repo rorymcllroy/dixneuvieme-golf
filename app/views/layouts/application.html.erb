@@ -37,7 +37,7 @@
     drift.load('aakbudp5srs8');
     </script>
  
-    <title>19ème Trou</title>
+    <title>19ème Trou <%= current_user && unread_message(current_user.id)!=0 ? "(#{unread_message(current_user.id)})" : nil %> </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= Gon::Base.render_data %>
     <%= csrf_meta_tags %>
