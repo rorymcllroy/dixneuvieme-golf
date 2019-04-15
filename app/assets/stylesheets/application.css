@@ -98,3 +98,7 @@ footer {
 .adjust-footer-right{
   padding-right: 80px;
 }
+
+.hidden{
+  display: none;
+}
