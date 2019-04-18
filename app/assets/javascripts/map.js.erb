@@ -1,10 +1,26 @@
 function initMap() {
-  let mymap = L.map('map').setView([51.505, -0.09], 13);
+  
+  let mymap = L.map('map').setView([47.0805693, 2.398932], 6);
+
   L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=<%= ENV['MAPBOX_API_KEY'] %>", {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'mapbox.streets',
-    accessToken: 'your.mapbox.access.token'
+    accessToken: 'your.mapbox.access.token',
+    style: 'https://openmaptiles.github.io/osm-bright-gl-style/style-cdn.json',
   }).addTo(mymap);
+  
+  // Marker
+  let customIcon = new L.Icon({
+    iconUrl: '<%= image_path("map_marker.png") %>',
+    iconSize: [25, 30]
+  });
+  for(let i = 0; i < gon.golfs.length; i++){
+    let marker = L.marker([gon.golfs[i].lat, gon.golfs[i].long], {icon: customIcon}).addTo(mymap);
+    marker.bindPopup(gon.golfs[i].name.link("golfs/"+gon.golfs[i].id));
+	};
+
+  
+
 }
 
