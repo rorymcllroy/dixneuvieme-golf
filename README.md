@@ -28,7 +28,7 @@ Outil | Utilisation |
 *API Stripe* | `Gestion des fonctionnalités de paiement` |
 *API GoogleMaps* | `Géolocalisation des golfs` |
 
-Envie d'essayer le service ? Alors, rendez-vous sur [19ème trou](https://dixneuvieme-golf.herokuapp.com/) !
+Envie d'essayer le service ? Alors, rendez-vous sur [19ème trou](https://dixneuvieme-golf-production.herokuapp.com/) !
 
 Tu peux également découvrir le parcours utilisateur sur [YouTube](https://youtu.be/iisaiDft3aE)
 
